@@ -2,6 +2,8 @@
 
 My dotfiles, managed by using stow
 
+This can also compatible with Termux.
+
 ## Install
 
 (SSH)
