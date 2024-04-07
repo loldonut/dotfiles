@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+DIR="$HOME"
+
+stow --target="$DIR" zsh
