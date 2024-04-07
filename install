@@ -1,4 +1,26 @@
-#!/usr/bin/bash
-DIR="$HOME"
+#!/usr/bin/env bash
 
-stow --target="$DIR" zsh
+set -e
+set -x
+
+HOME_DIR="$HOME"
+CONFIG_DIR="$HOME/.config"
+
+# Configs only stored in ~/ or $HOME
+HOME_DIRS=("zsh")
+# Configs only stored in ~/.config/
+CONFIG_DIRS=("nvim")
+
+stow_it() {
+    for h in ${HOME_DIRS[@]}; do
+        stow --target="$HOME_DIR" $h
+    done
+
+    for c in ${CONFIG_DIRS[@]}; do
+        [[ ! -e "$CONFIG_DIR/$c" ]] && mkdir "$CONFIG_DIR/$c"
+        stow --target="$CONFIG_DIR/$c" --adopt -R $c
+    done
+}
+
+stow_it
+
