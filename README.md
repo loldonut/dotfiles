@@ -2,7 +2,7 @@
 
 My dotfiles, managed by using stow
 
-This can also compatible with Termux.
+This is also compatible with Termux.
 
 ## Install
 
