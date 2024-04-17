@@ -17,7 +17,10 @@ stow_it() {
     done
 
     for c in ${CONFIG_DIRS[@]}; do
+        # make a .config folder if it does not exist
+        [[ ! -e $CONFIG_DIR ]] && mkdir "$CONFIG_DIR"
         [[ ! -e "$CONFIG_DIR/$c" ]] && mkdir "$CONFIG_DIR/$c"
+
         stow --target="$CONFIG_DIR/$c" --adopt -R $c
     done
 }
