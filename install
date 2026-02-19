@@ -7,7 +7,7 @@ HOME_DIR="$HOME"
 CONFIG_DIR="$HOME/.config"
 
 # Configs only stored in ~/ or $HOME
-HOME_DIRS=("zsh")
+HOME_DIRS=("zsh" "tmux")
 # Configs only stored in ~/.config/
 CONFIG_DIRS=("nvim")
 
