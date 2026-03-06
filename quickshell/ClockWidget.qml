@@ -1,0 +1,13 @@
+import QtQuick
+
+Text {
+  text: Time.time
+
+  color: root.colGreen
+  font {
+    pixelSize: root.fontSize
+    letterSpacing: 0.8
+    family: root.fontFamily
+    bold: true
+  }
+}
