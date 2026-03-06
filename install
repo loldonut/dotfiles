@@ -4,7 +4,7 @@ set -e
 set -x
 
 HOME_DIR="$HOME"
-CONFIG_DIR="$HOME/.config"
+CONFIG_DIR="${HOME_DIR}/.config"
 
 # Configs only stored in ~/ or $HOME
 HOME_DIRS=("zsh" "tmux")
