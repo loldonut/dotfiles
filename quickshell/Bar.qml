@@ -19,7 +19,7 @@ Scope {
   property color colRed: "#ff757f"
 
   property string fontFamilyNerd: "Adwaita Mono"
-  property string fontFamily: "Adwaita Sans"
+  property string fontFamily: "JetBrains Mono"
   property int fontSize: 14
 
   Variants {
@@ -48,11 +48,24 @@ Scope {
         }
 
         Workspaces {}
+        Separator {}
+        Wifi {}
         ActiveWindow {}
         Item { Layout.fillWidth: true }
+
+        Separator {}
+        Volume {}
+
+        Separator {}
         Bluetooth {}
+
+        Separator {}
         Battery {}
+
+        Separator {}
         ClockWidget {}
+
+        Separator {}
         Notification {}
       }
     }

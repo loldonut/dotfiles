@@ -23,8 +23,9 @@ Text {
       charging: ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
     }
 
-    const iconState = icons[state][Math.floor(battery.percentage * 10)]
+    const batteryStateIndex = Math.floor((battery.percentage * 100) / 10)
+    const iconState = icons[state][batteryStateIndex]
 
-    return `${iconState} ${Math.floor(battery.percentage * 100)}%`
+    return `${iconState}  ${Math.floor(battery.percentage * 100)}%`
   }
 }

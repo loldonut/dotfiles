@@ -1,4 +1,5 @@
 import Quickshell
+import Quickshell.Hyprland
 import Quickshell.Widgets
 import Quickshell.Services.Notifications
 import QtQuick
@@ -10,13 +11,23 @@ WrapperItem {
   Text {
     id: notification
 
-    color: root.colBlue
+    color: root.colTextDark
     font {
       family: root.fontFamilyNerd
       pixelSize: root.fontSize + 4
     }
 
-    text: NotificationServer.trackedNotifications  ? "󱅫" : ""
+    NotificationServer {
+      keepOnReload: true
+      imageSupported: true
+      persistenceSupported: true
+      bodySupported: true
+
+      onNotification: console.log(notification)
+    }
+
+    // text: NotificationServer.trackedNotifications.values  ? "󱅫" : ""
+    text: "m"
 
     MouseArea {
       anchors.fill: parent
@@ -24,7 +35,8 @@ WrapperItem {
       hoverEnabled: true
       cursorShape: Qt.PointingHandCursor
 
-      // onClicked:
+      // onClicked: Hyprland.dispatch("exec swaync-client --open-panel")
+      onClicked: console.log(NotificationServer.trackedNotifications)
     }
   }
 }

@@ -6,7 +6,7 @@ import QtQuick
 import QtQuick.Layouts
 
 Repeater {
-  model: Hyprland.workspaces.values.length
+  model: Hyprland.workspaces
 
   Rectangle {
     property var ws: Hyprland.workspaces.values.find(w => w.id === index + 1)

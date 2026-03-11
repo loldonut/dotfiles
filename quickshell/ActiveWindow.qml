@@ -14,8 +14,6 @@ Text {
 
   color: root.colTextDark
   fontSizeMode: Text.Fit
-  wrapMode: Text.WordWrap
-  elide: Text.ElideRight
   maximumLineCount: 1
 
   font {
@@ -25,7 +23,14 @@ Text {
     bold: true
   }
 
-  text: activeWindow
+  text: {
+    const maxLength = 50
+    if (activeWindow.length > maxLength) {
+      activeWindow = activeWindow.substr(0, maxLength) + '...'
+    }
+
+    return activeWindow
+  }
   horizontalAlignment: Text.AlignHCenter
   verticalAlignment: Text.AlignVCenter
 
