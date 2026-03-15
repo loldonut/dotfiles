@@ -18,8 +18,6 @@ yay -S --needed swaync quickshell-git alacritty rofi zsh tmux neovim
 
 ### Fonts
 
-#### Arch
-
 ```sh
 yay -S --needed noto-fonts-cjk ttf-jetbrains-mono-nerd ttf-adwaitamono-nerd
 ```
