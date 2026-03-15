@@ -13,7 +13,7 @@ Download using any AUR Helper programs
 ### Applications
 
 ```sh
-yay -S --needed swaync quickshell-git alacritty rofi zsh tmux neovim
+yay -S --needed swaync noctalia-shell alacritty rofi zsh tmux neovim
 ```
 
 ### Fonts
