@@ -19,7 +19,7 @@ Scope {
   property color colRed: "#ff757f"
 
   property string fontFamilyNerd: "Adwaita Mono"
-  property string fontFamily: "JetBrains Mono"
+  property string fontFamily: "JetBrainsMono Nerd Font"
   property int fontSize: 14
 
   Variants {
