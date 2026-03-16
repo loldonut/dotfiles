@@ -13,8 +13,10 @@ Download using any AUR Helper programs
 ### Applications
 
 ```sh
-yay -S --needed swaync noctalia-shell alacritty rofi zsh tmux neovim
+yay -S --needed swaync noctalia-shell alacritty rofi zsh tmux neovim hyprshot hyprpaper swaybg waypaper
 ```
+
+Use `awww` or `swaybg` for wallpapers. Then switch wallpapers using `waypaper` (except for `awww`)
 
 ### Fonts
 
