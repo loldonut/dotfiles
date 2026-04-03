@@ -105,7 +105,7 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
 
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"

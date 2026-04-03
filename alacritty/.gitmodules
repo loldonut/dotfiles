@@ -1,7 +1,3 @@
-[submodule "nvim"]
-	path = nvim
-	url = git@github.com:loldonut/nvim.git
-
 [submodule "tokyo-night-alacritty-theme"]
 	path = alacritty/tokyo-night-alacritty-theme
 	url = git@github.com:zatchheems/tokyo-night-alacritty-theme.git
