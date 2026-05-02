@@ -10,13 +10,17 @@ CONFIG_DIR="${HOME_DIR}/.config"
 HOME_DIRS=("zsh" "tmux")
 # Configs only stored in ~/.config/
 CONFIG_DIRS=("nvim" "kitty" "hypr" "swaync" "quickshell" "rofi" "noctalia" "alacritty" "MangoHud")
+# Directories that are ignored when running on NixOS
+NIX_IGNORED_DIRS=("noctalia" "zsh" "swaync")
 
 stow_it() {
     for h in ${HOME_DIRS[@]}; do
+	[[ ${NIX_IGNORED_DIRS[*]} =~ ${h} ]] && continue
         stow --target="$HOME_DIR" $h
     done
 
     for c in ${CONFIG_DIRS[@]}; do
+	[[ ${NIX_IGNORED_DIRS[*]} =~ ${c} ]] && continue
         # make a .config folder if it does not exist
         [[ ! -e $CONFIG_DIR ]] && mkdir "$CONFIG_DIR"
         [[ ! -e "$CONFIG_DIR/$c" ]] && mkdir "$CONFIG_DIR/$c"
