@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+HYPR_PATH="${HOME}/dotnix/dotfiles/hypr"
+PROFILE_SELECTED="$(echo ${1} | tr '[:upper:]' '[:lower:]')"
+VALID_PROFILES=("default" "performance")
+
+function prof_err() {
+    echo "hyprprofile: $1" >&2
+}
+
+function prof_print() {
+    echo "hyprprofile: $*"
+}
+
+function set_hypr_profile() {
+    if [[ -z ${1+x} ]]; then
+        cat "${HYPR_PATH}/profiles/${PROFILE_SELECTED}.conf" > "${HYPR_PATH}/hyprland.conf"
+    else
+        cat "${HYPR_PATH}/profiles/${1}.conf" > "${HYPR_PATH}/hyprland.conf"
+    fi
+}
+
+case "${PROFILE_SELECTED}" in
+    default)
+        set_hypr_profile
+        prof_print "set profile to ${PROFILE_SELECTED}"
+        exit 0
+        ;;
+    perf | performance)
+        set_hypr_profile "performance"
+        prof_print "set profile to ${PROFILE_SELECTED}"
+        exit 0
+        ;;
+    *)
+        prof_err "no profile selected. (hyprprofile <default|performance>"
+        exit 1
+        ;;
+esac
