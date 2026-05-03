@@ -1,0 +1,50 @@
+[bar]
+scale = 0.6499999761581421
+inset-edge = 0.5
+inset-ends = 0.5
+background-opacity = 75
+rounding = "md"
+
+[[bar.layout]]
+monitor = "*"
+show = true
+left = [
+    "hyprland-workspaces",
+    "clock",
+]
+center = ["window-title"]
+right = [
+    "battery",
+    "network",
+    "volume",
+    "systray",
+    "dashboard",
+]
+
+[styling.palette]
+bg = "#16161e"
+surface = "#1a1b26"
+elevated = "#202230"
+fg = "#c0caf5"
+fg-muted = "#a9b1d6"
+primary = "#7aa2f7"
+red = "#f7768e"
+yellow = "#e0af68"
+green = "#9ece6a"
+blue = "#7dcfff"
+
+[modules.clock]
+format = "%a, %b %d, %Y %I:%M %p"
+border-color = "bg-base"
+icon-color = "accent"
+icon-bg-color = "transparent"
+label-color = "fg-default"
+
+[modules.hyprland-workspaces]
+active-color = "blue"
+
+[modules.window-title]
+icon-color = "fg-default"
+icon-bg-color = "transparent"
+label-color = "fg-default"
+

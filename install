@@ -9,7 +9,7 @@ CONFIG_DIR="${HOME_DIR}/.config"
 # Configs only stored in ~/ or $HOME
 HOME_DIRS=("zsh" "tmux")
 # Configs only stored in ~/.config/
-CONFIG_DIRS=("nvim" "kitty" "hypr" "swaync" "quickshell" "rofi" "noctalia" "alacritty" "MangoHud")
+CONFIG_DIRS=("nvim" "kitty" "hypr" "swaync" "quickshell" "rofi" "noctalia" "alacritty" "MangoHud" "wayle")
 # Directories that are ignored when running on NixOS
 NIX_IGNORED_DIRS=("noctalia" "zsh" "swaync")
 
