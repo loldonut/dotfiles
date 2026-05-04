@@ -40,6 +40,10 @@ icon-color = "accent"
 icon-bg-color = "transparent"
 label-color = "fg-default"
 
+[modules.dashboard]
+dropdown-poweroff-command = "hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'"
+dropdown-reboot-command = "hyprshutdown -t 'Rebooting...' --post-cmd 'reboot'"
+
 [modules.hyprland-workspaces]
 active-color = "blue"
 
