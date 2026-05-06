@@ -1,23 +1,36 @@
+[general]
+font-sans = "JetBrainsMono Nerd Font"
+
 [bar]
 scale = 0.6499999761581421
+module-gap = 0.6
 inset-edge = 0.5
 inset-ends = 0.5
 background-opacity = 75
 rounding = "md"
+button-variant = "basic"
+button-gap = 1.2
+button-label-size = 1.2
+button-label-weight = "bold"
 
 [[bar.layout]]
 monitor = "*"
 show = true
 left = [
     "hyprland-workspaces",
+    "separator",
     "clock",
 ]
 center = ["window-title"]
 right = [
     "battery",
+    "separator",
     "network",
+    "separator",
     "volume",
+    "separator",
     "systray",
+    "separator",
     "dashboard",
 ]
 
@@ -35,12 +48,15 @@ blue = "#7dcfff"
 
 [modules.clock]
 format = "%a, %b %d, %Y %I:%M %p"
-border-color = "bg-base"
-icon-color = "accent"
-icon-bg-color = "transparent"
+button-bg-color = "transparent"
 label-color = "fg-default"
+icon-show = false
+icon-color = "fg-default"
+icon-bg-color = "transparent"
 
 [modules.dashboard]
+icon-color = "fg-default"
+icon-bg-color = "transparent"
 dropdown-poweroff-command = "hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'"
 dropdown-reboot-command = "hyprshutdown -t 'Rebooting...' --post-cmd 'reboot'"
 
@@ -48,7 +64,33 @@ dropdown-reboot-command = "hyprshutdown -t 'Rebooting...' --post-cmd 'reboot'"
 active-color = "blue"
 
 [modules.window-title]
+button-bg-color = "transparent"
 icon-color = "fg-default"
 icon-bg-color = "transparent"
 label-color = "fg-default"
+
+[modules.battery]
+button-bg-color = "transparent"
+label-color = "fg-default"
+icon-color = "fg-default"
+icon-bg-color = "transparent"
+
+[modules.network]
+button-bg-color = "transparent"
+label-color = "fg-default"
+label-show = false
+icon-color = "fg-default"
+icon-bg-color = "transparent"
+
+[modules.volume]
+button-bg-color = "transparent"
+label-color = "fg-default"
+icon-color = "fg-default"
+icon-bg-color = "transparent"
+
+[modules.systray]
+button-bg-color = "transparent"
+label-color = "fg-default"
+icon-color = "fg-default"
+icon-bg-color = "transparent"
 
