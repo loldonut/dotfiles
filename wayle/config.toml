@@ -18,8 +18,8 @@ monitor = "*"
 show = true
 left = [
     "hyprland-workspaces",
-    "separator",
     "clock",
+    "weather",
 ]
 center = ["window-title"]
 right = [
@@ -89,6 +89,18 @@ icon-color = "fg-default"
 icon-bg-color = "transparent"
 
 [modules.systray]
+button-bg-color = "transparent"
+label-color = "fg-default"
+icon-color = "fg-default"
+icon-bg-color = "transparent"
+
+[modules.media]
+icon-show = false
+label-color = "fg-default"
+label-max-length = 20
+
+[modules.weather]
+location = "Manila"
 button-bg-color = "transparent"
 label-color = "fg-default"
 icon-color = "fg-default"
