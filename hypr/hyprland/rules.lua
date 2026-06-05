@@ -71,6 +71,8 @@ local floatList = {
     { "class:waypaper",                   patterns.startsWith  },
     { "class:libresplit",                 patterns.has,        },
     { "class:nm-connection-editor",       patterns.has,        },
+    { "class:steam",                      patterns.has         },
+    { "class:org.kde.dolphin",            patterns.has         },
     {
         "class:pavucontrol",
         patterns.has,
