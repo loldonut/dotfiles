@@ -2,12 +2,10 @@
 font-sans = "JetBrainsMono Nerd Font"
 
 [bar]
-scale = 0.6499999761581421
+scale = 0.65
 module-gap = 0.6
-inset-edge = 0.5
-inset-ends = 0.5
-background-opacity = 75
-rounding = "md"
+background-opacity = 100
+rounding = "none"
 button-variant = "basic"
 button-gap = 1.2
 button-label-size = 1.2
@@ -61,7 +59,9 @@ dropdown-poweroff-command = "hyprshutdown -t 'Shutting down...' --post-cmd 'shut
 dropdown-reboot-command = "hyprshutdown -t 'Rebooting...' --post-cmd 'reboot'"
 
 [modules.hyprland-workspaces]
+active-indicator = "underline"
 active-color = "blue"
+container-bg-color = "transparent"
 
 [modules.window-title]
 button-bg-color = "transparent"

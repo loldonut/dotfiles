@@ -8,16 +8,23 @@ hl.monitor({
 hl.config({
     general = {
         gaps_in = 5,
-        gaps_out = 10,
+        gaps_out = 8,
 
         border_size = 2,
 
         -- col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg # default
         -- col.active_border = rgb(82aaff) rgb(222436) 45deg
+        -- col = {
+        --     active_border = {
+        --         colors = {"rgb(232A2E)", "rgb(D3C6AA)"},
+        --         angle = 60
+        --     },
+        --     inactive_border = "rgba(595959aa)",
+        -- },
         col = {
             active_border = {
-                colors = {"rgb(232A2E)", "rgb(D3C6AA)"},
-                angle = 60
+                colors = {"rgb(82aaff)", "rgb(222436)"},
+                angle = 45
             },
             inactive_border = "rgba(595959aa)",
         },
@@ -27,8 +34,7 @@ hl.config({
         layout = "dwindle",
     },
     decoration = {
-        rounding       = 5,
-        rounding_power = 2,
+        rounding = 1,
 
         active_opacity   = 1.0,
         inactive_opacity = 1.0,
