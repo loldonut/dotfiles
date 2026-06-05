@@ -31,34 +31,58 @@ local patterns = {
         return string.format("^(.*)(%s)$", title)
     end,
     has = function (title)
-        return string.format("^(%s)", title)
+        return string.format("^(%s)$", title)
     end
 }
 
-local function windowRuleFloat(title, pattern)
-    hl.window_rule({
+local function parseWindowSelector(str)
+    local selector, value = str:match("^([^:]+):(.*)$")
+    return { selector, value }
+end
+
+local function windowRuleFloat(title, pattern, extraFields)
+    local parsedTitle = parseWindowSelector(title)
+    local selector = parsedTitle[1]
+    local windowTitle = parsedTitle[2]
+
+    local rule = {
         match = {
-            title = pattern(title),
-            class = pattern(title),
+            [selector] = pattern(windowTitle),
         },
         center = true,
         float = true,
-    })
+    }
+
+    if extraFields then
+        for k, v in pairs(extraFields) do
+            rule[k] = v
+        end
+    end
+    hl.window_rule(rule)
 end
 
 local floatList = {
-    { "Open File", patterns.startsWith },
-    { "Select a File", patterns.startsWith },
-    { "Choose a wallpaper", patterns.startsWith },
-    { "Open Folder", patterns.startsWith },
-    { "wants to save", patterns.endsWith },
-    { "wants to open", patterns.endsWith },
-    { "wants to open", patterns.endsWith },
-    { "pavucontrol", patterns.has },
-    { "org.pulseaudio.pavucontrol", patterns.has },
-    { "nm-connection-editor", patterns.has },
+    { "title:Open File",                  patterns.startsWith  },
+    { "title:Select a File",              patterns.startsWith  },
+    { "title:Choose a wallpaper",         patterns.startsWith  },
+    { "title:Open Folder",                patterns.startsWith  },
+    { "title:wants to save",              patterns.endsWith    },
+    { "title:wants to open",              patterns.endsWith    },
+    { "class:waypaper",                   patterns.startsWith  },
+    { "class:libresplit",                 patterns.has,        },
+    { "class:nm-connection-editor",       patterns.has,        },
+    {
+        "class:pavucontrol",
+        patterns.has,
+        { size = { "(monitor_w*.45)", "(monitor_h*.45)" } }
+    },
+    {
+        "class:org.pulseaudio.pavucontrol",
+        patterns.has,
+        { size = { "(monitor_w*.45)", "(monitor_h*.45)" } }
+    },
 }
 
 for _, value in pairs(floatList) do
-    windowRuleFloat(value[1], value[2])
+    windowRuleFloat(value[1], value[2], value[3])
 end

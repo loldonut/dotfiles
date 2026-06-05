@@ -27,6 +27,8 @@ bindMod("B", exec_cmd(default.bluetoothManager))
 bindMod("C", hl.dsp.window.close())
 bindMod("V", hl.dsp.window.float({ action = "toggle" }))
 
+bindShiftMod("P", exec_cmd("pavucontrol"))
+
 -- Screenshotting
 hl.bind("PRINT",      exec_cmd("hyprshot -m output"))
 bindMod("PRINT",      exec_cmd("hyprshot -m window"))
