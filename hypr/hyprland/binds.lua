@@ -63,6 +63,7 @@ bindMod("G", function ()
     })
 end)
 
+bindMod("F", hl.dsp.window.center())
 bindShiftMod("F1", function ()
     local game_mode = (hl.get_config("animations.enabled") == false)
 
