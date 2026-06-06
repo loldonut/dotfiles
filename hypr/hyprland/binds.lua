@@ -49,18 +49,29 @@ bindShiftMod("T", function ()
 end)
 
 -- LibreSplit and L4D2 binds
+bindMod("F5", hl.dsp.pass({ window = "class:^(libresplit)$" }))
 bindMod("G", function ()
-    hl.dsp.pass({
+    -- For some reason 'hl.dsp.send_shortcut' and 'hl.dsp.pass' does not work
+    -- and this is the work around
+    hl.dispatch(hl.dsp.send_key_state({
+        state = "down",
+        mods = mainMod,
+        key = "G",
         window = "class:^(libresplit)$"
-    })
-    hl.dsp.pass({
+    }))
+    hl.dispatch(hl.dsp.send_key_state({
+        state = "down",
+        mods = mainMod,
+        key = "G",
         window = "class:^(libresplit)$"
-    })
+    }))
 
-    hl.dsp.send_shortcut({
+    hl.dispatch(hl.dsp.send_key_state({
+        state = "down",
+        mods = "",
         key = "G",
         window = "title:^(Left 4 Dead 2)$"
-    })
+    }))
 end)
 
 bindMod("F", hl.dsp.window.center())
