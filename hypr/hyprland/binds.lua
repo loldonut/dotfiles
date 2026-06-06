@@ -63,7 +63,6 @@ bindMod("G", function ()
     })
 end)
 
-bindMod("D", exec_cmd("~/dotfiles/hypr/hyprland/show_desktop.sh"))
 bindShiftMod("F1", function ()
     local game_mode = (hl.get_config("animations.enabled") == false)
 
