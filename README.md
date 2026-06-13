@@ -3,6 +3,11 @@
 My dotfiles, managed by using stow \
 Using Hyprland, with [Wayle](https://github.com/wayle-rs/wayle) as status bar
 
+- [Clone Repository](#clone-repository)
+- [Required Packages](#required-packages)
+- [Install](#install)
+- [Hyprland Configuration](#hyprland-configuration)
+
 ## Clone Repository
 
 ##### SSH
@@ -38,3 +43,7 @@ yay -S --needed noto-fonts-cjk ttf-jetbrains-mono-nerd ttf-adwaitamono-nerd
 ```sh
 ./install
 ```
+
+## Hyprland Configuration
+
+[**See README here**](https://github.com/loldonut/dotfiles/blob/main/hypr/README.md)
