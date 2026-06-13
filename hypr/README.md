@@ -11,8 +11,19 @@ Folder `hyprland`, and `utils` are the base configuration and extra configuratio
 ```
 hypr/extras
 ├── binds.lua
+├── devices.lua
 └── monitors.lua
 ```
+
+#### `binds.lua`
+
+You can put extra binds here.
+
+[**Hyprland Wiki for Binds**](https://wiki.hypr.land/Configuring/Basics/Binds/)
+
+#### `devices.lua`
+
+[**Hyprland Wiki for Devices**](https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/)
 
 #### `monitors.lua`
 
@@ -31,8 +42,3 @@ hl.monitor({
 
 [**Hyprland Wiki for Monitors**](https://wiki.hypr.land/Configuring/Basics/Monitors/)
 
-#### `binds.lua`
-
-You can put extra binds here.
-
-[**Hyprland Wiki for Binds**](https://wiki.hypr.land/Configuring/Basics/Binds/)
