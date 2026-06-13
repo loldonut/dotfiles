@@ -7,6 +7,10 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("blueman-applet")
     hl.exec_cmd("wayle panel start")
 
+    -- Clipboard Manager
+    hl.exec_cmd("wl-paste --type text --watch cliphist store")
+    hl.exec_cmd("wl-paste --type image --watch cliphist store")
+
     hl.exec_cmd("hyprctl setcursor capitaine-cursors 32")
 
     -- Authentication Agents

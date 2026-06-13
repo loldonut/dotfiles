@@ -13,6 +13,9 @@ bindMod("V", hl.dsp.window.float({ action = "toggle" }))
 bindShiftMod("B", exec_cmd(bluetoothManager))
 bindShiftMod("P", exec_cmd("pavucontrol"))
 
+-- Open Clipboard History with Rofi
+bindShiftMod("R", exec_cmd("cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"))
+
 -- Screenshotting
 hl.bind("PRINT",      exec_cmd('grim - | wl-copy'))
 bindMod("PRINT",      exec_cmd("hyprshot -m window"))

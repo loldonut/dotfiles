@@ -28,7 +28,7 @@ git clone --recurse-submodules https://github.com/loldonut/dotfiles
 You can use `awww`, `swaybg`, and `hyprpaper` for wallpapers. Then switch wallpapers using `waypaper` (except for `awww`)
 
 ```sh
-yay -S --needed stow swaync alacritty rofi zsh tmux neovim hyprshot hyprpaper hyprshutdown swaybg waypaper wayle mangohud hyprpolkitagent ghostty grim slurp swappy dolphin brave-bin blueman
+yay -S --needed stow swaync alacritty rofi zsh tmux neovim hyprshot hyprpaper hyprshutdown swaybg waypaper wayle mangohud hyprpolkitagent ghostty grim slurp swappy dolphin brave-bin blueman wl-clipboard cliphist
 ```
 
 ### Fonts
