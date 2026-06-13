@@ -1,7 +1,7 @@
-local default = require("..defaults")
+require("..defaults")
 
 hl.on("hyprland.start", function ()
-    hl.exec_cmd(default.terminal, { workspace = "1" })
+    hl.exec_cmd(terminal, { workspace = "1" })
     hl.exec_cmd("swaync")
     hl.exec_cmd("nm-applet")
     hl.exec_cmd("blueman-applet")
