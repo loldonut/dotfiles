@@ -5,11 +5,12 @@ bindMod("Q", exec_cmd(terminal))
 bindMod("M", exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 bindMod("E", exec_cmd(fileManager))
 bindMod("R", exec_cmd(menu))
+bindMod("B", exec_cmd(browser))
 bindMod("P", exec_cmd("pavucontrol"))
-bindMod("B", exec_cmd(bluetoothManager))
 bindMod("C", hl.dsp.window.close())
 bindMod("V", hl.dsp.window.float({ action = "toggle" }))
 
+bindShiftMod("B", exec_cmd(bluetoothManager))
 bindShiftMod("P", exec_cmd("pavucontrol"))
 
 -- Screenshotting
