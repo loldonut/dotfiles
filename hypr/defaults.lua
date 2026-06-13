@@ -1,5 +1,5 @@
 local default = {
-    terminal = "alacritty",
+    terminal = "ghostty",
     fileManager = "dolphin",
     menu = "rofi -config ~/.config/rofi/config.rasi -show drun",
     browser = "flatpak run com.brave.Browser",
