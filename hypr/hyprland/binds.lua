@@ -1,8 +1,8 @@
 local default = require("..defaults")
 
-local mainMod = "SUPER"
+mainMod = "SUPER"
 
-local function bindMod(key, action, flags)
+function bindMod(key, action, flags)
     local bindModKey = string.format("%s + %s", mainMod, key)
     if flags then
         hl.bind(bindModKey, action, flags)
@@ -11,12 +11,12 @@ local function bindMod(key, action, flags)
     end
 end
 
-local function bindShiftMod(key, action, flags)
+function bindShiftMod(key, action, flags)
     local bindModKey = string.format("SHIFT + %s", key)
     bindMod(bindModKey, action, flags)
 end
 
-local exec_cmd = hl.dsp.exec_cmd
+exec_cmd = hl.dsp.exec_cmd
 
 bindMod("Q", exec_cmd(default.terminal))
 bindMod("M", exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
@@ -33,46 +33,6 @@ bindShiftMod("P", exec_cmd("pavucontrol"))
 hl.bind("PRINT",      exec_cmd('grim - | wl-copy'))
 bindMod("PRINT",      exec_cmd("hyprshot -m window"))
 bindShiftMod("PRINT", exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
-
--- Touchpad/Trackpad
-bindMod("T", function ()
-    hl.device({
-        name = "synps/2-synaptics-touchpad",
-        enabled = false
-    })
-end)
-bindShiftMod("T", function ()
-    hl.device({
-        name = "synps/2-synaptics-touchpad",
-        enabled = true
-    })
-end)
-
--- LibreSplit and L4D2 binds
-bindMod("F5", hl.dsp.pass({ window = "class:^(libresplit)$" }))
-bindMod("G", function ()
-    -- For some reason 'hl.dsp.send_shortcut' and 'hl.dsp.pass' does not work
-    -- and this is the work around
-    hl.dispatch(hl.dsp.send_key_state({
-        state = "down",
-        mods = mainMod,
-        key = "G",
-        window = "class:^(libresplit)$"
-    }))
-    hl.dispatch(hl.dsp.send_key_state({
-        state = "down",
-        mods = mainMod,
-        key = "G",
-        window = "class:^(libresplit)$"
-    }))
-
-    hl.dispatch(hl.dsp.send_key_state({
-        state = "down",
-        mods = "",
-        key = "G",
-        window = "title:^(Left 4 Dead 2)$"
-    }))
-end)
 
 bindMod("F", hl.dsp.window.center())
 bindShiftMod("F1", function ()
