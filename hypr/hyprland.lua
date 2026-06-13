@@ -18,9 +18,12 @@ if pathExists(hyprConfigPath .. "extras/binds.lua") then
     require("extras.binds")
 end
 
+if pathExists(hyprConfigPath .. "extras/devices.lua") then
+    require("extras.devices")
+end
+
 require("hyprland.animations")
 require("hyprland.rules")
 require("hyprland.env")
 require("hyprland.binds")
 require("hyprland.input")
-require("hyprland.devices")
