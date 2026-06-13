@@ -1,4 +1,4 @@
-require("..hyprland.binds")
+require("..utils.binds")
 
 -- Touchpad/Trackpad
 bindMod("T", function ()

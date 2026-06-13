@@ -1,29 +1,12 @@
-local default = require("..defaults")
+-- This imports "defaults.lua" as well
+require("..utils.binds")
 
-mainMod = "SUPER"
-
-function bindMod(key, action, flags)
-    local bindModKey = string.format("%s + %s", mainMod, key)
-    if flags then
-        hl.bind(bindModKey, action, flags)
-    else
-        hl.bind(bindModKey, action)
-    end
-end
-
-function bindShiftMod(key, action, flags)
-    local bindModKey = string.format("SHIFT + %s", key)
-    bindMod(bindModKey, action, flags)
-end
-
-exec_cmd = hl.dsp.exec_cmd
-
-bindMod("Q", exec_cmd(default.terminal))
+bindMod("Q", exec_cmd(terminal))
 bindMod("M", exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
-bindMod("E", exec_cmd(default.fileManager))
-bindMod("R", exec_cmd(default.menu))
+bindMod("E", exec_cmd(fileManager))
+bindMod("R", exec_cmd(menu))
 bindMod("P", exec_cmd("pavucontrol"))
-bindMod("B", exec_cmd(default.bluetoothManager))
+bindMod("B", exec_cmd(bluetoothManager))
 bindMod("C", hl.dsp.window.close())
 bindMod("V", hl.dsp.window.float({ action = "toggle" }))
 
