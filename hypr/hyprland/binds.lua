@@ -30,9 +30,9 @@ bindMod("V", hl.dsp.window.float({ action = "toggle" }))
 bindShiftMod("P", exec_cmd("pavucontrol"))
 
 -- Screenshotting
-hl.bind("PRINT",      exec_cmd("hyprshot -m output"))
+hl.bind("PRINT",      exec_cmd('grim - | wl-copy'))
 bindMod("PRINT",      exec_cmd("hyprshot -m window"))
-bindShiftMod("PRINT", exec_cmd("hyprshot -m region"))
+bindShiftMod("PRINT", exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
 
 -- Touchpad/Trackpad
 bindMod("T", function ()
