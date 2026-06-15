@@ -5,7 +5,7 @@ set = true
 command = 'waypaper --wallpaper {{ image }}'
 
 [templates.hypr]
-input_path = '~/dotfiles/matugen/colors.lua'
+input_path = '~/dotfiles/matugen/hypr/colors.lua'
 output_path = '~/dotfiles/hypr/hyprland/colors.lua'
 
 [templates.wayle]
