@@ -1,0 +1,8 @@
+[styling.palette]
+bg = "{{ colors.primary.default.hex }}"
+surface = "{{ colors.surface.default.hex }}"
+elevated = "{{ colors.primary_container.default.hex }}"
+fg = "{{ colors.primary.default.hex }}"
+fg-muted = "{{ colors.secondary.default.hex }}"
+primary = "{{ colors.primary.default.hex }}"
+

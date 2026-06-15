@@ -21,13 +21,6 @@ hl.config({
         --     },
         --     inactive_border = "rgba(595959aa)",
         -- },
-        col = {
-            active_border = {
-                colors = {"rgb(82aaff)", "rgb(222436)"},
-                angle = 45
-            },
-            inactive_border = "rgba(595959aa)",
-        },
 
         resize_on_border = false,
         allow_tearing = false,

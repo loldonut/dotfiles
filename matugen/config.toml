@@ -1,0 +1,29 @@
+[config]
+
+[config.wallpaper]
+set = true
+command = 'waypaper --wallpaper {{ image }}'
+
+[templates.hypr]
+input_path = '~/dotfiles/matugen/colors.lua'
+output_path = '~/dotfiles/hypr/hyprland/colors.lua'
+
+[templates.wayle]
+input_path = '~/dotfiles/matugen/wayle/colors.toml'
+output_path = '~/dotfiles/wayle/matugen/colors.toml'
+post_hook = 'wayle panel restart'
+
+[templates.ghostty]
+input_path = '~/dotfiles/matugen/ghostty/colors.ghostty'
+output_path = '~/dotfiles/ghostty/themes/Matugen'
+
+[templates.tmux]
+input_path = '~/dotfiles/matugen/tmux/colors.conf'
+output_path = '~/dotfiles/tmux/colors.conf'
+post_hook = 'tmux source-file ~/dotfiles/tmux/colors.conf'
+
+[templates.nvim]
+input_path = '~/dotfiles/matugen/nvim/ui.lua'
+output_path = '~/dotfiles/nvim/lua/plugins/ui.lua'
+post_hook = 'pkill -SIGUSR1 nvim'
+

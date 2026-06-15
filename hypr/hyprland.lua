@@ -23,6 +23,7 @@ for _, name in ipairs(extras) do
     end
 end
 
+require("hyprland.colors")
 require("hyprland.animations")
 require("hyprland.rules")
 require("hyprland.env")

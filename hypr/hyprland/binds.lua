@@ -12,6 +12,7 @@ bindMod("V", hl.dsp.window.float({ action = "toggle" }))
 
 bindShiftMod("B", exec_cmd(bluetoothManager))
 bindShiftMod("P", exec_cmd("pavucontrol"))
+bindShiftMod("W", exec_cmd("~/dotfiles/hypr/hyprland/wallpapers.sh " .. wallpaperFolder))
 
 -- Open Clipboard History with Rofi
 bindShiftMod("R", exec_cmd("cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"))
