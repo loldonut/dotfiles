@@ -2,7 +2,7 @@
 
 [config.wallpaper]
 set = true
-command = 'waypaper --wallpaper {{ image }}'
+command = 'waypaper --wallpaper "{{ image }}"'
 
 [templates.hypr]
 input_path = '~/dotfiles/matugen/hypr/colors.lua'
