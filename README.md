@@ -64,4 +64,6 @@ This will run `matugen` automatically and change the color scheme.
 
 ## Hyprland configuration
 
+If you are having issues with `xdg-desktop-portal`, try running Hyprland with UWSM.
+
 [**See README here**](https://github.com/loldonut/dotfiles/blob/main/hypr/README.md)
