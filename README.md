@@ -1,3 +1,5 @@
+<img width="5120" height="1440" alt="dotfiles_preview" src="https://github.com/user-attachments/assets/0a9b352b-180d-4e29-8385-b4b24e886c9b" />
+
 # .dotfiles
 
 my dotfiles, managed by using stow
