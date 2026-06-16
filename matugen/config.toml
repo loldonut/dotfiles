@@ -21,7 +21,7 @@ post_hook = 'pkill -SIGUSR2 ghostty'
 [templates.tmux]
 input_path = '~/dotfiles/matugen/tmux/colors.conf'
 output_path = '~/dotfiles/tmux/colors.conf'
-post_hook = 'tmux source-file ~/dotfiles/tmux/colors.conf'
+post_hook = 'tmux source-file ~/dotfiles/tmux/tmux.conf'
 
 [templates.nvim]
 input_path = '~/dotfiles/matugen/nvim/colors.json'
