@@ -15,6 +15,7 @@ my dotfiles, managed by using stow
 - [Required Packages](#required-packages)
 - [Install](#install)
 - [Change Wallpaper](#change-wallpaper)
+- [Whereis](#whereis-dotfiles)
 - [Hyprland Configuration](#hyprland-configuration)
 
 ## Clone repository
@@ -61,6 +62,12 @@ yay -S --needed noto-fonts-cjk ttf-jetbrains-mono-nerd ttf-adwaitamono-nerd
 
 Use the `SUPER + SHIFT + W` bind to change themes which will bring up a rofi menu showing images at `$HOME/Pictures/Wallpapers` \
 This will run `matugen` automatically and change the color scheme.
+
+## Whereis `dotfiles`
+
+- **State:** `~/.local/state/dotfiles`
+- **Share:** `~/.local/share/dotfiles`
+  - Is used to store things like `colors.json` for neovim.
 
 ## Hyprland configuration
 
