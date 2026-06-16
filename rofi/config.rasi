@@ -1,4 +1,5 @@
 configuration {
+  show-icons: true;
   modes: [ drun, combi ];
   combi-modes: [ drun, run ];
   font: "JetBrainsMono Nerd Font 12";

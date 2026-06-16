@@ -10,7 +10,13 @@ while IFS= read -r -d '' f; do
   fullpaths+=("$f")
 done < <(find "$WALLPAPER_FOLDER" -maxdepth 1 -type f -print0)
 
-idx=$(printf '%s\n' "${basenames[@]}" | rofi -dmenu -i -p "Select file:" -format i)
+# Build rofi entries: "display_name\0icon\x1fpath_to_image\n"
+# Spaces replaced with NBSP (U+00A0) so rofi doesn't word-split when searching
+idx=$(for i in "${!basenames[@]}"; do
+  name="${basenames[$i]// / }"
+  path="${fullpaths[$i]}"
+  printf '%s\x00icon\x1f%s\n' "$name" "$path"
+done | rofi -no-config -theme fullscreen-preview.rasi -dmenu -i -p "Select file:" -format i -show-icons)
 
 [ -z "$idx" ] && exit 0
 
