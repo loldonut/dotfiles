@@ -16,6 +16,7 @@ post_hook = 'wayle panel restart'
 [templates.ghostty]
 input_path = '~/dotfiles/matugen/ghostty/colors.ghostty'
 output_path = '~/dotfiles/ghostty/themes/Matugen'
+post_hook = 'pkill -SIGUSR2 ghostty'
 
 [templates.tmux]
 input_path = '~/dotfiles/matugen/tmux/colors.conf'
@@ -23,7 +24,7 @@ output_path = '~/dotfiles/tmux/colors.conf'
 post_hook = 'tmux source-file ~/dotfiles/tmux/colors.conf'
 
 [templates.nvim]
-input_path = '~/dotfiles/matugen/nvim/ui.lua'
-output_path = '~/dotfiles/nvim/lua/plugins/ui.lua'
+input_path = '~/dotfiles/matugen/nvim/colors.json'
+output_path = '~/.local/share/dotfiles/nvim/colors.json'
 post_hook = 'pkill -SIGUSR1 nvim'
 
