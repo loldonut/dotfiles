@@ -28,3 +28,12 @@ input_path = '~/dotfiles/matugen/nvim/colors.json'
 output_path = '~/.local/share/dotfiles/nvim/colors.json'
 post_hook = 'pkill -SIGUSR1 nvim'
 
+[templates.gtk3]
+input_path = '~/dotfiles/matugen/gtk-3.0/gtk.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+
+[templates.gtk4]
+input_path = '~/.config/matugen/gtk-4.0/gtk.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
+post_hook = "gsettings set org.gnome.desktop.interface color-scheme prefer-dark"
+

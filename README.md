@@ -11,6 +11,10 @@ my dotfiles, managed by using stow
 - Terminal Emulator: [Ghostty](https://github.com/ghostty-org/ghostty)
 - Text Editor: [Neovim](https://github.com/neovim/neovim)
 
+### Thanks to
+
+- GTK Template: [end-4/dots-hyprland](https://github.com/end-4/dots-hyprland)
+
 ## Table of Contents
 
 - [Clone Repository](#clone-repository)
