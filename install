@@ -11,7 +11,7 @@ STAMP_FILE="$STATE_DIR/.initialized"
 # Configs only stored in ~/ or $HOME
 HOME_DIRS=("zsh")
 # Configs only stored in ~/.config/
-CONFIG_DIRS=("nvim" "kitty" "hypr" "swaync" "rofi" "noctalia" "alacritty" "MangoHud" "wayle" "ghostty" "matugen" "tmux")
+CONFIG_DIRS=("nvim" "kitty" "hypr" "swaync" "rofi" "noctalia" "alacritty" "MangoHud" "wayle" "ghostty" "matugen" "tmux" "fish")
 # Directories that are ignored when running on NixOS
 NIX_IGNORED_DIRS=("noctalia" "zsh" "swaync")
 
