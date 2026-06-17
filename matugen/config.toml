@@ -37,3 +37,7 @@ input_path = '~/.config/matugen/gtk-4.0/gtk.css'
 output_path = '~/.config/gtk-4.0/gtk.css'
 post_hook = "gsettings set org.gnome.desktop.interface color-scheme prefer-dark"
 
+[templates.rofi]
+input_path = '~/.config/matugen/rofi/colors.rasi'
+output_path = '~/.config/rofi/colors.rasi'
+

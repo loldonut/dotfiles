@@ -8,6 +8,7 @@ configuration {
 entry {
   placeholder: "Type here";
   cursor: pointer;
+  background-color: black;
 }
 
 element {
@@ -16,4 +17,4 @@ element {
   spacing: 5px;
 }
 
-// @theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+@import "colors.rasi"
