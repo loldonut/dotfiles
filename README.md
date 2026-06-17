@@ -8,7 +8,7 @@ my dotfiles, managed by using stow
 - Wayland Compositor: [Hyprland](https://github.com/hyprwm/Hyprland)
 - Status Bar: [Wayle](https://github.com/wayle-rs/wayle)
 - Color Generation Tool: [Matugen](https://github.com/InioX/matugen)
-- Terminal Emulator: [Ghostty](https://github.com/ghostty-org/ghostty)
+- Terminal Emulator: Fish + [Ghostty](https://github.com/ghostty-org/ghostty) **/** zsh + [Kitty](https://github.com/kovidgoyal/kitty) for launching programs that requires rendering.
 - Text Editor: [Neovim](https://github.com/neovim/neovim)
 
 ### Thanks to

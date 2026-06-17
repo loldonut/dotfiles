@@ -32,8 +32,4 @@ export PATH="$PATH:/home/ric/.local/bin:/home/ric/.local/share/bob/nvim-bin"
 
 alias vim='nvim'
 
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec ~/.config/fish/.sessionize
-fi
-
 export NVM_DIR="$HOME/.nvm"
