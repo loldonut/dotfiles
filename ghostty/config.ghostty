@@ -1,4 +1,5 @@
 theme = Matugen
 confirm-close-surface = false
+gtk-custom-css = "~/dotfiles/ghostty/custom.css"
 background-opacity = 0.8
 cursor-style = "bar"
