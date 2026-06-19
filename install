@@ -3,7 +3,6 @@
 set -e
 
 HOME_DIR="$HOME"
-CONFIG_DIR="${HOME_DIR}/.config"
 
 STATE_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/dotfiles"
 STAMP_FILE="$STATE_DIR/.initialized"
@@ -73,8 +72,8 @@ stow_it() {
             "$(basename ${pkg})"
     done
 
-    stow --dir="$HOME/dotfiles" --target="$HOME_DIR" --adopt -R dots \
-        && log "Stowed .config directory"
+    stow --dir="$HOME/dotfiles" --target="$HOME_DIR" --ignore="home" --adopt -R dots \
+        && log "Stowed .config and .local directory"
 
     mkdir -p "${STATE_DIR}"
     local override_wallpaper="${1:-}"
