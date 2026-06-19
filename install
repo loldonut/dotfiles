@@ -8,13 +8,6 @@ CONFIG_DIR="${HOME_DIR}/.config"
 STATE_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/dotfiles"
 STAMP_FILE="$STATE_DIR/.initialized"
 
-# Configs only stored in ~/ or $HOME
-HOME_DIRS=("zsh")
-# Configs only stored in ~/.config/
-CONFIG_DIRS=("nvim" "kitty" "hypr" "swaync" "rofi" "noctalia" "alacritty" "MangoHud" "wayle" "ghostty" "matugen" "tmux" "fish")
-# Directories that are ignored when running on NixOS
-NIX_IGNORED_DIRS=("noctalia" "zsh" "swaync")
-
 log() {
     printf "\e[1;32m[dotfiles]\e[0m %s\n" "$*";
 }
