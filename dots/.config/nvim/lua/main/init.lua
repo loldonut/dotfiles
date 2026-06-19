@@ -1,0 +1,5 @@
+require("main.binds")
+require("main.set")
+require("main.lazy_init")
+require("main.autocmds")
+require("lazy").setup("plugins")

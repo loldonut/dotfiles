@@ -5,31 +5,31 @@ set = true
 command = 'waypaper --wallpaper "{{ image }}"'
 
 [templates.hypr]
-input_path = '~/dotfiles/matugen/hypr/colors.lua'
-output_path = '~/dotfiles/hypr/hyprland/colors.lua'
+input_path = '~/.config/matugen/hypr/colors.lua'
+output_path = '~/.config/hypr/hyprland/colors.lua'
 
 [templates.wayle]
-input_path = '~/dotfiles/matugen/wayle/colors.toml'
-output_path = '~/dotfiles/wayle/matugen/colors.toml'
+input_path = '~/.config/matugen/wayle/colors.toml'
+output_path = '~/.config/wayle/matugen/colors.toml'
 post_hook = 'wayle panel restart'
 
 [templates.ghostty]
-input_path = '~/dotfiles/matugen/ghostty/colors.ghostty'
-output_path = '~/dotfiles/ghostty/themes/Matugen'
+input_path = '~/.config/matugen/ghostty/colors.ghostty'
+output_path = '~/.config/ghostty/themes/Matugen'
 post_hook = 'pkill -SIGUSR2 ghostty'
 
 [templates.tmux]
-input_path = '~/dotfiles/matugen/tmux/colors.conf'
-output_path = '~/dotfiles/tmux/colors.conf'
-post_hook = 'tmux source-file ~/dotfiles/tmux/tmux.conf'
+input_path = '~/.config/matugen/tmux/colors.conf'
+output_path = '~/.config/tmux/colors.conf'
+post_hook = 'tmux source-file ~/.config/tmux/tmux.conf'
 
 [templates.nvim]
-input_path = '~/dotfiles/matugen/nvim/colors.json'
+input_path = '~/.config/matugen/nvim/colors.json'
 output_path = '~/.local/share/dotfiles/nvim/colors.json'
 post_hook = 'pkill -SIGUSR1 nvim'
 
 [templates.gtk3]
-input_path = '~/dotfiles/matugen/gtk-3.0/gtk.css'
+input_path = '~/.config/matugen/gtk-3.0/gtk.css'
 output_path = '~/.config/gtk-3.0/gtk.css'
 
 [templates.gtk4]

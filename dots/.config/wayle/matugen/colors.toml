@@ -1,0 +1,8 @@
+[styling.palette]
+bg = "#a7c8ff"
+surface = "#111318"
+elevated = "#244777"
+fg = "#a7c8ff"
+fg-muted = "#bdc7dc"
+primary = "#a7c8ff"
+

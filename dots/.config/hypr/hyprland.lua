@@ -4,17 +4,13 @@ require("hyprland.general")
 require("utils")
 
 local home = os.getenv("HOME") .. "/"
-local hyprConfigPath = home .. "dotfiles/hypr"
+local hyprConfigPath = home .. ".config/hypr"
 
 local extras = {
     "monitors",
     "binds",
     "devices"
 }
-
-if not pathExists(hyprConfigPath) then
-    hyprConfigPath = home .. ".config/hypr"
-end
 
 for _, name in ipairs(extras) do
     local path = string.format("%s/extras/%s.lua", hyprConfigPath, name)

@@ -19,6 +19,11 @@ log() {
     printf "\e[1;32m[dotfiles]\e[0m %s\n" "$*";
 }
 
+log_die() {
+    printf "\e[1;32m[dotfiles]\e[0m %s\n" "$*" >&2;
+    exit 1
+}
+
 print_exit() {
     echo >&2 $*
     exit 1
@@ -61,23 +66,22 @@ stow_it() {
     require "stow"
     require "matugen"
 
-    for h in ${HOME_DIRS[@]}; do
-	[[ ${NIX_IGNORED_DIRS[*]} =~ ${h} ]] && continue
+    # TODO: auto-detect dotfiles directory, or just use the 'pwd' command
+    if [[ ! -d "$HOME/dotfiles" ]]; then
+        log_die "Dotfiles is not in HOME directory, exiting."
+        exit 1
+    fi
 
-        log "Stowed at home directory : ${h}"
-        stow --target="$HOME_DIR" $h
+    find "${HOME}/dotfiles/dots/home" -maxdepth 1 -mindepth 1 -print0 | while IFS= read -r -d '' pkg; do
+        log "Stowing ${pkg} -> ${HOME_DIR}"
+        log "$pkg"
+        stow --dir="${HOME}/dotfiles/dots/home" \
+            --target="${HOME_DIR}" \
+            "$(basename ${pkg})"
     done
 
-    for c in ${CONFIG_DIRS[@]}; do
-	[[ ${NIX_IGNORED_DIRS[*]} =~ ${c} ]] && continue
-        # make a .config folder if it does not exist
-        [[ ! -e $CONFIG_DIR ]] && mkdir "$CONFIG_DIR"
-        [[ ! -e "$CONFIG_DIR/$c" ]] && mkdir "$CONFIG_DIR/$c"
-
-        log "Stowed at .config directory : ${c}"
-        stow --target="$CONFIG_DIR/$c" --adopt -R $c
-    done
-
+    stow --dir="$HOME/dotfiles" --target="$HOME_DIR" --adopt -R dots \
+        && log "Stowed .config directory"
 
     mkdir -p "${STATE_DIR}"
     local override_wallpaper="${1:-}"
