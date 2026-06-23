@@ -12,7 +12,7 @@ fish_add_path $HOME/bin
 fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.local/bin
 
-source ~/.config/fish/functions/zoxide.fish
+zoxide init --cmd cd fish | source
 
 if status is-interactive
     if not set -q TMUX

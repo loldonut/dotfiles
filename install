@@ -72,7 +72,7 @@ stow_it() {
             "$(basename ${pkg})"
     done
 
-    stow --dir="$HOME/dotfiles" --target="$HOME_DIR" --ignore="home" --adopt -R dots \
+    stow --dir="$HOME/dotfiles" --target="$HOME_DIR" --ignore="home" -R dots \
         && log "Stowed .config and .local directory"
 
     mkdir -p "${STATE_DIR}"
