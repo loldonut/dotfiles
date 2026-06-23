@@ -9,6 +9,7 @@ bindMod("B", exec_cmd(browser))
 bindMod("P", exec_cmd("pavucontrol"))
 bindMod("C", hl.dsp.window.close())
 bindMod("V", hl.dsp.window.float({ action = "toggle" }))
+bindMod("F", hl.dsp.window.fullscreen())
 
 bindShiftMod("B", exec_cmd(bluetoothManager))
 bindShiftMod("P", exec_cmd("pavucontrol"))
