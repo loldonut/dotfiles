@@ -1,6 +1,8 @@
 require("..defaults")
 
 hl.on("hyprland.start", function ()
+    hl.exec_cmd("dbus-update-activation-environment --systemd --all")
+
     hl.exec_cmd(terminal, { workspace = "1" })
     hl.exec_cmd("swaync")
     hl.exec_cmd("nm-applet")
