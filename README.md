@@ -5,11 +5,11 @@
 my dotfiles, managed by using stow
 
 ## Using
-- Wayland Compositor: [Hyprland](https://github.com/hyprwm/Hyprland)
-- Status Bar: [Wayle](https://github.com/wayle-rs/wayle)
-- Color Generation Tool: [Matugen](https://github.com/InioX/matugen)
-- Terminal Emulator: Fish + [Ghostty](https://github.com/ghostty-org/ghostty) **/** zsh + [Kitty](https://github.com/kovidgoyal/kitty) for launching programs that requires rendering.
-- Text Editor: [Neovim](https://github.com/neovim/neovim)
+- **Wayland Compositor:** [Hyprland](https://github.com/hyprwm/Hyprland)
+- **Status Bar:** [Wayle](https://github.com/wayle-rs/wayle)
+- **Color Generation Tool:** [Matugen](https://github.com/InioX/matugen)
+- **Terminal Emulator:** Fish + [Ghostty](https://github.com/ghostty-org/ghostty) **/** zsh + [Kitty](https://github.com/kovidgoyal/kitty) for launching programs that requires rendering.
+- **Text Editor:** [Neovim](https://github.com/neovim/neovim)
 
 ### Thanks to
 
@@ -45,7 +45,7 @@ git clone --recurse-submodules https://github.com/loldonut/dotfiles
 This config uses `hyprpaper` for wallpapers. Switch wallpapers using the bind `SUPER + SHIFT + W`
 
 ```sh
-yay -S --needed stow swaync alacritty rofi zsh tmux neovim hyprshot hyprpaper hyprshutdown swaybg waypaper wayle mangohud hyprpolkitagent ghostty grim slurp swappy dolphin brave-bin blueman wl-clipboard cliphist matugen fish qt5-wayland qt6-wayland zoxide starship
+yay -S --needed stow swaync alacritty rofi zsh tmux neovim hyprshot hyprpaper hyprshutdown waypaper wayle mangohud hyprpolkitagent ghostty grim slurp swappy dolphin brave-bin blueman wl-clipboard cliphist matugen fish qt5-wayland qt6-wayland zoxide starship xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk network-manager-applet dolphin kitty
 ```
 
 ### Fonts
@@ -78,6 +78,7 @@ This will run `matugen` automatically and change the color scheme.
 
 ## Hyprland configuration
 
-If you are having issues with `xdg-desktop-portal`, try running Hyprland with UWSM.
+If you are having issues with `xdg-desktop-portal`, try running [Hyprland with UWSM.](https://wiki.hypr.land/Useful-Utilities/Systemd-start)
 
 [**See README here**](https://github.com/loldonut/dotfiles/blob/main/hypr/README.md)
+
