@@ -16,13 +16,8 @@ log_die() {
     exit 1
 }
 
-print_exit() {
-    echo >&2 $*
-    exit 1
-}
-
 require() {
-    command -v "$1" &>/dev/null || print_exit "'$1' is not installed."
+    command -v "$1" &>/dev/null || log_die "'$1' is not installed."
 }
 
 init_matugen() {
@@ -61,7 +56,6 @@ stow_it() {
     # TODO: auto-detect dotfiles directory, or just use the 'pwd' command
     if [[ ! -d "$HOME/dotfiles" ]]; then
         log_die "Dotfiles is not in HOME directory, exiting."
-        exit 1
     fi
 
     find "${HOME}/dotfiles/dots/home" -maxdepth 1 -mindepth 1 -print0 | while IFS= read -r -d '' pkg; do
@@ -69,7 +63,7 @@ stow_it() {
         log "$pkg"
         stow --dir="${HOME}/dotfiles/dots/home" \
             --target="${HOME_DIR}" \
-            "$(basename ${pkg})"
+            "$(basename "${pkg}")"
     done
 
     stow --dir="$HOME/dotfiles" --target="$HOME_DIR" --ignore="home" -R dots \
