@@ -45,7 +45,7 @@ git clone --recurse-submodules https://github.com/loldonut/dotfiles
 This config uses `hyprpaper` for wallpapers. Switch wallpapers using the bind `SUPER + SHIFT + W`
 
 ```sh
-yay -S --needed stow swaync alacritty rofi zsh tmux neovim hyprshot hyprpaper hyprshutdown waypaper wayle mangohud hyprpolkitagent ghostty grim slurp swappy dolphin brave-bin blueman wl-clipboard cliphist matugen fish qt5-wayland qt6-wayland zoxide starship xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk network-manager-applet dolphin kitty
+yay -S --needed git stow
 ```
 
 ### Fonts
