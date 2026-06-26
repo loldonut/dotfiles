@@ -39,7 +39,9 @@ git clone --recurse-submodules git@github.com:loldonut/dotfiles.git
 git clone --recurse-submodules https://github.com/loldonut/dotfiles
 ```
 
-## Required packages
+## Install
+
+### Required packages
 
 **(arch only)** Download using any AUR Helper programs \
 This config uses `hyprpaper` for wallpapers. Switch wallpapers using the bind `SUPER + SHIFT + W`
@@ -48,13 +50,21 @@ This config uses `hyprpaper` for wallpapers. Switch wallpapers using the bind `S
 yay -S --needed git stow
 ```
 
-### Fonts
+<details>
+
+<summary>Fonts</summary>
+
+- `noto-fonts-cjk`
+- `ttf-jetbrains-mono-nerd`
+- `ttf-adwaitamono-nerd`
+
+### Install manually
 
 ```sh
 yay -S --needed noto-fonts-cjk ttf-jetbrains-mono-nerd ttf-adwaitamono-nerd
 ```
 
-## Install
+</details>
 
 **Usage:**
 ```sh

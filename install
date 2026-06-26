@@ -44,6 +44,12 @@ DEPS=(
     matugen
 )
 
+FONT_DEPS=(
+    noto-fonts-cjk
+    ttf-jetbrains-mono-nerd
+    ttf-adwaitamono-nerd
+)
+
 log() {
     printf "\e[1;32m[dotfiles]\e[0m %s\n" "$*";
 }
@@ -81,6 +87,15 @@ install_deps() {
     yay -S --needed --noconfirm "${DEPS[@]}"
 
     log "Installed required dependencies."
+    printf "\e[1;34m[dotfiles]\e[0m Install fonts? (noto-fonts-cjk ttf-jetbrains-mono-nerd ttf-adwaitamono-nerd) [Y/n] "
+    read -r reply
+    if [[ -z "${reply}" || "${reply,,}" == "y" ]]; then
+        log "Installing fonts..."
+        yay -S --needed --noconfirm "${FONT_DEPS[@]}"
+        log "Fonts installed."
+    else
+        log "Skipping font installation."
+    fi
 }
 
 init_matugen() {
@@ -113,8 +128,6 @@ check_wallpaper_folder() {
 }
 
 stow_it() {
-    install_deps
-
     require "stow"
     require "matugen"
 
@@ -159,5 +172,6 @@ stow_it() {
     fi
 }
 
+install_deps
 stow_it "$@"
 
