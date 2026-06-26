@@ -19,8 +19,8 @@ my dotfiles, managed by using stow
 ## Table of Contents
 
 - [Clone Repository](#clone-repository)
-- [Required Packages](#required-packages)
 - [Install](#install)
+  - [Required Packages](#required-packages)
 - [Change Wallpaper](#change-wallpaper)
 - [Whereis](#whereis-dotfiles)
 - [Hyprland Configuration](#hyprland-configuration)
