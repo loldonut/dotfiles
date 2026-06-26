@@ -42,10 +42,10 @@ git clone --recurse-submodules https://github.com/loldonut/dotfiles
 ## Required packages
 
 **(arch only)** Download using any AUR Helper programs \
-This config uses `hyprpaper` for wallpapers. Switch wallpapers using `waypaper` (except for `awww`)
+This config uses `hyprpaper` for wallpapers. Switch wallpapers using the bind `SUPER + SHIFT + W`
 
 ```sh
-yay -S --needed stow swaync alacritty rofi zsh tmux neovim hyprshot hyprpaper hyprshutdown swaybg waypaper wayle mangohud hyprpolkitagent ghostty grim slurp swappy dolphin brave-bin blueman wl-clipboard cliphist matugen fish qt5-wayland qt6-wayland zoxide
+yay -S --needed stow swaync alacritty rofi zsh tmux neovim hyprshot hyprpaper hyprshutdown swaybg waypaper wayle mangohud hyprpolkitagent ghostty grim slurp swappy dolphin brave-bin blueman wl-clipboard cliphist matugen fish qt5-wayland qt6-wayland zoxide starship
 ```
 
 ### Fonts
