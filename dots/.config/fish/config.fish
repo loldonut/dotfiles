@@ -11,6 +11,7 @@ alias vim="nvim"
 fish_add_path $HOME/bin
 fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.local/bin
+fish_add_path $HOME/.spicetify
 
 starship init fish | source
 zoxide init --cmd cd fish | source
@@ -20,3 +21,4 @@ if status is-interactive
         exec $SESSIONIZER
     end
 end
+
