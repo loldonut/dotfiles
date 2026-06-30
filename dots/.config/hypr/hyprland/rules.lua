@@ -92,12 +92,7 @@ local floatList = {
     { "class:org.kde.gwenview",           patterns.has         },
     { "class:[Xx]dg-desktop-portal-gtk",  patterns.has         },
     {
-        "class:pavucontrol",
-        patterns.has,
-        { size = { "(monitor_w*.45)", "(monitor_h*.45)" } }
-    },
-    {
-        "class:org.pulseaudio.pavucontrol",
+        "class:pavucontrol|org.pulseaudio.pavucontrol",
         patterns.has,
         { size = { "(monitor_w*.45)", "(monitor_h*.45)" } }
     },
