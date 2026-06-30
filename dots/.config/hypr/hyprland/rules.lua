@@ -101,6 +101,11 @@ local floatList = {
         patterns.has,
         { size = { "(monitor_w*.45)", "(monitor_h*.45)" } }
     },
+    {
+        "class:blueman-manager",
+        patterns.has,
+        { size = { "(monitor_w*.55)", "(monitor_h*.80)" } }
+    },
 }
 
 for _, value in pairs(floatList) do
