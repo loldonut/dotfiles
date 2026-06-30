@@ -1,0 +1,126 @@
+#!/usr/bin/env bash
+
+source ./scripts/logger.sh
+source ./scripts/install_deps.sh
+source ./scripts/print_help.sh
+
+set -e
+
+STATE_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/dotfiles"
+SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+STAMP_FILE="$STATE_DIR/.initialized"
+
+require() {
+    command -v "$1" &>/dev/null || log_die "'$1' is not installed."
+}
+
+init_matugen() {
+    local wallpaper="$1"
+    local fallback_source_color="#1a1b26"
+
+    if [[ -z "$wallpaper" ]]; then
+        log "No wallpaper found. Running matugen without an image source."
+        log "Pass a wallpaper path as the first argument to override, e.g.:"
+        log "  $0 /path/to/wallpaper.jpg"
+        matugen color hex "${fallback_source_color}" --verbose
+    elif [[ ! -f "$wallpaper" ]]; then
+        log "Detected wallpaper path does not exist: ${wallpaper}"
+        log "Using fallback source color."
+        matugen color hex "${fallback_source_color}" --verbose
+    else
+        log "Generating theme from: ${wallpaper}"
+        matugen image "${wallpaper}" --verbose
+    fi
+}
+
+check_wallpaper_folder() {
+    if [[ ! -e "${HOME}/Pictures/Wallpapers" ]]; then
+        log "No wallpaper folder found. Creating one.."
+
+        mkdir -p "${HOME}/Pictures/Wallpapers"
+
+        log "Created wallpaper folder.\n"
+    fi
+}
+
+stow_it() {
+    find "${SCRIPT_DIR}/dots/home" -maxdepth 1 -mindepth 1 -print0 | while IFS= read -r -d '' pkg; do
+        log "Stowing ${pkg} -> ${HOME}"
+        log "$pkg"
+        stow --dir="${HOME}/dotfiles/dots/home" \
+            --target="${HOME}" \
+            "$(basename "${pkg}")"
+    done
+
+    stow --dir="${SCRIPT_DIR}" \
+        --target="${HOME}" \
+        --ignore="home" -R dots \
+        --no-folding \
+        && log "Stowed .config and .local directory"
+
+}
+
+main() {
+    local skip_matugen
+
+    # OPTIONS
+    while [[ "$1" =~ ^- && ! "$1" == "--" ]]; do
+        case $1 in
+        -h | --help)
+            print_help
+            ;;
+        -m | --skip-matugen)
+            skip_matugen=1
+            ;;
+        esac; shift;
+    done
+
+    # COMMANDS
+    case "$1" in
+        '--')
+            shift
+            ;;
+        reset)
+            log "deleting init file at '${STAMP_FILE}'"
+
+            if [[ -f "${STAMP_FILE}" ]]; then
+                rm "${STAMP_FILE}"  || log_die "unable to delete init file"
+                log "deleted init file"
+            fi
+            exit 0
+            ;;
+    esac
+
+    require "stow"
+    require "matugen"
+
+    install_deps
+    stow_it
+
+    mkdir -p "${STATE_DIR}"
+    local override_wallpaper="${1:-}"
+
+    if [[ ! -f "${STAMP_FILE}" && ! "${skip_matugen}" ]]; then
+        log "First run detected. Initializing matugen theme."
+
+        local wallpaper
+        if [[ -n "${override_wallpaper}" ]]; then
+            wallpaper="${override_wallpaper}"
+            echo "Using wallpaper: ${override_wallpaper}"
+        fi
+
+        check_wallpaper_folder
+
+        log "Initializing matugen colors"
+        init_matugen "${wallpaper}"
+        touch "${STAMP_FILE}"
+    else
+        if [[ -n "${override_wallpaper}" ]]; then
+            log "Ignoring given wallpaper path. Use the 'SUPER + SHIFT + W' bind instead."
+        fi
+        log "Matugen has already been initialized. Doing nothing."
+    fi
+}
+
+main "$@"
+

@@ -68,7 +68,17 @@ yay -S --needed noto-fonts-cjk ttf-jetbrains-mono-nerd ttf-adwaitamono-nerd
 
 **Usage:**
 ```sh
-./install [path_to_wallpaper]
+Usage: ./setup [COMMAND|PATH_TO_WALLPAPER] [OPTIONS]
+
+COMMANDS
+
+      help                  displays this help message
+      reset                 resets the state of dotfiles setup
+
+OPTIONS
+
+      -m, --skip-matugen    skips matugen color generation step
+      -h, --help            displays this help message
 ```
 
 - Will create a folder at `~/Pictures/Wallpapers` when it is not found. It will also generate a matugen color scheme when the script is run for the first time.
