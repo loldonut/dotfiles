@@ -28,7 +28,7 @@ fpath=(~/ $fpath)
 autoload -Uz compinit
 compinit
 
-export PATH="$PATH:/home/ric/.local/bin:/home/ric/.local/share/bob/nvim-bin"
+export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.spicetify:$HOME/.cargo/bin"
 
 alias vim='nvim'
 

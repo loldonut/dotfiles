@@ -15,6 +15,7 @@ DEPS=(
     wl-clipboard
     cliphist
     fish
+    fzf
     qt5-wayland
     qt6-wayland
     zoxide
