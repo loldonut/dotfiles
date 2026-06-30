@@ -23,7 +23,19 @@ hl.window_rule({
     no_focus = true
 })
 
+hl.window_rule({
+    name = "spicetify-spotify-blur",
+    match = {
+        class = "^spotify$",
+    },
+    opacity = "0.8",
+    border_size = 0,
+})
+
 local patterns = {
+    between = function (title)
+        return string.format("^(.*%s.*)$", title)
+    end,
     startsWith = function (title)
         return string.format("^(%s)(.*)$", title)
     end,
@@ -62,7 +74,7 @@ local function windowRuleFloat(title, pattern, extraFields)
 end
 
 local floatList = {
-    { "title:Open File",                  patterns.startsWith  },
+    { "initial_title:Open File",          patterns.startsWith  },
     { "title:Select a File",              patterns.startsWith  },
     { "title:Choose a wallpaper",         patterns.startsWith  },
     { "title:Open Folder",                patterns.startsWith  },
@@ -71,11 +83,14 @@ local floatList = {
     { "title:Choose Start Directory",     patterns.startsWith  },
     { "title:wants to save",              patterns.endsWith    },
     { "title:wants to open",              patterns.endsWith    },
+    { "class:dialog",                     patterns.between     },
+    { "title:dialog",                     patterns.between     },
     { "class:libresplit",                 patterns.has,        },
     { "class:nm-connection-editor",       patterns.has,        },
     { "class:steam",                      patterns.has         },
     { "class:org.kde.dolphin",            patterns.has         },
     { "class:org.kde.gwenview",           patterns.has         },
+    { "class:[Xx]dg-desktop-portal-gtk",  patterns.has         },
     {
         "class:pavucontrol",
         patterns.has,
