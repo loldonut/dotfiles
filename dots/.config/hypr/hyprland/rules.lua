@@ -91,6 +91,7 @@ local floatList = {
     { "class:org.kde.dolphin",            patterns.has         },
     { "class:org.kde.gwenview",           patterns.has         },
     { "class:[Xx]dg-desktop-portal-gtk",  patterns.has         },
+    { "class:net.davidotek.pupgui2",      patterns.has         },
     {
         "class:pavucontrol|org.pulseaudio.pavucontrol",
         patterns.has,
