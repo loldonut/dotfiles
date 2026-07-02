@@ -68,12 +68,13 @@ yay -S --needed noto-fonts-cjk ttf-jetbrains-mono-nerd ttf-adwaitamono-nerd
 
 **Usage:**
 ```sh
-Usage: ./setup [COMMAND|PATH_TO_WALLPAPER] [OPTIONS]
+Usage: setup [COMMAND|PATH_TO_WALLPAPER] [OPTIONS]
 
 COMMANDS
 
       help                  displays this help message
       reset                 resets the state of dotfiles setup
+      restow                restow the dotfiles
 
 OPTIONS
 

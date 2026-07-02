@@ -89,6 +89,10 @@ main() {
             fi
             exit 0
             ;;
+        restow)
+            stow_it
+            exit 0
+            ;;
     esac
 
     require "stow"
