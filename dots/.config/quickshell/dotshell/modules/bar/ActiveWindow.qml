@@ -8,6 +8,7 @@ import qs.modules.config
 
 RowLayout {
   anchors.centerIn: parent
+  spacing: 8
 
   IconImage {
     source: Quickshell.iconPath(Hyprland.activeToplevel.title, true)
