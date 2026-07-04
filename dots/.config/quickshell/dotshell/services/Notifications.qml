@@ -26,7 +26,7 @@ Scope {
     }
 
     margins {
-      top: 8
+      top: Config.bar.height + 8
       right: 8
     }
 
@@ -89,8 +89,8 @@ Scope {
                 Layout.fillWidth: true
                 text: card.modelData.summary
                 color: Colors.fg
-                font.family: Config.fontConfig.family
-                font.pixelSize: Config.fontConfig.size
+                font.family: Config.font.family
+                font.pixelSize: Config.font.size
                 font.bold: true
                 elide: Text.ElideRight
               }
@@ -100,8 +100,8 @@ Scope {
                 visible: text !== ""
                 text: card.modelData.body
                 color: Colors.fg
-                font.family: Config.fontConfig.family
-                font.pixelSize: Config.fontConfig.size - 2
+                font.family: Config.font.family
+                font.pixelSize: Config.font.size - 2
                 wrapMode: Text.WordWrap
               }
             }
