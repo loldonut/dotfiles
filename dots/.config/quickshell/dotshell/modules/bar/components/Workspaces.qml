@@ -30,7 +30,7 @@ Repeater {
       hoverEnabled: true
       cursorShape: Qt.PointingHandCursor
 
-      onClicked: Hyprland.dispatch(`hl.dsp.focus({ workspace = "${index + 1}" })`)
+      onClicked: Hyprland.dispatch(`hl.dsp.focus({ workspace = "${modelData.id}" })`)
     }
 
     Behavior on color {
