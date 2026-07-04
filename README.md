@@ -23,6 +23,7 @@ my dotfiles, managed by using stow
   - [Required Packages](#required-packages)
 - [Change Wallpaper](#change-wallpaper)
 - [Whereis](#whereis-dotfiles)
+- [Quickshell](#quickshell)
 - [Hyprland Configuration](#hyprland-configuration)
 
 ## Clone repository
