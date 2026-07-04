@@ -8,16 +8,15 @@ import QtQuick.Layouts
 import qs.modules.config
 
 Repeater {
-  model: 10
+  model: Hyprland.workspaces.values.slice().sort((a, b) => a.id - b.id)
 
   Text {
-    anchors.verticalCenter: parent.verticalCenter
-    property var ws: Hyprland.workspaces.values.find(w => w.id === index + 1)
-    property bool isActive: Hyprland.focusedWorkspace?.id === (index + 1)
-
     id: workspaces
+    anchors.verticalCenter: parent.verticalCenter
+    required property var modelData
+    property bool isActive: Hyprland.focusedWorkspace?.id === modelData.id
 
-    text: index + 1
+    text: modelData.id
     color: isActive ? Colors.fg : Colors.onPrimary
     font {
       family: Config.font.family
