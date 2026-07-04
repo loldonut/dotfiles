@@ -18,6 +18,7 @@ DEPS=(
     fzf
     qt5-wayland
     qt6-wayland
+    quickshell
     zoxide
     starship
     xdg-desktop-portal
@@ -31,7 +32,6 @@ DEPS=(
     hyprpaper
     hyprshutdown
     waypaper
-    wayle
     hyprpolkitagent
     ghostty
     brave-bin

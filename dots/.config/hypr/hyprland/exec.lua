@@ -3,11 +3,11 @@ require("..defaults")
 hl.on("hyprland.start", function ()
     hl.exec_cmd("dbus-update-activation-environment --systemd --all")
 
+    hl.exec_cmd("iio-hyprland")
     hl.exec_cmd(terminal, { workspace = "1" })
-    hl.exec_cmd("swaync")
     hl.exec_cmd("nm-applet")
     hl.exec_cmd("blueman-applet")
-    hl.exec_cmd("wayle panel start")
+    hl.exec_cmd("qs -c dotshell")
 
     -- Clipboard Manager
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
@@ -15,9 +15,8 @@ hl.on("hyprland.start", function ()
 
     hl.exec_cmd("hyprctl setcursor capitaine-cursors 32")
 
-    -- Authentication Agents
+    -- Authentication Agent
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
-    -- hl.exec_cmd("/usr/lib/pam_kwallet_init")
 
     hl.exec_cmd("hyprpaper & swaybg & waypaper --restore")
 end)

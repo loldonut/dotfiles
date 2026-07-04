@@ -11,7 +11,6 @@ output_path = '~/.config/hypr/hyprland/colors.lua'
 [templates.wayle]
 input_path = '~/.config/matugen/wayle/colors.toml'
 output_path = '~/.config/wayle/matugen/colors.toml'
-post_hook = 'wayle panel restart'
 
 [templates.ghostty]
 input_path = '~/.config/matugen/ghostty/colors.ghostty'
@@ -40,4 +39,9 @@ post_hook = "gsettings set org.gnome.desktop.interface color-scheme prefer-dark"
 [templates.rofi]
 input_path = '~/.config/matugen/rofi/colors.rasi'
 output_path = '~/.config/rofi/colors.rasi'
+
+[templates.quickshell]
+input_path = '~/.config/matugen/quickshell/Colors.qml'
+output_path = '~/.config/quickshell/dotshell/modules/config/Colors.qml'
+post_hook = 'pkill -9 qs && qs -c dotshell'
 

@@ -1,6 +1,8 @@
 -- This imports "defaults.lua" as well
 require("..utils.binds")
 
+local qsIpc = "qs -c dotshell ipc call "
+
 bindMod("Q", exec_cmd(terminal))
 bindMod("M", exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 bindMod("E", exec_cmd(fileManager))
@@ -13,7 +15,7 @@ bindMod("F", hl.dsp.window.fullscreen())
 
 bindShiftMod("B", exec_cmd(bluetoothManager))
 bindShiftMod("P", exec_cmd("pavucontrol"))
-bindShiftMod("W", exec_cmd("~/.config/hypr/hyprland/wallpapers.sh " .. wallpaperFolder))
+bindShiftMod("W", exec_cmd(qsIpc .. "wallpapers toggle"))
 
 -- Open Clipboard History with Rofi
 bindShiftMod("R", exec_cmd("cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"))

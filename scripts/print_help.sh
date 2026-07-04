@@ -9,8 +9,10 @@ print_help() {
     echo
     bold_fmt "COMMANDS"
     echo
-    echo "      $(bold_fmt "help")                  displays this help message"
-    echo "      $(bold_fmt "reset")                 resets the state of dotfiles setup"
+    echo "      $(bold_fmt "help")                                   displays this help message"
+    echo "      $(bold_fmt "reset")                                  resets the state of dotfiles setup"
+    echo "      $(bold_fmt "restow")                                 restow the dotfiles"
+    echo "      $(bold_fmt "wallpaper <WALLPAPER_PATH>")             set a wallpaper to generate colors for"
     echo
     bold_fmt "OPTIONS"
     echo

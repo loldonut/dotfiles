@@ -6,7 +6,7 @@ my dotfiles, managed by using stow
 
 ## Using
 - **Wayland Compositor:** [Hyprland](https://github.com/hyprwm/Hyprland)
-- **Status Bar:** [Wayle](https://github.com/wayle-rs/wayle)
+- **Status Bar:** [Quickshell](https://quickshell.org)
 - **Color Generation Tool:** [Matugen](https://github.com/InioX/matugen)
 - **Terminal Emulator:** Fish + [Ghostty](https://github.com/ghostty-org/ghostty) **/** zsh + [Kitty](https://github.com/kovidgoyal/kitty) for launching programs that requires rendering.
 - **Text Editor:** [Neovim](https://github.com/neovim/neovim)
@@ -72,9 +72,10 @@ Usage: setup [COMMAND|PATH_TO_WALLPAPER] [OPTIONS]
 
 COMMANDS
 
-      help                  displays this help message
-      reset                 resets the state of dotfiles setup
-      restow                restow the dotfiles
+      help                                   displays this help message
+      reset                                  resets the state of dotfiles setup
+      restow                                 restow the dotfiles
+      wallpaper <WALLPAPER_PATH>             set a wallpaper to generate colors for
 
 OPTIONS
 
@@ -96,6 +97,12 @@ This will run `matugen` automatically and change the color scheme.
 - **State:** `~/.local/state/dotfiles`
 - **Share:** `~/.local/share/dotfiles`
   - Is used to store things like `colors.json` for neovim.
+
+## Quickshell
+
+If you are missing colors or fonts in the status bar, make sure you have initiated matugen to generate a `Colors.qml` file
+
+You can also generate a matugen manually by using the [./setup wallpaper](#install) command provided
 
 ## Hyprland configuration
 

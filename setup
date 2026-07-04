@@ -3,6 +3,7 @@
 source ./scripts/logger.sh
 source ./scripts/install_deps.sh
 source ./scripts/print_help.sh
+source ./scripts/wallpapers.sh
 
 set -e
 
@@ -91,6 +92,10 @@ main() {
             ;;
         restow)
             stow_it
+            exit 0
+            ;;
+        wallpaper)
+            wallpapers_selector "$2"
             exit 0
             ;;
     esac
