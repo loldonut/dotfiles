@@ -8,8 +8,6 @@ import qs.modules.wallpapers
 import qs.services
 
 ShellRoot {
-  settings.watchFiles: true
-
   Notifications {}
   Wallpapers {}
   VolumeOverlay {}
