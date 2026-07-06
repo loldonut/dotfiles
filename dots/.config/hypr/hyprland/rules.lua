@@ -32,6 +32,12 @@ hl.window_rule({
     border_size = 0,
 })
 
+hl.layer_rule({
+  match = { namespace = "rofi" },
+  blur = true,
+  ignore_alpha = 0.5,
+})
+
 local patterns = {
     between = function (title)
         return string.format("^(.*%s.*)$", title)
