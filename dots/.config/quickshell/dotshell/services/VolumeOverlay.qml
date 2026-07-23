@@ -9,8 +9,8 @@ import qs.modules.config
 Scope {
   id: root
 
-  PwObjectTracker {
-    objects: [ Pipewire.defaultAudioSink ]
+  PwNodeLinkTracker {
+    node: Pipewire.defaultAudioSink
   }
 
   Connections {

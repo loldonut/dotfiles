@@ -1,12 +1,12 @@
 * {
-    background: rgba(25, 18, 13, 0.8);
-    foreground: #ffb782;
+    background: rgba(17, 19, 24, 0.8);
+    foreground: #adc6ff;
     background-color: var(background);
-    text-color: #ffb782;
+    text-color: #adc6ff;
     blue: blue;
     urgent-foreground: red;
-    lightbg: rgba(42, 30, 22, 0.8);
-    lightfg: #ffc69c;
+    lightbg: rgba(28, 31, 39, 0.8);
+    lightfg: #c7d8ff;
 
     border: 0;
     margin: 0;
@@ -198,11 +198,11 @@ case-indicator {
 }
 
 entry {
-    text-color:        #ffb782;
+    text-color:        #adc6ff;
     cursor:            pointer;
-    background-color:  #19120d;
+    background-color:  #111318;
     spacing:           0;
-    placeholder-color: #4f2500;
+    placeholder-color: #102f60;
     placeholder:       "Type here";
 }
 

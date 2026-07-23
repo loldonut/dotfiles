@@ -32,10 +32,21 @@ hl.window_rule({
     border_size = 0,
 })
 
+-- Float Download / History in Firefox
+hl.window_rule({
+    match = {
+        class = "^firefox$",
+        title = "^Library$",
+    },
+    float = true,
+    center = true,
+    size = { "(monitor_w*.55)", "(monitor_h*.70)" }
+})
+
 hl.layer_rule({
-  match = { namespace = "rofi" },
-  blur = true,
-  ignore_alpha = 0.5,
+    match = { namespace = "rofi" },
+    blur = true,
+    ignore_alpha = 0.5,
 })
 
 local patterns = {
@@ -98,6 +109,11 @@ local floatList = {
     { "class:org.kde.gwenview",           patterns.has         },
     { "class:[Xx]dg-desktop-portal-gtk",  patterns.has         },
     { "class:net.davidotek.pupgui2",      patterns.has         },
+    {
+        "title:Mpris",
+        patterns.has,
+        { size = { "(monitor_w*.45)", "(monitor_h*.25)" } }
+    },
     {
         "class:pavucontrol|org.pulseaudio.pavucontrol",
         patterns.has,

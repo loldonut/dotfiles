@@ -1,9 +1,9 @@
+import QtQuick
+import QtQuick.Layouts
 import Quickshell
 import Quickshell.Hyprland
 import Quickshell.Io
 import Quickshell.Widgets
-import QtQuick
-import QtQuick.Layouts
 
 import qs.modules.config
 
@@ -12,7 +12,7 @@ Repeater {
 
   Text {
     id: workspaces
-    anchors.verticalCenter: parent.verticalCenter
+    Layout.alignment: Qt.AlignVCenter
     required property var modelData
     property bool isActive: Hyprland.focusedWorkspace?.id === modelData.id
 
@@ -20,7 +20,7 @@ Repeater {
     color: isActive ? Colors.fg : Colors.onPrimary
     font {
       family: Config.font.family
-      pixelSize: Config.font.size - 4
+      pixelSize: Config.font.size
       bold: true
     }
 
@@ -36,14 +36,7 @@ Repeater {
     Behavior on color {
       ColorAnimation {
         duration: 200
-        easing.type: Easing.InQuad
-      }
-    }
-
-    Behavior on color {
-      ColorAnimation {
-        duration: 200
-        easing.type: Easing.OutQuart
+        easing.type: Easing.InOutQuad
       }
     }
   }

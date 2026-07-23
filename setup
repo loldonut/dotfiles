@@ -4,6 +4,7 @@ source ./scripts/logger.sh
 source ./scripts/install_deps.sh
 source ./scripts/print_help.sh
 source ./scripts/wallpapers.sh
+source ./scripts/sudo_keepalive.sh
 
 set -e
 
@@ -102,6 +103,9 @@ main() {
 
     require "stow"
     require "matugen"
+
+    sudo_keepalive
+    trap sudo_stop EXIT INT TERM
 
     install_deps
     stow_it

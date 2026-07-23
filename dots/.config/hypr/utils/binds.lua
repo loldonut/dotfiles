@@ -1,5 +1,3 @@
-require("..defaults")
-
 function bindMod(key, action, flags)
     local bindModKey = string.format("%s + %s", mainMod, key)
     if flags then

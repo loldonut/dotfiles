@@ -1,7 +1,7 @@
 require("hyprland.exec")
 require("hyprland.general")
-
 require("utils")
+require(".defaults")
 
 local home = os.getenv("HOME") .. "/"
 local hyprConfigPath = home .. ".config/hypr"

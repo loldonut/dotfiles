@@ -8,6 +8,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("nm-applet")
     hl.exec_cmd("blueman-applet")
     hl.exec_cmd("qs -c dotshell")
+    hl.exec_cmd("~/.config/tmux/import_env")
 
     -- Clipboard Manager
     hl.exec_cmd("wl-paste --type text --watch cliphist store")

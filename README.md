@@ -13,7 +13,7 @@ my dotfiles, managed by using stow
 
 ### Thanks to
 
-- GTK Template: [end-4/dots-hyprland](https://github.com/end-4/dots-hyprland)
+- GTK Template and the sudo keep alive script: [end-4/dots-hyprland](https://github.com/end-4/dots-hyprland)
 - [Tmux Sessionizer](https://github.com/ThePrimeagen/tmux-sessionizer) by ThePrimeagen
 
 ## Table of Contents
@@ -90,7 +90,7 @@ OPTIONS
 
 ### Change wallpaper
 
-Use the `SUPER + SHIFT + W` bind to change themes which will bring up a rofi menu showing images at `$HOME/Pictures/Wallpapers` \
+Use the `SUPER + SHIFT + W` bind to change themes which will bring up a menu showing images at `$HOME/Pictures/Wallpapers` \
 This will run `matugen` automatically and change the color scheme.
 
 ## Whereis `dotfiles`

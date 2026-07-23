@@ -1,11 +1,10 @@
-import Quickshell
 import QtQuick
 import QtQuick.Layouts
+import Quickshell
 
 import qs.modules.config
 
 Rectangle {
-  anchors.verticalCenter: parent.verticalCenter
   Layout.preferredWidth: 1.5
   Layout.preferredHeight: parent.height
   Layout.alignment: Qt.AlignVCenter

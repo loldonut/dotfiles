@@ -12,16 +12,6 @@ hl.config({
 
         border_size = 2,
 
-        -- col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg # default
-        -- col.active_border = rgb(82aaff) rgb(222436) 45deg
-        -- col = {
-        --     active_border = {
-        --         colors = {"rgb(232A2E)", "rgb(D3C6AA)"},
-        --         angle = 60
-        --     },
-        --     inactive_border = "rgba(595959aa)",
-        -- },
-
         resize_on_border = false,
         allow_tearing = false,
         layout = "dwindle",
@@ -60,8 +50,7 @@ hl.config({
 
 hl.config({
     dwindle = {
-        -- pseudotile = true -- Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-        preserve_split = true -- You probably want this
+        preserve_split = true
     }
 })
 

@@ -1,23 +1,26 @@
+import QtQuick
+import QtQuick.Layouts
 import Quickshell
 import Quickshell.Wayland
 import Quickshell.Hyprland
 import Quickshell.Io
-import QtQuick
-import QtQuick.Layouts
 
-import qs.modules.config
 import qs.modules.bar
 import qs.modules.bar.components
+import qs.modules.bar.components.dashboard
+import qs.modules.bar.components.tray
 import qs.modules.bar.components.volume
+import qs.modules.common
+import qs.modules.config
 
 Scope {
   id: root
-  property string time
 
   Variants {
     model: Quickshell.screens
 
     PanelWindow {
+      id: bar
       required property var modelData
       screen: modelData
 
@@ -27,40 +30,67 @@ Scope {
         right: true
       }
 
-      implicitHeight: Config.bar.height
+      margins {
+        top: 8
+        left: 8
+        right: 8
+      }
 
-      color: Colors.bg
+      color: "transparent"
+      implicitHeight: Config.bar.height + 2
 
-      RowLayout {
-        id: leftLayout
+      Rectangle {
         anchors {
-          fill: parent
-          margins: 8
+          top: parent.top
+          left: parent.left
+          right: parent.right
+          verticalCenter: parent.verticalCenter
         }
-        spacing: 6
+        color: Colors.onSecondaryFixed
 
-        Workspaces {}
-        Separator {}
-        Text {
-          anchors.verticalCenter: parent.verticalCenter
-          font.family: Config.font.family
-          font.bold: true
+        radius: 4
 
-          color: Colors.fg
-          text: Time.time
+        RowLayout {
+          anchors {
+            top: parent.top
+            left: parent.left
+            margins: 8
+            verticalCenter: parent.verticalCenter
+          }
+          Workspaces {}
+          Separator {}
+          StyledText {
+            color: Colors.fg
+            text: Time.time
+          }
         }
 
-        Item { Layout.fillWidth: true }
+        RowLayout {
+          anchors {
+            centerIn: parent
+            margins: 8
+            verticalCenter: parent.verticalCenter
+          }
 
-        ActiveWindow {}
+          ActiveWindow {}
+        }
 
-        Tray {}
-        Separator {}
-        Volume {}
-        Separator {}
-        Battery {}
-        Separator {}
-        PowerButton {}
+        RowLayout {
+          anchors {
+            top: parent.top
+            right: parent.right
+            margins: 8
+            verticalCenter: parent.verticalCenter
+          }
+
+          spacing: 4
+
+          Tray {}
+          Connections {}
+          Volume {}
+          Battery {}
+          PowerButton {}
+        }
       }
     }
   }

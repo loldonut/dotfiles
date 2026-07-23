@@ -1,106 +1,81 @@
-import Quickshell
-import Quickshell.Wayland
-import Quickshell.Services.Pipewire
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
+import Quickshell
+import Quickshell.Hyprland
+import Quickshell.Wayland
+import Quickshell.Widgets
+import Quickshell.Services.Pipewire
 
 import qs.modules.config
 
-LazyLoader {
-  active: volWidget.showSlider
+PanelWindow {
+  id: volMenu
 
-  PanelWindow {
-    anchors {
-      top: true
-      right: true
-    }
+  visible: false
 
-    exclusiveZone: 0
+  color: "transparent"
 
-    implicitWidth: 220
-    implicitHeight: 50
-    color: "transparent"
+  implicitWidth: 600
+  implicitHeight: 300
 
-    Rectangle {
+  anchors {
+    top: true
+    right: true
+  }
+
+  margins {
+    top: 10
+    right: 10
+  }
+
+  HyprlandFocusGrab {
+    active: volMenu.visible
+    windows: [volMenu]
+    onCleared: volMenu.visible = false
+  }
+
+  Rectangle {
+    anchors.fill: parent
+    radius: 10
+
+    color: Colors.bg
+    border.color: Colors.inversePrimary
+    border.width: 2
+
+    ScrollView {
       anchors.fill: parent
-      radius: 10
-      color: Colors.bg
+      contentWidth: availableWidth
 
-      border.color: Colors.fg
-      border.width: 2
+      ColumnLayout {
+        anchors.fill: parent
+        anchors.margins: 10
 
-      RowLayout {
-        anchors {
-          fill: parent
-          leftMargin: 15
-          rightMargin: 10
+        PwNodeLinkTracker {
+          id: linkTracker
+          node: Pipewire.defaultAudioSink
         }
 
-        Text {
-          font.bold: true
-          font.family: Config.font.family
-          font.pixelSize: Config.font.size + 4
-
-          color: Colors.fg
-          text: (Pipewire.defaultAudioSink?.audio.volume !== 0 && !Pipewire.defaultAudioSink?.audio.muted) ? "󰕾 " : "󰝟 "
-
-          MouseArea {
-            anchors.fill: parent
-            cursorShape: Qt.PointingHandCursor
-            onClicked: audio.muted = !audio.muted
-          }
+        MixerEntry {
+          node: Pipewire.defaultAudioSink
         }
 
-        Slider {
-          id: volSlider
-          anchors.centerIn: parent
-          from: 0
-          value: !audio.muted ? audio.volume : 0
-          to: 1
-          stepSize: 0.02
+        Rectangle {
+          Layout.fillWidth: true
+          color: Colors.onPrimary
+          implicitHeight: 1
+        }
 
-          Behavior on value {
-            NumberAnimation {
-              easing {
-                type: Easing.OutQuart
-                amplitude: 1
-                period: 0.5
-              }
-            }
+        Repeater {
+          model: linkTracker.linkGroups
+
+          MixerEntry {
+            required property PwLinkGroup modelData
+            node: modelData.source
           }
-
-          background: Rectangle {
-            x: volSlider.leftPadding
-            y: volSlider.topPadding + volSlider.availableHeight / 2 - height / 2
-            implicitWidth: 150
-            implicitHeight: 8
-            width: volSlider.availableWidth
-            height: implicitHeight
-            color: Colors.fg
-            radius: 2
-
-            Rectangle {
-              width: volSlider.visualPosition * parent.width
-              height: parent.height
-              color: Colors.onPrimary
-              radius: 2
-            }
-          }
-
-          handle: Rectangle {
-            x: volSlider.leftPadding + volSlider.visualPosition * (volSlider.availableWidth - width)
-            y: volSlider.topPadding + volSlider.availableHeight / 2 - height / 2
-            implicitWidth: 28
-            implicitHeight: 28
-            radius: 13
-            color: Colors.bg
-            border.color: Colors.fg
-          }
-
-          onMoved: audio.volume = volSlider.value
         }
       }
     }
   }
 }
+

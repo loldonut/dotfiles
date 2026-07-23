@@ -3,7 +3,9 @@ import Quickshell
 import QtQuick
 
 Singleton {
-  property string fg: "#ffb782"
-  property string bg: "#19120d"
-  property string onPrimary: "#4f2500"
+  property string fg: "#adc6ff"
+  property string bg: "#111318"
+  property string onPrimary: "#102f60"
+  property string inversePrimary: "#445e91"
+  property string onSecondaryFixed: "#141b2c"
 }

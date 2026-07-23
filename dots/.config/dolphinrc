@@ -1,0 +1,13 @@
+[General]
+Version=202
+ViewPropsTimestamp=2026,7,16,8,11,30.061
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[MainWindow]
+MenuBar=Disabled
+
+[UiSettings]
+ColorScheme=kvantum-dark

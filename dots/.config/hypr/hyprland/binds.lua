@@ -1,20 +1,21 @@
--- This imports "defaults.lua" as well
 require("..utils.binds")
 
 local qsIpc = "qs -c dotshell ipc call "
 
 bindMod("Q", exec_cmd(terminal))
-bindMod("M", exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 bindMod("E", exec_cmd(fileManager))
 bindMod("R", exec_cmd(menu))
 bindMod("B", exec_cmd(browser))
-bindMod("P", exec_cmd("pavucontrol"))
 bindMod("C", hl.dsp.window.close())
 bindMod("V", hl.dsp.window.float({ action = "toggle" }))
 bindMod("F", hl.dsp.window.fullscreen())
 
+bindShiftMod("M", exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 bindShiftMod("B", exec_cmd(bluetoothManager))
 bindShiftMod("P", exec_cmd("pavucontrol"))
+
+bindMod("P", exec_cmd(qsIpc .. "mpris toggle"))
+bindMod("N", exec_cmd(qsIpc .. "notifications toggle"))
 bindShiftMod("W", exec_cmd(qsIpc .. "wallpapers toggle"))
 
 -- Open Clipboard History with Rofi

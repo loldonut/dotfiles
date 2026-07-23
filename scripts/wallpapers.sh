@@ -14,10 +14,10 @@ wallpapers_selector() {
   # Build rofi entries: "display_name\0icon\x1fpath_to_image\n"
   # Spaces replaced with NBSP (U+00A0) so rofi doesn't word-split when searching
   idx=$(for i in "${!basenames[@]}"; do
-  name="${basenames[$i]// / }"
-  path="${fullpaths[$i]}"
-  printf '%s\x00icon\x1f%s\n' "$name" "$path"
-  done | PREVIEW=true rofi -no-config -theme fullscreen-preview.rasi -dmenu -i -p "Select file:" -format i -show-icons)
+          path="${fullpaths[$i]}"
+          name="${basenames[$i]// / }"
+          printf '%s\x00icon\x1f%s\n' "$name" "$path"
+        done | PREVIEW=true rofi -no-config -theme fullscreen-preview.rasi -dmenu -i -p "Select file:" -format i -show-icons)
 
   [ -z "$idx" ] && exit 0
 

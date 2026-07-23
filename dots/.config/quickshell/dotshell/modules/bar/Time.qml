@@ -1,9 +1,8 @@
 pragma Singleton
 
-import Quickshell
 import QtQuick
+import Quickshell
 
-// your singletons should always have Singleton as the type
 Singleton {
   id: root
 

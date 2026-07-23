@@ -1,10 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-alias prettyjson="cat $* | jq"
 alias vim="nvim"
-alias live-server="live-server --no-browser"
-alias rewaybar='pkill waybar && hyprctl dispatch exec waybar'
-alias brave='com.brave.Browser'
 
 ZSH_THEME="robbyrussell"
 

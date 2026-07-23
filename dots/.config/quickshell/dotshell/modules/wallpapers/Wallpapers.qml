@@ -1,12 +1,14 @@
-import Quickshell
-import Quickshell.Io
 import Qt.labs.folderlistmodel
 import Qt.labs.platform
+import Qt5Compat.GraphicalEffects
 import QtQml
 import QtQuick
+import QtQuick.Effects
 import QtQuick.Layouts
-import Qt5Compat.GraphicalEffects
+import Quickshell
+import Quickshell.Io
 
+import qs.modules.common
 import qs.modules.config
 
 Scope {
@@ -22,7 +24,7 @@ Scope {
 
   FolderListModel {
     id: wallpaperModel
-    folder: StandardPaths.writableLocation(StandardPaths.HomeLocation) + "/Pictures/Wallpapers"
+    folder: Config.bar.wallpaperPath
     nameFilters: ["*.png", "*.jpg", "*.jpeg", "*.webp"]
     showDirs: false
   }
@@ -46,6 +48,13 @@ Scope {
     exclusionMode: ExclusionMode.Ignore
     focusable: true
 
+    anchors {
+      top: true
+      bottom: true
+      left: true
+      right: true
+    }
+
     implicitWidth: 650
     implicitHeight: 500
 
@@ -55,13 +64,28 @@ Scope {
       }
     }
 
+    RectangularShadow {
+      anchors.fill: parent
+
+      blur: 24
+      spread: 0.05
+      color: Qt.rgba(0, 0, 0, 0.6)
+    }
+
+    MouseArea {
+      anchors.fill: parent
+      onClicked: root.openWallpaper = false
+    }
+
     Rectangle {
       id: container
-      anchors.fill: parent
+      anchors.centerIn: parent
       color: Colors.bg
       radius: 12
+      height: 500
+      width: 650
       border.width: 2
-      border.color: Colors.fg
+      border.color: Colors.inversePrimary
 
       Keys.onPressed: (event) => {
         if (event.key === Qt.Key_Escape) {
@@ -79,11 +103,11 @@ Scope {
         RowLayout {
           Layout.fillWidth: true
 
-          Text {
-            Layout.fillWidth: true
-            anchors.centerIn: parent
-            font.family: Config.fontConfig.family
-            font.pixelSize: Config.fontConfig.size
+          StyledText {
+            Layout.alignment: Qt.AlignVCenter
+            font {
+              pixelSize: Config.font.size + 4
+            }
             color: Colors.fg
             text: "Select wallpaper"
           }
@@ -162,7 +186,6 @@ Scope {
                 hoverEnabled: true
                 cursorShape: Qt.PointingHandCursor
                 onClicked: {
-                  console.log("Selected wallpaper:", filePath)
                   root.openWallpaper = false
                   if (matugenProc.running) {
                     matugenProc.running = false
