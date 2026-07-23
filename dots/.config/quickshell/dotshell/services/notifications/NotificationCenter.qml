@@ -23,7 +23,7 @@ LazyLoader {
     }
 
     implicitWidth: 500
-    implicitHeight: history.count > 0 ? Math.min(centerCol.implicitHeight + 16, 700) : 700
+    implicitHeight: history.count > 0 ? Math.min(centerCol.implicitHeight + 30, 700) : 700
 
     margins {
       top: 10
@@ -51,7 +51,7 @@ LazyLoader {
         id: centerCol
 
         anchors.fill: parent
-        anchors.margins: 8
+        anchors.margins: 15
         spacing: 10
 
         RowLayout {
@@ -59,8 +59,9 @@ LazyLoader {
 
           StyledText {
             font {
-              bold: true
               pixelSize: Config.font.size + 6
+              weight: Font.Black
+              variableAxes: { "wdth": 150 }
             }
 
             color: Colors.fg
