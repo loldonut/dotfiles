@@ -27,7 +27,6 @@ DEPS=(
     network-manager-applet
     dolphin
     kitty
-    swaync
     hyprshot
     hyprpaper
     hyprshutdown
