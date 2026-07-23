@@ -43,10 +43,30 @@ hl.window_rule({
     size = { "(monitor_w*.55)", "(monitor_h*.70)" }
 })
 
+-- Rofi blur
 hl.layer_rule({
     match = { namespace = "rofi" },
     blur = true,
     ignore_alpha = 0.5,
+})
+
+-- Specific workspace for specific apps --
+
+local browserWorkspace = "2"
+local musicPlayerWorkspace = "3"
+
+hl.window_rule({
+    match = {
+        class = "^(brave-browser|zen|firefox)$"
+    },
+    workspace = browserWorkspace
+})
+
+hl.window_rule({
+    match = {
+        class = "^(spotify)$",
+    },
+    workspace = musicPlayerWorkspace
 })
 
 local patterns = {
