@@ -11,8 +11,8 @@ Rectangle {
   required property var notif
 
   Timer {
-    running: card.notif.urgency !== NotificationUrgency.Critical
-    interval: Config.notifications.timeout
+    running: true
+    interval: card.notif.urgency !== NotificationUrgency.Critical ? Config.notifications.timeout : Config.notifications.criticalTimeout
     onTriggered: card.notif.dismiss()
   }
 

@@ -17,6 +17,7 @@ Singleton {
   }
 
   property QtObject notifications: QtObject {
-    property int timeout: 5000
+    property int criticalTimeout: 15000
+    property int timeout: 7000
   }
 }
