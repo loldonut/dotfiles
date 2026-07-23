@@ -16,6 +16,8 @@ DEPS=(
     cliphist
     fish
     fzf
+    qt5ct
+    qt6ct
     qt5-wayland
     qt6-wayland
     quickshell
