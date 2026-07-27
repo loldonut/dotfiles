@@ -1,6 +1,6 @@
 require("..defaults")
 
-hl.on("hyprland.start", function ()
+hl.on("hyprland.start", function()
     hl.exec_cmd("dbus-update-activation-environment --systemd --all")
 
     hl.exec_cmd("iio-hyprland")
@@ -19,5 +19,5 @@ hl.on("hyprland.start", function ()
     -- Authentication Agent
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
 
-    hl.exec_cmd("hyprpaper & swaybg & waypaper --restore")
+    hl.exec_cmd("awww-daemon")
 end)

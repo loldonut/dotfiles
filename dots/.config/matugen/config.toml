@@ -2,7 +2,7 @@
 
 [config.wallpaper]
 set = true
-command = 'waypaper --wallpaper "{{ image }}"'
+command = 'awww img "{{ image }}" --transition-type center'
 
 [templates.hypr]
 input_path = '~/.config/matugen/hypr/colors.lua'

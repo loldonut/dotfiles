@@ -30,13 +30,12 @@ DEPS=(
     dolphin
     kitty
     hyprshot
-    hyprpaper
     hyprshutdown
-    waypaper
     hyprpolkitagent
     ghostty
     brave-bin
     matugen
+    awww
 )
 
 FONT_DEPS=(
