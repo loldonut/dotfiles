@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 
+import qs.modules.common
 import qs.modules.config
 
 Item {
@@ -44,15 +45,11 @@ Item {
     ColumnLayout {
       Layout.fillWidth: true
 
-      Text {
+      StyledText {
         Layout.fillWidth: true
         Layout.alignment: Qt.AlignVCenter
         visible: !entry.isSeparator
-        font {
-          family: Config.font.family
-          pixelSize: Config.font.size + 2
-        }
-        color: Colors.fg
+        font.pixelSize: Config.font.size + 2
         elide: Text.ElideRight
         text: entry.text
       }

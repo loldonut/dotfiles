@@ -12,8 +12,7 @@ ColumnLayout {
   PwObjectTracker { objects: [ node ] }
 
   RowLayout {
-    Text {
-      color: Colors.fg
+    StyledText {
       text: (node?.audio?.volume !== 0 && !node?.audio?.muted) ? `󰕾 ` : `󰝟 `
     }
 

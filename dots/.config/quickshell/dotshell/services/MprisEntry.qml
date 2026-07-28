@@ -4,6 +4,7 @@ import QtQuick.Controls
 import Qt5Compat.GraphicalEffects
 import QtQuick.Layouts
 
+import qs.modules.common
 import qs.modules.config
 
 RowLayout {
@@ -33,12 +34,10 @@ RowLayout {
   }
 
   ColumnLayout {
-    Text {
+    StyledText {
       Layout.fillWidth: true
 
-      color: Colors.fg
       font {
-        family: Config.font.family
         pixelSize: 30
         bold: true
       }
@@ -58,22 +57,15 @@ RowLayout {
       }
     }
 
-    Text {
+    StyledText {
       visible: player?.trackAlbum !== null
-      font {
-        family: Config.font.family
-        pixelSize: 12
-      }
+      font.pixelSize: 12
       text: player?.trackAlbum || ""
-      color: Colors.fg
     }
 
-    Text {
+    StyledText {
       id: trackTime
-      font {
-        family: Config.font.family
-        pixelSize: 22
-      }
+      font.pixelSize: 22
       text: {
         if (!player?.trackArtist) {
           return "Unknown Artist"
@@ -81,7 +73,6 @@ RowLayout {
 
         return `${player.trackArtist}`
       }
-      color: Colors.fg
     }
 
     Rectangle {
@@ -119,27 +110,18 @@ RowLayout {
           return `${m}:${s}`
       }
 
-      Text {
+      StyledText {
         color: Colors.onPrimary
-        font {
-          family: Config.font.family
-        }
         text: parent.formatTime(player.position)
       }
 
-      Text {
+      StyledText {
         color: Colors.onPrimary
-        font {
-          family: Config.font.family
-        }
         text: "—"
       }
 
-      Text {
+      StyledText {
         color: Colors.onPrimary
-        font {
-          family: Config.font.family
-        }
         text: parent.formatTime(player.length)
       }
     }
@@ -148,10 +130,8 @@ RowLayout {
     RowLayout {
       spacing: 16
 
-      Text {
-        color: Colors.fg
+      StyledText {
         font {
-          family: Config.font.family
           pixelSize: 40
           bold: true
         }
@@ -175,11 +155,10 @@ RowLayout {
 
         color: Colors.fg
 
-        Text {
+        StyledText {
           anchors.centerIn: parent
           color: Colors.onPrimary
           font {
-            family: Config.font.family
             pixelSize: 40
             bold: true
           }
@@ -195,10 +174,8 @@ RowLayout {
         }
       }
 
-      Text {
-        color: Colors.fg
+      StyledText {
         font {
-          family: Config.font.family
           pixelSize: 40
           bold: true
         }

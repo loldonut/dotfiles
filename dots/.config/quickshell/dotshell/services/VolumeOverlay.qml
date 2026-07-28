@@ -4,6 +4,7 @@ import Quickshell
 import Quickshell.Services.Pipewire
 import Quickshell.Widgets
 
+import qs.modules.common
 import qs.modules.config
 
 Scope {
@@ -64,12 +65,12 @@ Scope {
             rightMargin: 15
           }
 
-          Text {
-            font.bold: true
-            font.family: Config.font.family
-            font.pixelSize: Config.font.size + 4
+          StyledText {
+            font {
+              bold: true
+              pixelSize: Config.font.size + 4
+            }
 
-            color: Colors.fg
             text: (Pipewire.defaultAudioSink?.audio.volume !== 0 && !Pipewire.defaultAudioSink?.audio.muted) ? "󰕾 " : "󰝟 "
           }
 
