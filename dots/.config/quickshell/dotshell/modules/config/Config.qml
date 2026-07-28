@@ -9,6 +9,7 @@ Singleton {
     property string propo: "JetBrainsMono Nerd Font Propo"
     property string symbols: "Material Symbols Rounded"
     property int size: 14 * bar.scale
+    property int iconSize: 16 * bar.scale
   }
 
   property QtObject bar: QtObject {

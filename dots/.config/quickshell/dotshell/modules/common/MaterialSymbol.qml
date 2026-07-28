@@ -6,7 +6,7 @@ import qs.modules.config
 // from https://github.com/end-4/dots-hyprland
 
 StyledText {
-  property real size: Config.font.size
+  property real size: Config.font.iconSize
   property real fill: 0
   property real truncatedFill: fill.toFixed(1)
 

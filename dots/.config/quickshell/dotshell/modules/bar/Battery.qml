@@ -35,7 +35,7 @@ StyledBarRect {
       visible: root.isCharging
 
       Layout.leftMargin: -5
-      size: Config.font.size - 2
+      size: Config.font.iconSize
       text: "bolt"
     }
 
