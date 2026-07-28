@@ -36,6 +36,7 @@ DEPS=(
     brave-bin
     matugen
     awww
+    brightnessctl
 )
 
 FONT_DEPS=(
