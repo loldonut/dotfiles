@@ -10,7 +10,8 @@ StyledBarRect {
   id: root
 
   readonly property var battery: UPower.displayDevice
-  readonly property int batteryPercent: Math.floor(battery.percentage * 100)
+  readonly property var rawBatteryPercent: batteryPercent.percentage ?? 1
+  readonly property int batteryPercent: Math.floor(rawBatteryPercent * 100)
   readonly property bool isCharging: [UPowerDeviceState.Charging, UPowerDeviceState.PendingCharge].includes(battery.state)
 
   implicitWidth: batteryRow.implicitWidth + 20
