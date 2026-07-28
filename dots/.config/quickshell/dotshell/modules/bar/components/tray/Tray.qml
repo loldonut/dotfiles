@@ -18,11 +18,11 @@ Item {
     topRightRadius: 0
     bottomRightRadius: 0
 
-    Text {
+    MaterialSymbol {
       anchors.centerIn: parent
 
-      color: Colors.fg
-      text: ""
+      size: Config.font.size + 14
+      text: "arrow_drop_down"
     }
   }
 

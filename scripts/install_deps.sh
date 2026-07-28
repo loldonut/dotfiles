@@ -42,6 +42,7 @@ FONT_DEPS=(
     noto-fonts-cjk
     ttf-jetbrains-mono-nerd
     ttf-adwaitamono-nerd
+    ttf-material-symbols-variable
 )
 
 install_deps() {

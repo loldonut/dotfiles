@@ -15,12 +15,11 @@ StyledBarRect {
   topLeftRadius: 0
   bottomLeftRadius: 0
 
-  StyledText {
+  MaterialSymbol {
     id: text
     anchors.centerIn: parent
-    font.family: Config.font.propo
 
-    text: "  "
+    text: "power_settings_new"
   }
 
   Dashboard {

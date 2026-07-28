@@ -13,7 +13,8 @@ my dotfiles, managed by using stow
 
 ### Thanks to
 
-- GTK Template and the sudo keep alive script: [end-4/dots-hyprland](https://github.com/end-4/dots-hyprland)
+- [end-4/dots-hyprland](https://github.com/end-4/dots-hyprland) - For quickshell and material design stuff
+- [caelestia-dots/shell](https://github.com/caelestia-dots/shell)
 - [Tmux Sessionizer](https://github.com/ThePrimeagen/tmux-sessionizer) by ThePrimeagen
 
 ## Table of Contents

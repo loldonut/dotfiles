@@ -7,6 +7,7 @@ Singleton {
   property QtObject font: QtObject {
     property string family: "Google Sans Flex"
     property string propo: "JetBrainsMono Nerd Font Propo"
+    property string symbols: "Material Symbols Rounded"
     property int size: 14 * bar.scale
   }
 

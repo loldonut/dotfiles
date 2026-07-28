@@ -14,27 +14,26 @@ StyledBarRect {
     id: connRow
     anchors.centerIn: parent
 
-    StyledText {
+    MaterialSymbol {
       text: {
         const network = Networking.devices.values.find((n) => n.connected)
         const isConnected = ((network !== null) && (Networking.devices.values.length > 0))
 
         if (!isConnected) {
-          return "󰌙";
+          return "signal_wifi_off";
         }
 
         const iconState = {
-          [DeviceType.Wired]: "󰌗",
-          [DeviceType.Wifi]: "󰖩"
+          [DeviceType.Wired]: "lan",
+          [DeviceType.Wifi]: "wifi"
         }
 
         return iconState[network.type]
       }
     }
 
-    StyledText {
-      Layout.alignment: Qt.AlignVCenter
-      text: "󰂯"
+    MaterialSymbol {
+      text: "bluetooth"
     }
   }
 }

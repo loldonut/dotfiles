@@ -31,15 +31,6 @@ Scope {
 
   Process {
     id: matugenProc
-    stdout: StdioCollector {
-      onStreamFinished: console.log(`line read: ${this.text}`)
-    }
-    stderr: StdioCollector {
-      onStreamFinished: console.log(`line read: ${this.text}`)
-    }
-    onExited: code => {
-      console.log(code)
-    }
   }
 
   PanelWindow {
@@ -55,8 +46,6 @@ Scope {
       right: true
     }
 
-    implicitWidth: 650
-    implicitHeight: 500
 
     onVisibleChanged: {
       if (visible) {
@@ -64,12 +53,11 @@ Scope {
       }
     }
 
-    RectangularShadow {
+    Rectangle {
       anchors.fill: parent
 
-      blur: 24
-      spread: 0.05
-      color: Qt.rgba(0, 0, 0, 0.6)
+      opacity: 0.3
+      color: "black"
     }
 
     MouseArea {
@@ -79,11 +67,14 @@ Scope {
 
     Rectangle {
       id: container
+
       anchors.centerIn: parent
+
+      implicitWidth: 680
+      implicitHeight: 500
+
       color: Colors.bg
       radius: 12
-      height: 500
-      width: 650
       border.width: 2
       border.color: Colors.inversePrimary
 
@@ -97,7 +88,7 @@ Scope {
       ColumnLayout {
         id: centerCol
         anchors.fill: parent
-        anchors.margins: 12
+        anchors.margins: 20
         spacing: 12
 
         RowLayout {
@@ -107,9 +98,11 @@ Scope {
             Layout.alignment: Qt.AlignVCenter
             font {
               pixelSize: Config.font.size + 4
+              weight: Font.Black
+              variableAxes: { "wdth": 150 }
             }
             color: Colors.fg
-            text: "Select wallpaper"
+            text: "Wallpapers"
           }
         }
 
@@ -119,7 +112,7 @@ Scope {
           Layout.alignment: Qt.AlignVCenter
           Layout.leftMargin: 2
           Layout.rightMargin: 2
-          opacity: 0.3
+          opacity: 0.2
           color: Colors.fg
         }
 
@@ -133,8 +126,8 @@ Scope {
             anchors.fill: parent
             model: wallpaperModel
 
-            cellWidth: 155
-            cellHeight: 105
+            cellWidth: 160
+            cellHeight: 110
 
             delegate: Item {
               id: delegateItem
