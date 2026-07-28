@@ -5,12 +5,13 @@ import Quickshell.Hyprland
 import Quickshell.Io
 import Quickshell.Widgets
 
+import qs.modules.common
 import qs.modules.config
 
 Repeater {
   model: Hyprland.workspaces.values.slice().sort((a, b) => a.id - b.id)
 
-  Text {
+  StyledText {
     id: workspaces
     Layout.alignment: Qt.AlignVCenter
     required property var modelData
@@ -18,11 +19,7 @@ Repeater {
 
     text: modelData.id
     color: isActive ? Colors.fg : Colors.onPrimary
-    font {
-      family: Config.font.family
-      pixelSize: Config.font.size
-      bold: true
-    }
+    font.bold: true
 
     MouseArea {
       anchors.fill: parent
