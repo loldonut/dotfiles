@@ -2,6 +2,7 @@ require("..utils.binds")
 
 local qsIpc = "qs -c dotshell ipc call "
 
+-- stylua: ignore start
 bindMod("Q", exec_cmd(terminal))
 bindMod("E", exec_cmd(fileManager))
 bindMod("R", exec_cmd(menu))
@@ -22,7 +23,7 @@ bindShiftMod("W", exec_cmd(qsIpc .. "wallpapers toggle"))
 bindShiftMod("R", exec_cmd("cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"))
 
 -- Screenshotting
-hl.bind("PRINT",      exec_cmd('grim - | wl-copy'))
+hl.bind("PRINT",      exec_cmd('grim - | swappy -f -'))
 bindMod("PRINT",      exec_cmd("hyprshot -m window"))
 bindShiftMod("PRINT", exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
 
@@ -95,3 +96,4 @@ hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = tr
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
+-- stylua: ignore end
