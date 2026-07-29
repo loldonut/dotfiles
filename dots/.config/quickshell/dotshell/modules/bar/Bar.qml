@@ -31,9 +31,9 @@ Scope {
       }
 
       margins {
-        top: 8
-        left: 8
-        right: 8
+        top: 4
+        left: 6
+        right: 6
       }
 
       color: "transparent"
