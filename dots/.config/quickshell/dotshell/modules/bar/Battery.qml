@@ -11,7 +11,7 @@ StyledBarRect {
 
   readonly property bool available: UPower.displayDevice.isLaptopBattery
   readonly property var battery: UPower.displayDevice
-  readonly property var rawBatteryPercent: batteryPercent.percentage ?? 1
+  readonly property var rawBatteryPercent: battery.percentage ?? 1
   readonly property int batteryPercent: Math.floor(rawBatteryPercent * 100)
   readonly property bool isCharging: [UPowerDeviceState.Charging, UPowerDeviceState.PendingCharge].includes(battery.state)
 
