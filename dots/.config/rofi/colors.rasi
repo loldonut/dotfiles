@@ -1,5 +1,5 @@
 * {
-    background: rgba(17, 19, 24, 0.8);
+    background: #111318;
     foreground: #adc6ff;
     background-color: var(background);
     text-color: #adc6ff;
@@ -13,35 +13,41 @@
     padding: 0;
     spacing: 0;
 
-    selected-active-foreground:  var(background);
-    separatorcolor:              var(foreground);
-    alternate-urgent-background: var(lightbg);
     border-color:                var(foreground);
-    normal-background:           var(background);
-    selected-urgent-background:  var(red);
-    alternate-active-background: var(lightbg);
-    alternate-normal-foreground: var(foreground);
-    urgent-background:           var(background);
-    selected-normal-foreground:  var(lightbg);
-    active-foreground:           var(blue);
-    selected-active-background:  var(blue);
+    separatorcolor:              var(foreground);
+
     active-background:           var(background);
-    selected-normal-background:  var(lightfg);
+    normal-background:           var(background);
+    urgent-background:           var(background);
+
+    alternate-active-background: var(lightbg);
     alternate-normal-background: var(lightbg);
-    selected-urgent-foreground:  var(background);
+    alternate-urgent-background: var(lightbg);
+
+    selected-normal-background:  var(lightfg);
+    selected-urgent-background:  var(red);
+
+    active-foreground:           var(blue);
     normal-foreground:           var(foreground);
-    alternate-urgent-foreground: var(red);
+
     alternate-active-foreground: var(blue);
+    alternate-normal-foreground: var(foreground);
+    alternate-urgent-foreground: var(red);
+
+    selected-normal-foreground:  var(lightbg);
+    selected-active-foreground:  var(background);
+    selected-active-background:  var(blue);
+    selected-urgent-foreground:  var(background);
 }
 
 element {
-    padding:        4px;
+    padding:        10px;
     orientation:    horizontal;
     cursor:         pointer;
-    spacing:        0;
+    spacing:        8px;
     border:         0;
     border-radius:  2px;
-    children:       [ "element-text","element-icon" ];
+    children:       [ "element-icon", "element-text" ];
 }
 
 element normal.normal {
@@ -104,14 +110,14 @@ element-icon {
 }
 
 window {
-    padding:          5;
+    padding:          12;
     background-color: var(background);
     border:           1;
-    border-radius:    2px;
+    border-radius:    12px;
 }
 
 mainbox {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: var(background);
     padding: 0;
     border: 0;
 }
@@ -134,6 +140,7 @@ listview {
     spacing:          0;
     fixed-height:     0;
     border:           2px dash 0px 0px ;
+    lines: 10;
 }
 
 scrollbar {
@@ -178,10 +185,10 @@ textbox-num-sep {
 }
 
 inputbar {
-    padding:    1px ;
-    spacing:    0px ;
+    padding:    4px;
+    spacing:    0px;
     text-color: var(normal-foreground);
-    children:   [ "prompt","textbox-prompt-colon","entry","overlay","num-filtered-rows","textbox-num-sep","num-rows","case-indicator" ];
+    children:   [ "entry","overlay","num-filtered-rows","textbox-num-sep","num-rows","case-indicator" ];
 }
 
 overlay {

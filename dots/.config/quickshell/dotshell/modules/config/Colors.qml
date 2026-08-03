@@ -5,13 +5,13 @@ import QtQuick
 Singleton {
   // TODO: Rename 'fg' and 'bg' to primary and surface respectively.
   property string fg:                       "#adc6ff"
-  property string onPrimary:              "#102f60"
+  property string onPrimary:                "#102f60"
   property string primaryContainer:         "#2b4678"
   property string uponPrimaryContainer:     "#d8e2ff"
   property string inversePrimary:           "#445e91"
   property string secondary:                "#bfc6dc"
   property string uponSecondary:            "#293041"
-  property string onSecondaryFixed:       "#141b2c"
+  property string onSecondaryFixed:         "#141b2c"
   property string uponSecondaryContainer:   "#dbe2f9"
   property string tertiary:                 "#debcdf"
   property string uponTertiary:             "#402843"
