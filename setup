@@ -82,6 +82,9 @@ main() {
         '--')
             shift
             ;;
+        help)
+            print_help
+            ;;
         reset)
             log "deleting init file at '${STAMP_FILE}'"
 
