@@ -1,7 +1,7 @@
 hl.config({
     xwayland = {
-        force_zero_scaling = true
-    }
+        force_zero_scaling = true,
+    },
 })
 
 hl.window_rule({
@@ -18,19 +18,12 @@ hl.window_rule({
         xwayland = true,
         float = true,
         fullscreen = false,
-        pin = false
+        pin = false,
     },
-    no_focus = true
+    no_focus = true,
 })
 
-hl.window_rule({
-    name = "spicetify-spotify-blur",
-    match = {
-        class = "^spotify$",
-    },
-    opacity = "0.8",
-    border_size = 0,
-})
+hl.window_rule({})
 
 -- Float Download / History in Firefox
 hl.window_rule({
@@ -40,7 +33,7 @@ hl.window_rule({
     },
     float = true,
     center = true,
-    size = { "(monitor_w*.55)", "(monitor_h*.70)" }
+    size = { "(monitor_w*.55)", "(monitor_h*.70)" },
 })
 
 -- Rofi blur
@@ -57,31 +50,35 @@ local musicPlayerWorkspace = "3"
 
 hl.window_rule({
     match = {
-        class = "^(brave-browser|zen|firefox)$"
+        class = "^(brave-browser|zen|firefox)$",
     },
-    workspace = browserWorkspace
+    workspace = browserWorkspace,
 })
 
 hl.window_rule({
+    name = "spicetify-spotify-blur",
     match = {
-        class = "^(spotify)$",
+        class = "^([Ss]potify)(.*)$",
     },
-    workspace = musicPlayerWorkspace
+
+    workspace = musicPlayerWorkspace,
+    opacity = "0.8",
+    border_size = 0,
 })
 
 local patterns = {
-    between = function (title)
+    between = function(title)
         return string.format("^(.*%s.*)$", title)
     end,
-    startsWith = function (title)
+    startsWith = function(title)
         return string.format("^(%s)(.*)$", title)
     end,
-    endsWith = function (title)
+    endsWith = function(title)
         return string.format("^(.*)(%s)$", title)
     end,
-    has = function (title)
+    has = function(title)
         return string.format("^(%s)$", title)
-    end
+    end,
 }
 
 local function parseWindowSelector(str)
@@ -111,38 +108,38 @@ local function windowRuleFloat(title, pattern, extraFields)
 end
 
 local floatList = {
-    { "initial_title:Open File",          patterns.startsWith  },
-    { "title:Select a File",              patterns.startsWith  },
-    { "title:Choose a wallpaper",         patterns.startsWith  },
-    { "title:Open Folder",                patterns.startsWith  },
-    { "class:waypaper",                   patterns.startsWith  },
-    { "title:Pick game",                  patterns.startsWith  },
-    { "title:Choose Start Directory",     patterns.startsWith  },
-    { "title:wants to save",              patterns.endsWith    },
-    { "title:wants to open",              patterns.endsWith    },
-    { "class:dialog",                     patterns.between     },
-    { "title:dialog",                     patterns.between     },
-    { "class:libresplit",                 patterns.has,        },
-    { "class:nm-connection-editor",       patterns.has,        },
-    { "class:steam",                      patterns.has         },
-    { "class:org.kde.dolphin",            patterns.has         },
-    { "class:org.kde.gwenview",           patterns.has         },
-    { "class:[Xx]dg-desktop-portal-gtk",  patterns.has         },
-    { "class:net.davidotek.pupgui2",      patterns.has         },
+    { "initial_title:Open File", patterns.startsWith },
+    { "title:Select a File", patterns.startsWith },
+    { "title:Choose a wallpaper", patterns.startsWith },
+    { "title:Open Folder", patterns.startsWith },
+    { "class:waypaper", patterns.startsWith },
+    { "title:Pick game", patterns.startsWith },
+    { "title:Choose Start Directory", patterns.startsWith },
+    { "title:wants to save", patterns.endsWith },
+    { "title:wants to open", patterns.endsWith },
+    { "class:dialog", patterns.between },
+    { "title:dialog", patterns.between },
+    { "class:libresplit", patterns.has },
+    { "class:nm-connection-editor", patterns.has },
+    { "class:steam", patterns.has },
+    { "class:org.kde.dolphin", patterns.has },
+    { "class:org.kde.gwenview", patterns.has },
+    { "class:[Xx]dg-desktop-portal-gtk", patterns.has },
+    { "class:net.davidotek.pupgui2", patterns.has },
     {
         "title:Mpris",
         patterns.has,
-        { size = { "(monitor_w*.45)", "(monitor_h*.25)" } }
+        { size = { "(monitor_w*.45)", "(monitor_h*.25)" } },
     },
     {
         "class:pavucontrol|org.pulseaudio.pavucontrol",
         patterns.has,
-        { size = { "(monitor_w*.45)", "(monitor_h*.45)" } }
+        { size = { "(monitor_w*.45)", "(monitor_h*.45)" } },
     },
     {
         "class:blueman-manager",
         patterns.has,
-        { size = { "(monitor_w*.55)", "(monitor_h*.80)" } }
+        { size = { "(monitor_w*.55)", "(monitor_h*.80)" } },
     },
 }
 
