@@ -16,6 +16,7 @@ Singleton {
     property int height: 50
     property real scale: 1.0
     property string wallpaperPath: StandardPaths.writableLocation(StandardPaths.HomeLocation) + "/Pictures/Wallpapers"
+    property bool shortTimeFormat: true
   }
 
   property QtObject notifications: QtObject {

@@ -10,6 +10,7 @@ import qs.modules.bar.components
 import qs.modules.bar.components.dashboard
 import qs.modules.bar.components.tray
 import qs.modules.bar.components.volume
+import qs.modules.bar.components.weather
 import qs.modules.common
 import qs.modules.config
 
@@ -59,10 +60,9 @@ Scope {
           }
           Workspaces {}
           Separator {}
-          StyledText {
-            color: Colors.fg
-            text: Time.time
-          }
+          Time {}
+          Separator {}
+          Weather {}
         }
 
         RowLayout {

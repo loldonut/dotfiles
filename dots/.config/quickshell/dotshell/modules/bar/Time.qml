@@ -1,17 +1,17 @@
-pragma Singleton
-
 import QtQuick
 import Quickshell
 
-Singleton {
-  id: root
+import qs.modules.common
+import qs.modules.config
+import qs.services
 
-  readonly property string time: {
-    Qt.formatDateTime(clock.date, "ddd, MMMM d, yyyy hh:mm AP")
-  }
+StyledText {
+  property bool shortFormat: Config.shortTimeFormat
 
-  SystemClock {
-    id: clock
-    precision: SystemClock.Minutes
+  text: Time.getTime(shortFormat)
+
+  MouseArea {
+    anchors.fill: parent
+    onClicked: shortFormat = !shortFormat
   }
 }
