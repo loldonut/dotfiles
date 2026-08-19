@@ -10,10 +10,13 @@ import qs.modules.common
 import qs.modules.config
 
 StyledBarRect {
+  id: root
+
   property bool showSlider: false
   readonly property PwNodeAudio audio: Pipewire.defaultAudioSink.audio
-  readonly property real rawVolume: audio.volume
-  property int volume: Math.round((rawVolume ?? 0) * 100)
+  property int volume: Math.round((audio?.volume ?? 0) * 100)
+  property int maxVolume: 100
+  property real stepSize: 0.05
 
   implicitWidth: volRow.implicitWidth + 15
 
@@ -71,6 +74,18 @@ StyledBarRect {
     }
   }
 
+  function increaseVolume() {
+    if (root.volume < root.maxVolume) {
+      root.audio.volume += stepSize
+    }
+  }
+
+  function decreaseVolume() {
+    if (root.volume > 0) {
+      root.audio.volume -= stepSize
+    }
+  }
+
   MouseArea {
     anchors.fill: parent
 
@@ -78,5 +93,16 @@ StyledBarRect {
     cursorShape: Qt.PointingHandCursor
 
     onClicked: volSlider.visible = !volSlider.visible
+
+    WheelHandler {
+      acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
+      onWheel: event => {
+        if (event.angleDelta.y > 0) {
+          root.increaseVolume();
+        } else {
+          root.decreaseVolume();
+        }
+      }
+    }
   }
 }
