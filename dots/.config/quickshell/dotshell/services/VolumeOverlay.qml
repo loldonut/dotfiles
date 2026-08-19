@@ -10,12 +10,14 @@ import qs.modules.config
 Scope {
   id: root
 
+  property PwNodeAudio audio: Pipewire.defaultAudioSink.audio
+
   PwNodeLinkTracker {
     node: Pipewire.defaultAudioSink
   }
 
   Connections {
-    target: Pipewire.defaultAudioSink?.audio
+    target: root.audio
 
     function onVolumeChanged() {
       root.shouldShowOsd = true;
@@ -65,13 +67,8 @@ Scope {
             rightMargin: 15
           }
 
-          StyledText {
-            font {
-              bold: true
-              pixelSize: Config.font.size + 4
-            }
-
-            text: (Pipewire.defaultAudioSink?.audio.volume !== 0 && !Pipewire.defaultAudioSink?.audio.muted) ? "󰕾 " : "󰝟 "
+          MaterialSymbol {
+            text: (audio.volume !== 0 && !audio.muted) ? "volume_up" : "volume_mute"
           }
 
           Rectangle {
@@ -90,7 +87,7 @@ Scope {
 
               color: Colors.fg
 
-              implicitWidth: parent.width * (!Pipewire.defaultAudioSink?.audio.muted ? Pipewire.defaultAudioSink?.audio.volume : 0)
+              implicitWidth: parent.width * (!audio.muted ? audio.volume : 0)
               radius: parent.radius
 
               Behavior on implicitWidth {

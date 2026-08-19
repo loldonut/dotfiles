@@ -12,8 +12,8 @@ ColumnLayout {
   PwObjectTracker { objects: [ node ] }
 
   RowLayout {
-    StyledText {
-      text: (node?.audio?.volume !== 0 && !node?.audio?.muted) ? `󰕾 ` : `󰝟 `
+    MaterialSymbol {
+      text: (node?.audio?.volume !== 0 && !node?.audio?.muted) ? `volume_up` : `volume_mute`
     }
 
     Label {

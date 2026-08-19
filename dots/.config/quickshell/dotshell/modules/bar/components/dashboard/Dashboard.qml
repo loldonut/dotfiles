@@ -67,11 +67,11 @@ PanelWindow {
         radius: 16
         color: Colors.onPrimary
 
-        StyledText {
+        MaterialSymbol {
           anchors.centerIn: parent
           font.pixelSize: Config.font.size + 20
 
-          text: ""
+          text: "logout"
         }
 
         MouseArea {
@@ -88,11 +88,11 @@ PanelWindow {
         radius: 16
         color: Colors.onPrimary
 
-        StyledText {
+        MaterialSymbol {
           anchors.centerIn: parent
           font.pixelSize: Config.font.size + 20
 
-          text: "󰜉"
+          text: "restart_alt"
         }
 
         MouseArea {
@@ -109,12 +109,12 @@ PanelWindow {
         radius: 16
         color: Colors.onPrimary
 
-        StyledText {
+        MaterialSymbol {
           anchors.centerIn: parent
           font.pixelSize: Config.font.size + 20
 
           color: "#F44336"
-          text: ""
+          text: "power_settings_new"
         }
 
         MouseArea {
