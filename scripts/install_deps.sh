@@ -37,6 +37,7 @@ DEPS=(
     matugen
     awww
     brightnessctl
+    playerctl
 )
 
 FONT_DEPS=(
