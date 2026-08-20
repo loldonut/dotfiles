@@ -1,9 +1,17 @@
+function bind(key, action, flags)
+    if flags then
+        hl.bind(key, action, flags)
+    else
+        hl.bind(key, action)
+    end
+end
+
 function bindMod(key, action, flags)
     local bindModKey = string.format("%s + %s", mainMod, key)
     if flags then
-        hl.bind(bindModKey, action, flags)
+        bind(bindModKey, action, flags)
     else
-        hl.bind(bindModKey, action)
+        bind(bindModKey, action)
     end
 end
 
