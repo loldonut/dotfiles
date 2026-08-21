@@ -5,6 +5,7 @@ import Quickshell.Wayland
 import Quickshell.Widgets
 import Quickshell.Hyprland
 
+import qs
 import qs.modules.common
 import qs.modules.config
 
@@ -60,24 +61,10 @@ PanelWindow {
 
       spacing: 10
 
-      StyledRect {
-        implicitWidth: 100
-        implicitHeight: 100
-
-        radius: 16
-        color: Colors.onPrimary
-
-        MaterialSymbol {
-          anchors.centerIn: parent
-          font.pixelSize: Config.font.size + 20
-
-          text: "logout"
-        }
-
-        MouseArea {
-          anchors.fill: parent
-          cursorShape: Qt.PointingHandCursor
-          onClicked: Hyprland.dispatch("hl.dsp.exec_cmd(\"hyprshutdown -t 'Logging out...'\")")
+      DashboardButton {
+        text: "lock"
+        clickedHandler: () => {
+          ShellState.locked = true
         }
       }
 

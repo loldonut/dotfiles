@@ -1,17 +1,14 @@
 import QtQuick
-import Quickshell
 
 import qs.modules.common
 import qs.modules.config
 import qs.services
 
 StyledText {
-  property bool shortFormat: Config.shortTimeFormat
-
-  text: Time.getTime(shortFormat)
+  text: Time.getDateAndTime(Config.bar.shortTimeFormat)
 
   MouseArea {
     anchors.fill: parent
-    onClicked: shortFormat = !shortFormat
+    onClicked: Config.bar.shortTimeFormat = !Config.bar.shortTimeFormat
   }
 }

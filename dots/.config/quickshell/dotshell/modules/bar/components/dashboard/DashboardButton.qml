@@ -1,0 +1,32 @@
+import QtQuick
+
+import qs.modules.common
+import qs.modules.config
+
+StyledRect {
+  id: root
+  required property string text
+  property string command
+  property var clickedHandler
+
+  implicitWidth: 100
+  implicitHeight: 100
+
+  radius: 16
+  color: Colors.onPrimary
+
+  MaterialSymbol {
+    anchors.centerIn: parent
+    font.pixelSize: Config.font.size + 20
+
+    text: root.text
+  }
+
+  MouseArea {
+    anchors.fill: parent
+    cursorShape: Qt.PointingHandCursor
+    onClicked: {
+      root.clickedHandler();
+    }
+  }
+}

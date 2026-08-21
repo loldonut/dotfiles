@@ -21,6 +21,7 @@ bindShiftMod("F1", toggleAnimations,                      { description = "Toggl
 bindMod("P",      exec_cmd(qsIpc .. "mpris toggle"),         { description = "Open Mpris Player"        })
 bindMod("N",      exec_cmd(qsIpc .. "notifications toggle"), { description = "Open Notification Center" })
 bindShiftMod("W", exec_cmd(qsIpc .. "wallpapers toggle"),    { description = "Open Wallpaper Picker"    })
+bindShiftMod("M", exec_cmd(qsIpc .. "lock activate"),        { description = "Locks the session" })
 
 -- Screenshotting
 bind(        "PRINT", exec_cmd("grim - | swappy -f -"),               { description = "Screenshot the whole screen" })
@@ -40,7 +41,7 @@ bindMod("mouse:273",  hl.dsp.window.resize(), { mouse = true })
 -- stylua: ignore end
 
 bindShiftMod(
-    "M",
+    "ESCAPE",
     exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"),
     { description = "Kill active Hyprland session" }
 )

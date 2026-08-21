@@ -45,6 +45,7 @@ FONT_DEPS=(
     ttf-jetbrains-mono-nerd
     ttf-adwaitamono-nerd
     ttf-material-symbols-variable
+    ttf-roboto-flex
 )
 
 install_deps() {
