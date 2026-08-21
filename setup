@@ -56,7 +56,8 @@ stow_it() {
 
     stow --dir="${SCRIPT_DIR}" \
         --target="${HOME}" \
-        --ignore="home" -R dots \
+        --ignore="home" --ignore=".qmlls.ini" \
+        -R dots \
         --no-folding \
         && log "Stowed .config and .local directory"
 
