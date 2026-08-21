@@ -60,7 +60,7 @@ Scope {
 
       Repeater {
         model: server.trackedNotifications
-        delegate: NotificationItem {
+        delegate: NotificationCard {
           required property var modelData
           notif: modelData
         }
