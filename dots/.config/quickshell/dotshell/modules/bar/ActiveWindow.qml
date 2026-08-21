@@ -12,8 +12,6 @@ StyledText {
   Layout.alignment: Qt.AlignCenter
   Layout.maximumWidth: 250
 
-  color: Colors.fg
-
   text: Hyprland.activeToplevel?.title || ""
   maximumLineCount: 1
   elide: Text.ElideRight

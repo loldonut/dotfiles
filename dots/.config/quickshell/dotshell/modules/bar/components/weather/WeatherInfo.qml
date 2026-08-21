@@ -29,7 +29,7 @@ PopupWindow {
     anchors.fill: parent
 
     radius: 8
-    border.color: Colors.inversePrimary
+    border.color: Colors.md3.inverse_primary
     border.width: 2
 
     RowLayout {

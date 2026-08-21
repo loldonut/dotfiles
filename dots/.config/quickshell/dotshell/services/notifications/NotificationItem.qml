@@ -20,10 +20,10 @@ Rectangle {
   Layout.preferredHeight: layout.implicitHeight + 20
 
   radius: 8
-  color: Colors.bg
+  color: Colors.md3.surface
   border.width: 2
   border.color: notif.urgency === NotificationUrgency.Critical
-  ? "#ff0000" : Colors.fg
+  ? "#ff0000" : Colors.md3.primary
 
   MouseArea {
     anchors.fill: parent
@@ -55,7 +55,6 @@ Rectangle {
         StyledText {
           Layout.fillWidth: true
           text: card.notif.summary
-          color: Colors.fg
           font {
             family: Config.font.family
             pixelSize: Config.font.size + 2
@@ -68,7 +67,6 @@ Rectangle {
           Layout.fillWidth: true
           visible: text !== ""
           text: card.notif.body
-          color: Colors.fg
           font {
             pixelSize: Config.font.size + 2
           }

@@ -3,5 +3,5 @@ import QtQuick
 import qs.modules.config
 
 Rectangle {
-  color: Colors.onSecondaryFixed
+  color: Colors.md3.on_secondary_fixed
 }

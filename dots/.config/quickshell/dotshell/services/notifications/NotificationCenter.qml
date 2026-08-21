@@ -38,13 +38,12 @@ LazyLoader {
       onCleared: loader.active = false
     }
 
-    Rectangle {
+    StyledRect {
       anchors.fill: parent
 
-      color: Colors.onSecondaryFixed
       radius: 10
 
-      border.color: Colors.inversePrimary
+      border.color: Colors.md3.inverse_primary
       border.width: 2
 
       ColumnLayout {
@@ -64,8 +63,6 @@ LazyLoader {
               variableAxes: { "wdth": 150 }
             }
 
-            color: Colors.fg
-
             text: "Notifications"
           }
 
@@ -78,7 +75,6 @@ LazyLoader {
               pixelSize: Config.font.size + 6
             }
 
-            color: Colors.fg
             text: "clear all"
 
             MouseArea {
@@ -91,7 +87,7 @@ LazyLoader {
 
         Rectangle {
           Layout.fillWidth: true
-          color: Colors.onPrimary
+          color: Colors.md3.on_primary
           implicitHeight: 1
         }
 
@@ -107,7 +103,6 @@ LazyLoader {
 
             font.pixelSize: Config.font.size + 4
 
-            color: Colors.fg
             text: "All caught up!"
           }
         }

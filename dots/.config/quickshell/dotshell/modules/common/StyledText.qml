@@ -8,5 +8,5 @@ Text {
     pixelSize: Config.font.size
     weight: Font.DemiBold
   }
-  color: Colors.fg
+  color: Colors.md3.primary
 }

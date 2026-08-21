@@ -39,8 +39,8 @@ PanelWindow {
     anchors.fill: parent
     radius: 10
 
-    color: Colors.bg
-    border.color: Colors.inversePrimary
+    color: Colors.md3.surface
+    border.color: Colors.md3.inverse_primary
     border.width: 2
 
     ScrollView {
@@ -62,7 +62,7 @@ PanelWindow {
 
         Rectangle {
           Layout.fillWidth: true
-          color: Colors.onPrimary
+          color: Colors.md3.on_primary
           implicitHeight: 1
         }
 

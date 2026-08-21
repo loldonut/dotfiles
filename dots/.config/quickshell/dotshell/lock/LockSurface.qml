@@ -25,7 +25,7 @@ StyledRect {
       enabled: true
       effect: MultiEffect {
         colorization: 0.4
-        colorizationColor: Colors.shadow
+        colorizationColor: Colors.md3.shadow
 
         blurEnabled: true
         blurMultiplier: 1
@@ -85,7 +85,7 @@ StyledRect {
       Layout.leftMargin: 2
       Layout.rightMargin: 2
       opacity: 0.85
-      color: Colors.onPrimary
+      color: Colors.md3.on_primary
     }
 
     ColumnLayout {
@@ -101,7 +101,7 @@ StyledRect {
           variableAxes: { "wdth": 150 }
         }
 
-        color: Colors.uponPrimaryContainer
+        color: Colors.md3.on_primary_container
 
         renderType: Text.NativeRendering
         font.pixelSize: 70
@@ -133,12 +133,12 @@ StyledRect {
             radius: 8
             color: passwordBox.enabled ? Qt.rgba(0, 0, 0, 0.2) : "transparent"
             border.width: 4
-            border.color: Colors.onPrimary
+            border.color: Colors.md3.on_primary
 
             layer {
               enabled: true
               effect: MultiEffect {
-                shadowColor: Colors.shadow
+                shadowColor: Colors.md3.shadow
                 shadowEnabled: true
                 blurEnabled: true
                 brightness: 0.4
@@ -172,14 +172,14 @@ StyledRect {
             font.family: "Roboto Flex"
 
             opacity: enabled ? 1.0 : 0.3
-            color: Colors.fg
+            color: Colors.md3.primary
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             elide: Text.ElideRight
           }
 
           background: Rectangle {
-            color: unlockButton.down ? Colors.inversePrimary : Colors.onSecondaryFixed
+            color: unlockButton.down ? Colors.md3.inverse_primary : Colors.md3.on_secondary_fixed
             radius: 8
           }
 

@@ -27,9 +27,9 @@ PopupWindow {
   Rectangle {
     anchors.fill: parent
 
-    color: Colors.onPrimary
+    color: Colors.md3.on_primary
     radius: 8
-    border.color: Colors.onSecondaryFixed
+    border.color: Colors.md3.on_secondary_fixed
     border.width: 2
 
     RowLayout {

@@ -13,7 +13,7 @@ StyledRect {
   implicitHeight: 100
 
   radius: 16
-  color: Colors.onPrimary
+  color: Colors.md3.on_primary
 
   MaterialSymbol {
     anchors.centerIn: parent

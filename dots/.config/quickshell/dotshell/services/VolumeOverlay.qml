@@ -55,9 +55,9 @@ Scope {
       Rectangle {
         anchors.fill: parent
         radius: 10
-        color: Colors.bg
+        color: Colors.md3.surface
 
-        border.color: Colors.fg
+        border.color: Colors.md3.primary
         border.width: 2
 
         RowLayout {
@@ -76,16 +76,16 @@ Scope {
 
             implicitHeight: 10
             radius: 20
-            color: Colors.onPrimary
+            color: Colors.md3.on_primary
 
-            Rectangle {
+            StyledRect {
               anchors {
                 left: parent.left
                 top: parent.top
                 bottom: parent.bottom
               }
 
-              color: Colors.fg
+              color: Colors.md3.primary
 
               implicitWidth: parent.width * (!audio.muted ? audio.volume : 0)
               radius: parent.radius

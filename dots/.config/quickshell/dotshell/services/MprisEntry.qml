@@ -82,7 +82,7 @@ RowLayout {
       implicitWidth: 500
       radius: 20
 
-      color: Colors.onPrimary
+      color: Colors.md3.on_primary
 
       Rectangle {
         anchors {
@@ -111,17 +111,17 @@ RowLayout {
       }
 
       StyledText {
-        color: Colors.onPrimary
+        color: Colors.md3.on_primary
         text: parent.formatTime(player.position)
       }
 
       StyledText {
-        color: Colors.onPrimary
+        color: Colors.md3.on_primary
         text: "—"
       }
 
       StyledText {
-        color: Colors.onPrimary
+        color: Colors.md3.on_primary
         text: parent.formatTime(player.length)
       }
     }
@@ -153,11 +153,11 @@ RowLayout {
 
         radius: 50
 
-        color: Colors.fg
+        color: Colors.md3.primary
 
         StyledText {
           anchors.centerIn: parent
-          color: Colors.onPrimary
+          color: Colors.md3.on_primary
           font {
             pixelSize: 40
             bold: true

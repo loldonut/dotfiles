@@ -15,7 +15,7 @@ Item {
     visible: entry.isSeparator
     width: parent.width
     height: 1
-    color: Colors.fg
+    color: Colors.md3.primary
     opacity: 0.25
   }
 
@@ -23,7 +23,7 @@ Item {
     visible: !entry.isSeparator
     anchors.fill: parent
     radius: 4
-    color: Colors.onPrimary
+    color: Colors.md3.on_primary
     opacity: entryMouse.containsMouse && entry.enabled ? 1 : 0
   }
 

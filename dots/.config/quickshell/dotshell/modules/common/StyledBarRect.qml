@@ -4,5 +4,5 @@ import qs.modules.config
 
 Rectangle {
   implicitHeight: Config.bar.height - 14
-  color: Colors.onPrimary
+  color: Colors.md3.on_primary
 }

@@ -47,7 +47,8 @@ Scope {
           right: parent.right
           verticalCenter: parent.verticalCenter
         }
-        color: Colors.onSecondaryFixed
+
+        color: Colors.md3.on_secondary_fixed
 
         radius: 4
 

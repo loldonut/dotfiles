@@ -18,7 +18,7 @@ ColumnLayout {
 
     Label {
       Layout.fillWidth: true
-      color: Colors.fg
+      color: Colors.md3.primary
       font {
         family: Config.font.family
         pixelSize: Config.font.size
@@ -39,7 +39,7 @@ ColumnLayout {
       contentItem: StyledText {
         text: node?.audio.muted ? "unmute" : "mute"
         opacity: enabled ? 1.0 : 0.3
-        color: Colors.fg
+        color: Colors.md3.primary
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         elide: Text.ElideRight
@@ -49,7 +49,7 @@ ColumnLayout {
         implicitWidth: 80
         implicitHeight: 20
         opacity: enabled ? 1 : 0.3
-        color: Colors.onPrimary
+        color: Colors.md3.on_primary
         radius: 4
       }
 
@@ -61,7 +61,7 @@ ColumnLayout {
 
   RowLayout {
     Label {
-      color: Colors.fg
+      color: Colors.md3.primary
       font {
         family: Config.font.family
         pixelSize: Config.font.size
@@ -86,13 +86,13 @@ ColumnLayout {
         width: control.availableWidth
         height: implicitHeight
         radius: 2
-        color: Colors.onPrimary
+        color: Colors.md3.on_primary
 
 
         Rectangle {
           width: control.visualPosition * parent.width
           height: parent.height
-          color: Colors.fg
+          color: Colors.md3.primary
           radius: 2
 
           Behavior on width {
@@ -113,8 +113,8 @@ ColumnLayout {
         implicitWidth: 10
         implicitHeight: 26
         radius: 5
-        color: Colors.bg
-        border.color: Colors.fg
+        color: Colors.md3.surface
+        border.color: Colors.md3.primary
 
         Behavior on x {
           NumberAnimation {

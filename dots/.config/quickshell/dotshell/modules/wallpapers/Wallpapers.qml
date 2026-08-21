@@ -68,10 +68,10 @@ Scope {
       implicitWidth: 680
       implicitHeight: 500
 
-      color: Colors.bg
+      color: Colors.md3.surface
       radius: 12
       border.width: 2
-      border.color: Colors.inversePrimary
+      border.color: Colors.md3.inverse_primary
 
       Keys.onPressed: (event) => {
         if (event.key === Qt.Key_Escape) {
@@ -96,7 +96,7 @@ Scope {
               weight: Font.Black
               variableAxes: { "wdth": 150 }
             }
-            color: Colors.fg
+            color: Colors.md3.primary
             text: "Wallpapers"
           }
         }
@@ -108,7 +108,7 @@ Scope {
           Layout.leftMargin: 2
           Layout.rightMargin: 2
           opacity: 0.2
-          color: Colors.fg
+          color: Colors.md3.primary
         }
 
         Item {
@@ -135,7 +135,7 @@ Scope {
                 verticalOffset: 0
                 radius: 8
                 samples: 17
-                color: mouseArea.containsMouse ? Colors.fg : "transparent"
+                color: mouseArea.containsMouse ? Colors.md3.primary : "transparent"
                 source: cardContainer
 
                 Behavior on color {
@@ -152,7 +152,7 @@ Scope {
                 clip: true
 
                 border.width: 2
-                border.color: mouseArea.containsMouse ? Colors.fg : Colors.onPrimary
+                border.color: mouseArea.containsMouse ? Colors.md3.primary : Colors.md3.on_primary
 
                 Behavior on border.color {
                   ColorAnimation { duration: 300 }

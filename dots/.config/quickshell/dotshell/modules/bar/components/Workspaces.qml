@@ -38,7 +38,7 @@ StyledRect {
 
         property bool isActive: Hyprland.focusedWorkspace?.id === modelData.id
 
-        color: isActive ? Colors.fg : Colors.onPrimary
+        color: isActive ? Colors.md3.primary : Colors.md3.on_primary
         opacity: isActive ? 0.8 : 1.0
 
         implicitWidth: isActive ? 18 : 15

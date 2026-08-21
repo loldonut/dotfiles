@@ -13,7 +13,7 @@ Rectangle {
   color: Colors.bg
   border.width: 2
   border.color: model.urgency === NotificationUrgency.Critical
-    ? "#ff0000" : Colors.onPrimary
+    ? "#ff0000" : Colors.md3.on_primary
 
   RowLayout {
     id: layout
@@ -42,7 +42,7 @@ Rectangle {
           bold: true
         }
 
-        color: Colors.fg
+        color: Colors.md3.primary
         text: model.summary
         elide: Text.ElideRight
       }
@@ -53,7 +53,7 @@ Rectangle {
 
         font.pixelSize: Config.font.size + 2
 
-        color: Colors.fg
+        color: Colors.md3.primary
         text: model.body
         wrapMode: Text.WordWrap
       }

@@ -52,11 +52,11 @@ Item {
     Rectangle {
       anchors.fill: parent
       clip: true
-      color: Colors.bg
+      color: Colors.md3.surface
 
       radius: 5
       border.width: 1
-      border.color: Colors.inversePrimary
+      border.color: Colors.md3.inverse_primary
 
       ColumnLayout {
         id: trayMenuCol
