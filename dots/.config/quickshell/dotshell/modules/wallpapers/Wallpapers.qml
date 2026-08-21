@@ -1,15 +1,14 @@
 import Qt.labs.folderlistmodel
-import Qt.labs.platform
 import Qt5Compat.GraphicalEffects
 import QtQml
 import QtQuick
-import QtQuick.Effects
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Io
 
 import qs.modules.common
 import qs.modules.config
+import qs.services
 
 Scope {
   id: root
@@ -27,10 +26,6 @@ Scope {
     folder: Config.bar.wallpaperPath
     nameFilters: ["*.png", "*.jpg", "*.jpeg", "*.webp"]
     showDirs: false
-  }
-
-  Process {
-    id: matugenProc
   }
 
   PanelWindow {
@@ -179,12 +174,8 @@ Scope {
                 hoverEnabled: true
                 cursorShape: Qt.PointingHandCursor
                 onClicked: {
-                  root.openWallpaper = false
-                  if (matugenProc.running) {
-                    matugenProc.running = false
-                  }
-                  matugenProc.command = ["matugen", "image", filePath, "--source-color-index", "0"]
-                  matugenProc.running = true
+                  root.openWallpaper = false;
+                  Wallpaper.setImage(filePath);
                 }
               }
             }
