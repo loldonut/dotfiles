@@ -10,7 +10,7 @@ Rectangle {
   Layout.fillWidth: true
   Layout.preferredHeight: layout.implicitHeight + 20
   radius: 8
-  color: Colors.bg
+  color: Colors.md3.surface
   border.width: 2
   border.color: model.urgency === NotificationUrgency.Critical
     ? "#ff0000" : Colors.md3.on_primary
