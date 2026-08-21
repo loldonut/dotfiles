@@ -195,16 +195,16 @@ StyledRect {
     }
   }
 
-  Button {
-    text: 'ge tout'
-    onClicked: root.context.unlocked();
-  }
-
-  Keys.onPressed: (event) => {
-    if (event.key == Qt.Key_Escape) {
-      root.context.unlocked();
-      event.accepted = true;
-    }
-  }
+  // Button {
+  //   text: 'ge tout'
+  //   onClicked: root.context.unlocked();
+  // }
+  //
+  // Keys.onPressed: (event) => {
+  //   if (event.key == Qt.Key_Escape) {
+  //     root.context.unlocked();
+  //     event.accepted = true;
+  //   }
+  // }
 }
 
