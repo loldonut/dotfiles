@@ -8,6 +8,7 @@ StyledRect {
   required property string text
   property string command
   property var clickedHandler
+  property color symbolColor: Colors.md3.primary
 
   implicitWidth: 100
   implicitHeight: 100
@@ -19,6 +20,7 @@ StyledRect {
     anchors.centerIn: parent
     font.pixelSize: Config.font.size + 20
 
+    color: root.symbolColor
     text: root.text
   }
 
