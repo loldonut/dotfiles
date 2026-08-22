@@ -23,7 +23,7 @@ Scope {
 
   FolderListModel {
     id: wallpaperModel
-    folder: Config.bar.wallpaperPath
+    folder: Paths.wallpaperPath
     nameFilters: ["*.png", "*.jpg", "*.jpeg", "*.webp"]
     showDirs: false
   }

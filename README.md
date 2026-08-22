@@ -1,5 +1,3 @@
-<img width="5120" height="1440" alt="dotfiles_preview" src="https://github.com/user-attachments/assets/0a9b352b-180d-4e29-8385-b4b24e886c9b" />
-
 # .dotfiles
 
 my dotfiles, managed by using stow
@@ -96,6 +94,8 @@ This will run `matugen` automatically and change the color scheme.
 
 ## Whereis `dotfiles`
 
+- **Config:** `~/.config/dotfiles`
+  - Contains `config.json`, the config file for the Quickshell application
 - **State:** `~/.local/state/dotfiles`
 - **Share:** `~/.local/share/dotfiles`
   - Is used to store things like `colors.json` for neovim.

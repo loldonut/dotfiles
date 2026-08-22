@@ -11,8 +11,11 @@ import qs.services.notifications
 
 ShellRoot {
   Notifications {}
+
   Wallpapers {}
+
   VolumeOverlay {}
+
   Mpris {}
 
   SessionLock {}
