@@ -8,10 +8,6 @@ command = 'awww img "{{ image }}" --transition-type center'
 input_path = '~/.config/matugen/hypr/colors.lua'
 output_path = '~/.config/hypr/hyprland/colors.lua'
 
-[templates.wayle]
-input_path = '~/.config/matugen/wayle/colors.toml'
-output_path = '~/.config/wayle/matugen/colors.toml'
-
 [templates.ghostty]
 input_path = '~/.config/matugen/ghostty/colors.ghostty'
 output_path = '~/.config/ghostty/themes/Matugen'
