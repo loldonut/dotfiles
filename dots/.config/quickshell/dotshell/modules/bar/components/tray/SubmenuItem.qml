@@ -65,8 +65,8 @@ Item {
     cursorShape: Qt.PointingHandCursor
 
     onClicked: {
-      entry.triggered()
-      trayMenu.visible = false
+      entry.triggered();
+      trayMenu.visible = false;
     }
   }
 }

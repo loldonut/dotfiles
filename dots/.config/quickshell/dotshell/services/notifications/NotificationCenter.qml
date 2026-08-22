@@ -60,13 +60,17 @@ LazyLoader {
             font {
               pixelSize: Config.font.size + 6
               weight: Font.Black
-              variableAxes: { "wdth": 150 }
+              variableAxes: {
+                "wdth": 150
+              }
             }
 
             text: "Notifications"
           }
 
-          Item { Layout.fillWidth: true }
+          Item {
+            Layout.fillWidth: true
+          }
 
           StyledText {
             visible: history.count > 0

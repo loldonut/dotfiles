@@ -1,9 +1,9 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
-import Quickshell.Wayland
 import Quickshell.Hyprland
 import Quickshell.Io
+import Quickshell.Wayland
 
 import qs.modules.bar
 import qs.modules.bar.components
@@ -34,7 +34,7 @@ Scope {
       margins {
         top: Config.bar.floating ? 4 : 0
         left: Config.bar.floating ? 6 : 0
-        right: Config.bar.floating ? 6: 0
+        right: Config.bar.floating ? 6 : 0
       }
 
       color: "transparent"

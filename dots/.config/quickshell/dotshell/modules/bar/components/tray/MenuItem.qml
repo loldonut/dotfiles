@@ -80,18 +80,18 @@ Item {
     anchors.fill: parent
     acceptedButtons: Qt.LeftButton | Qt.RightButton
     cursorShape: Qt.PointingHandCursor
-    onClicked: (mouse) => {
+    onClicked: mouse => {
       if (mouse.button === Qt.LeftButton) {
-        modelData.activate()
+        modelData.activate();
       } else {
         if (root.activeMenu) {
-          root.activeMenu.visible = false
-          root.activeMenu = trayMenu
+          root.activeMenu.visible = false;
+          root.activeMenu = trayMenu;
 
-          trayMenu.visible = !trayMenu.visible
+          trayMenu.visible = !trayMenu.visible;
         } else {
-          root.activeMenu = trayMenu
-          trayMenu.visible = !trayMenu.visible
+          root.activeMenu = trayMenu;
+          trayMenu.visible = !trayMenu.visible;
         }
       }
     }

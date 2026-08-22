@@ -28,9 +28,9 @@ StyledBarRect {
       id: batteryText
 
       text: {
-        const batteryIcon = Symbols.getBatteryIcon(root.batteryPercent)
+        const batteryIcon = Symbols.getBatteryIcon(root.batteryPercent);
 
-        return batteryIcon
+        return batteryIcon;
       }
     }
 

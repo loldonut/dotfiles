@@ -18,7 +18,7 @@ StyledText {
     weight: Font.Normal + (Font.DemiBold - Font.Normal) * truncatedFill
     variableAxes: {
       "FILL": truncatedFill,
-      "opsz": size,
+      "opsz": size
     }
   }
 }

@@ -33,8 +33,8 @@ PopupWindow {
     border.width: 2
 
     RowLayout {
-      anchors.centerIn: parent
       id: menuRow
+      anchors.centerIn: parent
       spacing: 8
 
       Repeater {

@@ -9,16 +9,16 @@ Singleton {
   id: root
 
   property var data: ({
-    cloudcover: 0,
-    desc: "",
-    humidity: 0,
-    observationTime: "",
-    pressure: 0,
-    tempC: 0,
-    tempF: 0,
-    uvIndex: 0,
-    windspeedKmph: 0,
-  })
+      cloudcover: 0,
+      desc: "",
+      humidity: 0,
+      observationTime: "",
+      pressure: 0,
+      tempC: 0,
+      tempF: 0,
+      uvIndex: 0,
+      windspeedKmph: 0
+    })
 
   function formatData(data) {
     let weather = {};
@@ -37,7 +37,7 @@ Singleton {
   }
 
   function getData() {
-    wttr.running = true
+    wttr.running = true;
   }
 
   Process {
@@ -45,7 +45,8 @@ Singleton {
     command: ["sh", "-c", `curl -L wttr.in/?format=j1 | jq '{current: .current_condition[0]}'`]
     stdout: StdioCollector {
       onStreamFinished: {
-        if (this.text.length === 0) return;
+        if (this.text.length === 0)
+          return;
         root.formatData(JSON.parse(this.text));
       }
     }

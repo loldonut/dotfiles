@@ -1,11 +1,11 @@
 import QtQuick
-import QtQuick.Layouts
 import QtQuick.Controls
+import QtQuick.Layouts
 import Quickshell
 import Quickshell.Hyprland
+import Quickshell.Services.Pipewire
 import Quickshell.Wayland
 import Quickshell.Widgets
-import Quickshell.Services.Pipewire
 
 import qs.modules.config
 
@@ -78,4 +78,3 @@ PanelWindow {
     }
   }
 }
-

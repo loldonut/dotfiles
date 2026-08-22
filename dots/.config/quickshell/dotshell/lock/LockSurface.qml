@@ -1,7 +1,7 @@
 import QtQuick
+import QtQuick.Controls.Fusion
 import QtQuick.Effects
 import QtQuick.Layouts
-import QtQuick.Controls.Fusion
 import Quickshell.Io
 import Quickshell.Wayland
 
@@ -10,8 +10,8 @@ import qs.modules.config
 import qs.services
 
 StyledRect {
-	id: root
-	required property LockContext context
+  id: root
+  required property LockContext context
 
   Image {
     id: wallpaper
@@ -55,7 +55,9 @@ StyledRect {
         font {
           family: "Roboto Flex"
           weight: Font.Black
-          variableAxes: { "wdth": 150 }
+          variableAxes: {
+            "wdth": 150
+          }
           pixelSize: 80
         }
 
@@ -67,7 +69,9 @@ StyledRect {
       StyledText {
         font {
           bold: true
-          variableAxes: { "wdth": 150 }
+          variableAxes: {
+            "wdth": 150
+          }
         }
 
         renderType: Text.NativeRendering
@@ -98,7 +102,9 @@ StyledRect {
         font {
           family: "Roboto Flex"
           weight: Font.Black
-          variableAxes: { "wdth": 150 }
+          variableAxes: {
+            "wdth": 150
+          }
         }
 
         color: Colors.md3.on_primary_container
@@ -124,10 +130,10 @@ StyledRect {
           placeholderText: "Password"
 
           // Update the text in the context when the text in the box changes.
-          onTextChanged: root.context.currentText = this.text;
+          onTextChanged: root.context.currentText = this.text
 
           // Try to unlock when enter is pressed.
-          onAccepted: root.context.tryUnlock();
+          onAccepted: root.context.tryUnlock()
           background: Rectangle {
             id: textBox
             radius: 8
@@ -183,8 +189,8 @@ StyledRect {
             radius: 8
           }
 
-          enabled: !root.context.unlockInProgress && root.context.currentText !== "";
-          onClicked: root.context.tryUnlock();
+          enabled: !root.context.unlockInProgress && root.context.currentText !== ""
+          onClicked: root.context.tryUnlock()
         }
       }
 
@@ -207,4 +213,3 @@ StyledRect {
   //   }
   // }
 }
-

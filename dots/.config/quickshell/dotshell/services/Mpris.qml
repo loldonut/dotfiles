@@ -1,11 +1,11 @@
+import QtQuick
+import QtQuick.Layouts
 import Quickshell
 import Quickshell.Io
 import Quickshell.Services.Mpris
-import QtQuick
-import QtQuick.Layouts
+import qs.modules.config
 
 import qs.services
-import qs.modules.config
 
 Scope {
   id: root
@@ -30,15 +30,20 @@ Scope {
           player: Mpris.players.values[0]
         }
       }
-
     }
   }
 
   IpcHandler {
     target: "mpris"
 
-    function toggle() { root.showMpris = !root.showMpris }
-    function hide() { root.showMpris = false }
-    function show() { root.showMpris = true }
+    function toggle() {
+      root.showMpris = !root.showMpris;
+    }
+    function hide() {
+      root.showMpris = false;
+    }
+    function show() {
+      root.showMpris = true;
+    }
   }
 }

@@ -4,15 +4,17 @@ import QtQuick.Layouts
 import Quickshell
 import Quickshell.Hyprland
 import Quickshell.Io
-import Quickshell.Wayland
 import Quickshell.Services.Notifications
+import Quickshell.Wayland
 
 import qs.modules.common
 import qs.modules.config
 
 Scope {
   id: root
-  ListModel { id: history }
+  ListModel {
+    id: history
+  }
 
   NotificationServer {
     id: server
@@ -32,7 +34,7 @@ Scope {
         time: Qt.formatDateTime(new Date(), "HH:mm")
       });
 
-      n.tracked = true
+      n.tracked = true;
     }
   }
 
@@ -73,13 +75,12 @@ Scope {
     history: history
   }
 
-
   IpcHandler {
     target: "notifications"
 
     function toggle(): void {
-      ncCenter.active = !ncCenter.active
-      server.centerOpen = !server.centerOpen
+      ncCenter.active = !ncCenter.active;
+      server.centerOpen = !server.centerOpen;
     }
   }
 }

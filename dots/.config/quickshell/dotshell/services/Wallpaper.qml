@@ -7,8 +7,8 @@ Singleton {
   property string imagePath: ""
 
   function setImage(path) {
-    matugenProc.command = ["matugen", "image", path, "--source-color-index", "0"]
-    matugenProc.running = true
+    matugenProc.command = ["matugen", "image", path, "--source-color-index", "0"];
+    matugenProc.running = true;
   }
 
   Process {
@@ -27,4 +27,3 @@ Singleton {
     }
   }
 }
-

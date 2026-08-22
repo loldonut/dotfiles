@@ -18,12 +18,13 @@ Singleton {
   // from https://github.com/end-4/dots-hyprland
   function trimFileProtocol(str) {
     let s = str;
-    if (typeof s !== "string") s = str.toString();
+    if (typeof s !== "string")
+      s = str.toString();
     return s.startsWith("file://") ? s.slice(7) : s;
   }
 
   Component.onCompleted: {
-    Quickshell.execDetached(["mkdir", "-p", `${shellConfigFolder}`])
-    Quickshell.execDetached(["mkdir", "-p", `${trimFileProtocol(wallpaperPath)}`])
+    Quickshell.execDetached(["mkdir", "-p", `${shellConfigFolder}`]);
+    Quickshell.execDetached(["mkdir", "-p", `${trimFileProtocol(wallpaperPath)}`]);
   }
 }

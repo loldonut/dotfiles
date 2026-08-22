@@ -66,7 +66,9 @@ PopupWindow {
         }
       }
 
-      Item { Layout.fillWidth: true }
+      Item {
+        Layout.fillWidth: true
+      }
 
       ColumnLayout {
         StyledText {

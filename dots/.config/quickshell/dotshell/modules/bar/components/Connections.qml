@@ -1,8 +1,8 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
-import Quickshell.Widgets
 import Quickshell.Networking
+import Quickshell.Widgets
 
 import qs.modules.common
 import qs.modules.config
@@ -16,8 +16,8 @@ StyledBarRect {
 
     MaterialSymbol {
       text: {
-        const network = Networking.devices.values.find((n) => n.connected)
-        const isConnected = ((network !== null) && (Networking.devices.values.length > 0))
+        const network = Networking.devices.values.find(n => n.connected);
+        const isConnected = ((network !== null) && (Networking.devices.values.length > 0));
 
         if (!isConnected) {
           return "signal_wifi_off";
@@ -26,9 +26,9 @@ StyledBarRect {
         const iconState = {
           [DeviceType.Wired]: "lan",
           [DeviceType.Wifi]: "wifi"
-        }
+        };
 
-        return iconState[network.type]
+        return iconState[network.type];
       }
     }
 

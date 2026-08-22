@@ -1,10 +1,10 @@
 import QtQuick
-import QtQuick.Layouts
 import QtQuick.Controls
+import QtQuick.Layouts
 import Quickshell
-import Quickshell.Wayland
-import Quickshell.Services.Pipewire
 import Quickshell.Hyprland
+import Quickshell.Services.Pipewire
+import Quickshell.Wayland
 
 import qs.modules.common
 import qs.modules.config
@@ -76,13 +76,13 @@ StyledBarRect {
 
   function increaseVolume() {
     if (root.volume < root.maxVolume) {
-      root.audio.volume += stepSize
+      root.audio.volume += stepSize;
     }
   }
 
   function decreaseVolume() {
     if (root.volume > 0) {
-      root.audio.volume -= stepSize
+      root.audio.volume -= stepSize;
     }
   }
 

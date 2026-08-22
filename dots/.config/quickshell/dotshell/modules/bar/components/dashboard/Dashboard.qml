@@ -30,7 +30,7 @@ PanelWindow {
   Item {
     anchors.fill: parent
     focus: true
-    Keys.onPressed: (event) => {
+    Keys.onPressed: event => {
       if (event.key === Qt.Key_Escape) {
         dashboard.visible = false;
         event.accepted = true;
@@ -62,14 +62,14 @@ PanelWindow {
       DashboardButton {
         text: "lock"
         clickedHandler: () => {
-          ShellState.locked = true
+          ShellState.locked = true;
         }
       }
 
       DashboardButton {
         text: "restart_alt"
         clickedHandler: () => {
-          Hyprland.dispatch("hl.dsp.exec_cmd(\"hyprshutdown -t 'Restarting...' --post-cmd 'reboot'\")")
+          Hyprland.dispatch("hl.dsp.exec_cmd(\"hyprshutdown -t 'Restarting...' --post-cmd 'reboot'\")");
         }
       }
 
@@ -77,7 +77,7 @@ PanelWindow {
         text: "power_settings_new"
         symbolColor: "#F44336"
         clickedHandler: () => {
-          Hyprland.dispatch("hl.dsp.exec_cmd(\"hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'\")")
+          Hyprland.dispatch("hl.dsp.exec_cmd(\"hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'\")");
         }
       }
     }

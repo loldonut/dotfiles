@@ -1,15 +1,17 @@
 import QtQuick
-import QtQuick.Layouts
 import QtQuick.Controls
+import QtQuick.Layouts
 import Quickshell.Services.Pipewire
 
 import qs.modules.common
 import qs.modules.config
 
 ColumnLayout {
-  required property PwNode node;
+  required property PwNode node
 
-  PwObjectTracker { objects: [ node ] }
+  PwObjectTracker {
+    objects: [node]
+  }
 
   RowLayout {
     MaterialSymbol {
@@ -88,7 +90,6 @@ ColumnLayout {
         radius: 2
         color: Colors.md3.on_primary
 
-
         Rectangle {
           width: control.visualPosition * parent.width
           height: parent.height
@@ -132,13 +133,12 @@ ColumnLayout {
         acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
         onWheel: event => {
           if (event.angleDelta.y > 0) {
-            control.increase()
+            control.increase();
           } else {
-            control.decrease()
+            control.decrease();
           }
         }
       }
     }
   }
 }
-

@@ -7,7 +7,7 @@ import qs
 
 Scope {
   LockContext {
-		id: lockContext
+    id: lockContext
     onUnlocked: {
       ShellState.locked = false;
     }
@@ -31,7 +31,7 @@ Scope {
     target: "lock"
 
     function activate(): void {
-      ShellState.locked = true
+      ShellState.locked = true;
     }
   }
 }

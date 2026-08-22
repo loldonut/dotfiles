@@ -22,13 +22,12 @@ Rectangle {
   radius: 8
   color: Colors.md3.surface
   border.width: 2
-  border.color: notif.urgency === NotificationUrgency.Critical
-  ? "#ff0000" : Colors.md3.primary
+  border.color: notif.urgency === NotificationUrgency.Critical ? "#ff0000" : Colors.md3.primary
 
   MouseArea {
     anchors.fill: parent
     onClicked: {
-      card.notif.dismiss()
+      card.notif.dismiss();
     }
   }
 

@@ -1,14 +1,14 @@
-import Quickshell.Services.Mpris
+import Qt5Compat.GraphicalEffects
 import QtQuick
 import QtQuick.Controls
-import Qt5Compat.GraphicalEffects
 import QtQuick.Layouts
+import Quickshell.Services.Mpris
 
 import qs.modules.common
 import qs.modules.config
 
 RowLayout {
-  required property MprisPlayer player;
+  required property MprisPlayer player
 
   spacing: 20
 
@@ -68,16 +68,16 @@ RowLayout {
       font.pixelSize: 22
       text: {
         if (!player?.trackArtist) {
-          return "Unknown Artist"
+          return "Unknown Artist";
         }
 
-        return `${player.trackArtist}`
+        return `${player.trackArtist}`;
       }
     }
 
     Rectangle {
-      visible: player?.position !== null
       id: trackBar
+      visible: player?.position !== null
       implicitHeight: 10
       implicitWidth: 500
       radius: 20
@@ -104,10 +104,10 @@ RowLayout {
     RowLayout {
       spacing: 8
       function formatTime(seconds) {
-          const m = Math.floor(seconds / 60).toString().padStart(2, '0')
-          const s = Math.floor(seconds % 60).toString().padStart(2, '0')
+        const m = Math.floor(seconds / 60).toString().padStart(2, '0');
+        const s = Math.floor(seconds % 60).toString().padStart(2, '0');
 
-          return `${m}:${s}`
+        return `${m}:${s}`;
       }
 
       StyledText {
@@ -192,4 +192,3 @@ RowLayout {
     }
   }
 }
-

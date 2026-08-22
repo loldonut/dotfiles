@@ -16,9 +16,15 @@ Scope {
 
   IpcHandler {
     target: "wallpapers"
-    function toggle() : void { root.openWallpaper = !root.openWallpaper }
-    function show() : void { root.openWallpaper = true }
-    function hide() : void { root.openWallpaper = false }
+    function toggle(): void {
+      root.openWallpaper = !root.openWallpaper;
+    }
+    function show(): void {
+      root.openWallpaper = true;
+    }
+    function hide(): void {
+      root.openWallpaper = false;
+    }
   }
 
   FolderListModel {
@@ -41,10 +47,9 @@ Scope {
       right: true
     }
 
-
     onVisibleChanged: {
       if (visible) {
-        container.forceActiveFocus()
+        container.forceActiveFocus();
       }
     }
 
@@ -73,10 +78,10 @@ Scope {
       border.width: 2
       border.color: Colors.md3.inverse_primary
 
-      Keys.onPressed: (event) => {
+      Keys.onPressed: event => {
         if (event.key === Qt.Key_Escape) {
-          root.openWallpaper = false
-          event.accepted = true
+          root.openWallpaper = false;
+          event.accepted = true;
         }
       }
 
@@ -94,7 +99,9 @@ Scope {
             font {
               pixelSize: Config.font.size + 4
               weight: Font.Black
-              variableAxes: { "wdth": 150 }
+              variableAxes: {
+                "wdth": 150
+              }
             }
             color: Colors.md3.primary
             text: "Wallpapers"
@@ -139,7 +146,9 @@ Scope {
                 source: cardContainer
 
                 Behavior on color {
-                  ColorAnimation { duration: 150 }
+                  ColorAnimation {
+                    duration: 150
+                  }
                 }
               }
 
@@ -155,7 +164,9 @@ Scope {
                 border.color: mouseArea.containsMouse ? Colors.md3.primary : Colors.md3.on_primary
 
                 Behavior on border.color {
-                  ColorAnimation { duration: 300 }
+                  ColorAnimation {
+                    duration: 300
+                  }
                 }
 
                 Image {
@@ -185,4 +196,3 @@ Scope {
     }
   }
 }
-
