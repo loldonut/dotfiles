@@ -4,19 +4,22 @@ import QtQuick
 import Quickshell
 
 Singleton {
+  id: root
+
   property QtObject font: QtObject {
     property string family: "Google Sans Flex"
     property string propo: "JetBrainsMono Nerd Font Propo"
     property string symbols: "Material Symbols Rounded"
-    property int size: 14 * bar.scale
-    property int iconSize: 16 * bar.scale
+    property int size: 14 * root.bar.scale
+    property int iconSize: 16 * root.bar.scale
   }
 
   property QtObject bar: QtObject {
-    property int height: 50
+    property bool floating: true
+    property int height: 50 * root.bar.scale
     property real scale: 1.0
-    property string wallpaperPath: StandardPaths.writableLocation(StandardPaths.HomeLocation) + "/Pictures/Wallpapers"
     property bool shortTimeFormat: true
+    property string wallpaperPath: StandardPaths.writableLocation(StandardPaths.HomeLocation) + "/Pictures/Wallpapers"
   }
 
   property QtObject notifications: QtObject {

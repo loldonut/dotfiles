@@ -32,9 +32,9 @@ Scope {
       }
 
       margins {
-        top: 4
-        left: 6
-        right: 6
+        top: Config.bar.floating ? 4 : 0
+        left: Config.bar.floating ? 6 : 0
+        right: Config.bar.floating ? 6: 0
       }
 
       color: "transparent"
@@ -50,7 +50,7 @@ Scope {
 
         color: Colors.md3.on_secondary_fixed
 
-        radius: 4
+        radius: Config.bar.floating ? 4 : 0
 
         RowLayout {
           anchors {
