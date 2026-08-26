@@ -1,7 +1,7 @@
 //@ pragma UseQApplication
 import QtQuick
 import Quickshell
-import Quickshell.Io
+import Quickshell.Hyprland
 
 import qs.lock
 import qs.modules.bar
@@ -10,8 +10,6 @@ import qs.services
 import qs.services.notifications
 
 ShellRoot {
-  Notifications {}
-
   Wallpapers {}
 
   VolumeOverlay {}
@@ -21,4 +19,12 @@ ShellRoot {
   SessionLock {}
 
   Bar {}
+
+  GlobalShortcut {
+    name: "notifCenter"
+
+    onPressed: {
+      Notifications.toggleNotifCenter()
+    }
+  }
 }

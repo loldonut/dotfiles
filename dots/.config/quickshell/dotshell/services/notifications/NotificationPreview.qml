@@ -7,8 +7,11 @@ import qs.modules.common
 import qs.modules.config
 
 Rectangle {
+  id: root
+
   Layout.fillWidth: true
   Layout.preferredHeight: layout.implicitHeight + 20
+
   radius: 8
   color: Colors.md3.surface
   border.width: 2
@@ -33,17 +36,32 @@ Rectangle {
       Layout.fillWidth: true
       spacing: 2
 
-      StyledText {
-        Layout.fillWidth: true
+      RowLayout {
+        StyledText {
+          Layout.fillWidth: true
 
-        font {
-          pixelSize: Config.font.size + 2
-          bold: true
+          font {
+            pixelSize: Config.font.size + 2
+            bold: true
+          }
+
+          color: Colors.md3.primary
+          text: model.summary
+          elide: Text.ElideRight
         }
 
-        color: Colors.md3.primary
-        text: model.summary
-        elide: Text.ElideRight
+        Item { Layout.fillWidth: true }
+
+        MaterialSymbol {
+          size: 22
+          text: "close"
+
+          MouseArea {
+            anchors.fill: parent
+            cursorShape: Qt.PointingHandCursor
+            onClicked: Notifications.removeById(index);
+          }
+        }
       }
 
       StyledText {

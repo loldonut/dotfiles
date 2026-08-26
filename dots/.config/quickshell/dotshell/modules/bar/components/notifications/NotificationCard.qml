@@ -1,18 +1,19 @@
 import QtQuick
 import QtQuick.Layouts
+import Quickshell
 import Quickshell.Services.Notifications
 
 import qs.modules.common
 import qs.modules.config
 
 Rectangle {
-  id: root
+  id: card
   required property var notif
 
   Timer {
     running: true
-    interval: root.notif.urgency !== NotificationUrgency.Critical ? Config.notifications.timeout : Config.notifications.criticalTimeout
-    onTriggered: root.notif.dismiss()
+    interval: card.notif.urgency !== NotificationUrgency.Critical ? Config.notifications.timeout : Config.notifications.criticalTimeout
+    onTriggered: card.notif.dismiss()
   }
 
   Layout.fillWidth: true
@@ -26,7 +27,7 @@ Rectangle {
   MouseArea {
     anchors.fill: parent
     onClicked: {
-      root.notif.dismiss();
+      card.notif.dismiss();
     }
   }
 
@@ -43,7 +44,7 @@ Rectangle {
         Layout.alignment: Qt.AlignTop
         fillMode: Image.PreserveAspectFit
         visible: source.toString() !== ""
-        source: root.notif.image || root.notif.appIcon || ""
+        source: card.notif.image || card.notif.appIcon || ""
       }
 
       ColumnLayout {
@@ -52,7 +53,7 @@ Rectangle {
 
         StyledText {
           Layout.fillWidth: true
-          text: root.notif.summary
+          text: card.notif.summary
           font {
             family: Config.font.family
             pixelSize: Config.font.size + 2
@@ -64,7 +65,7 @@ Rectangle {
         StyledText {
           Layout.fillWidth: true
           visible: text !== ""
-          text: root.notif.body
+          text: card.notif.body
           font {
             pixelSize: Config.font.size + 2
           }

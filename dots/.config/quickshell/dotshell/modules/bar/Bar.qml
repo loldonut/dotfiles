@@ -1,17 +1,14 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
-import Quickshell.Hyprland
-import Quickshell.Io
-import Quickshell.Wayland
 
 import qs.modules.bar
 import qs.modules.bar.components
 import qs.modules.bar.components.dashboard
+import qs.modules.bar.components.notifications
 import qs.modules.bar.components.tray
 import qs.modules.bar.components.volume
 import qs.modules.bar.components.weather
-import qs.modules.common
 import qs.modules.config
 
 Scope {
@@ -39,6 +36,8 @@ Scope {
 
       color: "transparent"
       implicitHeight: Config.bar.height + 2
+
+      NotificationPopup {}
 
       Rectangle {
         anchors {

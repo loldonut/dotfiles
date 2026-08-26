@@ -19,7 +19,7 @@ bindShiftMod("F1", toggleAnimations,                      { description = "Toggl
 
 -- Quickshell IPC Binds
 bindMod("P",      exec_cmd(qsIpc .. "mpris toggle"),         { description = "Open Mpris Player"        })
-bindMod("N",      exec_cmd(qsIpc .. "notifications toggle"), { description = "Open Notification Center" })
+bindMod("N",      hl.dsp.global("quickshell:notifCenter"),   { description = "Open Notification Center" })
 bindShiftMod("W", exec_cmd(qsIpc .. "wallpapers toggle"),    { description = "Open Wallpaper Picker"    })
 bindShiftMod("M", exec_cmd(qsIpc .. "lock activate"),        { description = "Locks the session" })
 

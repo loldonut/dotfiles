@@ -1,26 +1,31 @@
+pragma Singleton
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
-import Quickshell.Io
 import Quickshell.Services.Notifications
 
 import qs.modules.common
 import qs.modules.config
 
-Scope {
+Singleton {
   id: root
+
   ListModel {
     id: history
   }
 
+  property alias history: history
+  property alias server: server
+
   NotificationServer {
     id: server
-    property bool centerOpen: false
+
     actionsSupported: true
     bodySupported: true
     imageSupported: true
 
     onNotification: n => {
+      n.tracked = true;
       history.insert(0, {
         summary: n.summary,
         body: n.body,
@@ -30,8 +35,6 @@ Scope {
         urgency: n.urgency,
         time: Qt.formatDateTime(new Date(), "HH:mm")
       });
-
-      n.tracked = true;
     }
   }
 
@@ -45,49 +48,16 @@ Scope {
     }
   }
 
-  FocusablePanelWindow {
-    anchors {
-      top: true
-      right: true
-    }
-
-    margins {
-      top: Config.bar.height + 14
-      right: 8
-    }
-
-    implicitWidth: 380
-    implicitHeight: Math.max(1, column.implicitHeight)
-    color: "transparent"
-
-    exclusionMode: ExclusionMode.Ignore
-
-    ColumnLayout {
-      id: column
-      width: parent.width
-      spacing: 10
-
-      Repeater {
-        model: server.trackedNotifications
-        delegate: NotificationCard {
-          required property var modelData
-          notif: modelData
-        }
-      }
-    }
-  }
-
   NotificationCenter {
     id: ncCenter
     history: history
   }
 
-  IpcHandler {
-    target: "notifications"
+  function removeById(id) {
+    history.remove(id);
+  }
 
-    function toggle(): void {
-      ncCenter.active = !ncCenter.active;
-      server.centerOpen = !server.centerOpen;
-    }
+  function toggleNotifCenter() {
+    ncCenter.active = !ncCenter.active;
   }
 }
