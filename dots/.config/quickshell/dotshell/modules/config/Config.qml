@@ -17,6 +17,7 @@ Singleton {
     path: Paths.shellConfig
     watchChanges: true
     onFileChanged: reload()
+    onAdapterChanged: writeAdapter()
     onLoadFailed: error => {
       if (error === FileViewError.FileNotFound) {
         writeAdapter();
@@ -42,6 +43,8 @@ Singleton {
   component Notifications: JsonObject {
     property int criticalTimeout: 15000
     property int timeout: 7000
+    property int historyTimeout: 600000
+    property bool clearNotifications: true
   }
 
   component FontOptions: JsonObject {
