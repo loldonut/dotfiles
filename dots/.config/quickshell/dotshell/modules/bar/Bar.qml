@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 
+import qs.modules.bar
 import qs.modules.bar.dashboard
 import qs.modules.bar.notifications
 import qs.modules.bar.tray
