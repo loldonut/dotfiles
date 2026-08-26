@@ -2,13 +2,11 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 
-import qs.modules.bar
-import qs.modules.bar.components
-import qs.modules.bar.components.dashboard
-import qs.modules.bar.components.notifications
-import qs.modules.bar.components.tray
-import qs.modules.bar.components.volume
-import qs.modules.bar.components.weather
+import qs.modules.bar.dashboard
+import qs.modules.bar.notifications
+import qs.modules.bar.tray
+import qs.modules.bar.volume
+import qs.modules.bar.weather
 import qs.modules.config
 
 Scope {
