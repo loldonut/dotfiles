@@ -10,8 +10,8 @@ StyledRect {
   property var clickedHandler
   property color symbolColor: Colors.md3.primary
 
-  implicitWidth: 100
-  implicitHeight: 100
+  implicitWidth: 50
+  implicitHeight: 50
 
   radius: 16
   color: Colors.md3.on_primary

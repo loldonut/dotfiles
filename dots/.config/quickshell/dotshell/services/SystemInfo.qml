@@ -1,4 +1,5 @@
 pragma Singleton
+import QtQuick
 import Quickshell
 import Quickshell.Io
 
@@ -7,6 +8,24 @@ import Quickshell.Io
 Singleton {
   id: root
   property string user: ""
+  property string uptime: ""
+
+  Timer {
+    interval: 5000
+    repeat: true
+    onTriggered: uptimeProc.running = true
+  }
+
+  Process {
+    id: uptimeProc
+    running: true
+    command: ["sh", "-c", "uptime --pretty"]
+    stdout: SplitParser {
+      onRead: data => {
+        root.uptime = data.slice(3);
+      }
+    }
+  }
 
   Process {
     running: true
