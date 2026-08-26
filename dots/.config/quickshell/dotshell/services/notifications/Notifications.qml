@@ -1,11 +1,8 @@
 import QtQuick
-import QtQuick.Controls
 import QtQuick.Layouts
 import Quickshell
-import Quickshell.Hyprland
 import Quickshell.Io
 import Quickshell.Services.Notifications
-import Quickshell.Wayland
 
 import qs.modules.common
 import qs.modules.config
@@ -38,7 +35,17 @@ Scope {
     }
   }
 
-  PanelWindow {
+  Timer {
+    interval: Config.notifications.historyTimeout
+    running: Config.notifications.clearNotifications
+    repeat: true
+    onTriggered: {
+      if (history.count > 0)
+        history.remove(history.count - 1);
+    }
+  }
+
+  FocusablePanelWindow {
     anchors {
       top: true
       right: true
