@@ -50,7 +50,9 @@ Rectangle {
           elide: Text.ElideRight
         }
 
-        Item { Layout.fillWidth: true }
+        Item {
+          Layout.fillWidth: true
+        }
 
         MaterialSymbol {
           size: 22
@@ -59,7 +61,7 @@ Rectangle {
           MouseArea {
             anchors.fill: parent
             cursorShape: Qt.PointingHandCursor
-            onClicked: Notifications.removeById(index);
+            onClicked: Notifications.removeById(index)
           }
         }
       }

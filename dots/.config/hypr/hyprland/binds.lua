@@ -19,9 +19,9 @@ bindShiftMod("F1", toggleAnimations,                      { description = "Toggl
 
 -- Quickshell IPC Binds
 bindMod("P",      exec_cmd(qsIpc .. "mpris toggle"),         { description = "Open Mpris Player"        })
-bindMod("N",      hl.dsp.global("quickshell:notifCenter"),   { description = "Open Notification Center" })
-bindShiftMod("W", exec_cmd(qsIpc .. "wallpapers toggle"),    { description = "Open Wallpaper Picker"    })
-bindShiftMod("M", exec_cmd(qsIpc .. "lock activate"),        { description = "Locks the session" })
+bindMod("N",      global_dsp("quickshell:notifCenter"),      { description = "Open Notification Center" })
+bindShiftMod("W", global_dsp("quickshell:wallpapers"),       { description = "Open Wallpaper Picker"    })
+bindShiftMod("M", global_dsp("quickshell:lock"),             { description = "Locks the session"        })
 
 -- Screenshotting
 bind(        "PRINT", exec_cmd("grim - | swappy -f -"),               { description = "Screenshot the whole screen" })

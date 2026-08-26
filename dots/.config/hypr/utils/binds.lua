@@ -21,3 +21,4 @@ function bindShiftMod(key, action, flags)
 end
 
 exec_cmd = hl.dsp.exec_cmd
+global_dsp = hl.dsp.global

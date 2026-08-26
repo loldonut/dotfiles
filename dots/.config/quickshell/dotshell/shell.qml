@@ -24,7 +24,7 @@ ShellRoot {
     name: "notifCenter"
 
     onPressed: {
-      Notifications.toggleNotifCenter()
+      Notifications.toggleNotifCenter();
     }
   }
 }

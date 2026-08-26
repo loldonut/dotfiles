@@ -4,6 +4,7 @@ import QtQml
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
+import Quickshell.Hyprland
 import Quickshell.Io
 
 import qs.modules.common
@@ -14,10 +15,21 @@ Scope {
   id: root
   property bool openWallpaper: false
 
+  function toggleWallpaper() {
+    root.openWallpaper = !root.openWallpaper;
+  }
+
+  GlobalShortcut {
+    name: "wallpapers"
+
+    onPressed: root.toggleWallpaper()
+  }
+
   IpcHandler {
     target: "wallpapers"
+
     function toggle(): void {
-      root.openWallpaper = !root.openWallpaper;
+      root.toggleWallpaper();
     }
     function show(): void {
       root.openWallpaper = true;

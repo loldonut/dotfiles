@@ -1,6 +1,6 @@
 import QtQuick
 import Quickshell
-import Quickshell.Io
+import Quickshell.Hyprland
 import Quickshell.Wayland
 
 import qs
@@ -27,10 +27,10 @@ Scope {
     }
   }
 
-  IpcHandler {
-    target: "lock"
+  GlobalShortcut {
+    name: "lock"
 
-    function activate(): void {
+    onPressed: {
       ShellState.locked = true;
     }
   }
