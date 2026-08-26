@@ -107,25 +107,30 @@ local function windowRuleFloat(title, pattern, extraFields)
     hl.window_rule(rule)
 end
 
+-- stylua: ignore start
 local floatList = {
-    { "initial_title:Open File", patterns.startsWith },
-    { "title:Select a File", patterns.startsWith },
-    { "title:Choose a wallpaper", patterns.startsWith },
-    { "title:Open Folder", patterns.startsWith },
-    { "class:waypaper", patterns.startsWith },
-    { "title:Pick game", patterns.startsWith },
-    { "title:Choose Start Directory", patterns.startsWith },
-    { "title:wants to save", patterns.endsWith },
-    { "title:wants to open", patterns.endsWith },
-    { "class:dialog", patterns.between },
-    { "title:dialog", patterns.between },
-    { "class:libresplit", patterns.has },
-    { "class:nm-connection-editor", patterns.has },
-    { "class:steam", patterns.has },
-    { "class:org.kde.dolphin", patterns.has },
-    { "class:org.kde.gwenview", patterns.has },
-    { "class:[Xx]dg-desktop-portal-gtk", patterns.has },
-    { "class:net.davidotek.pupgui2", patterns.has },
+    { "initial_title:Open File",         patterns.startsWith },
+    { "title:Select a File",             patterns.startsWith },
+    { "title:Choose a wallpaper",        patterns.startsWith },
+    { "title:Open Folder",               patterns.startsWith },
+    { "class:waypaper",                  patterns.startsWith },
+    { "title:Pick game",                 patterns.startsWith },
+    { "title:Choose Start Directory",    patterns.startsWith },
+    { "title:wants to save",             patterns.endsWith   },
+    { "title:wants to open",             patterns.endsWith   },
+    { "class:dialog",                    patterns.between    },
+    { "title:dialog",                    patterns.between    },
+    { "class:libresplit",                patterns.has        },
+    { "class:nm-connection-editor",      patterns.has        },
+    { "class:steam",                     patterns.has        },
+    { "class:org.kde.gwenview",          patterns.has        },
+    { "class:[Xx]dg-desktop-portal-gtk", patterns.has        },
+    { "class:net.davidotek.pupgui2",     patterns.has        },
+    {
+        "class:org.kde.dolphin",
+        patterns.has,
+        { size = { "(monitor_w*.50)", "(monitor_h*.65)" } },
+    },
     {
         "title:Mpris",
         patterns.has,
@@ -142,6 +147,7 @@ local floatList = {
         { size = { "(monitor_w*.55)", "(monitor_h*.80)" } },
     },
 }
+-- stylia: ignore end
 
 for _, value in pairs(floatList) do
     windowRuleFloat(value[1], value[2], value[3])
