@@ -10,7 +10,7 @@ Singleton {
   id: root
 
   property alias bar: jsonAdapter.bar
-  property alias notifications: jsonAdapter.bar
+  property alias notifications: jsonAdapter.notifications
   property alias font: jsonAdapter.font
 
   FileView {
