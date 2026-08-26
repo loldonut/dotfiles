@@ -147,7 +147,7 @@ local floatList = {
         { size = { "(monitor_w*.55)", "(monitor_h*.80)" } },
     },
 }
--- stylia: ignore end
+-- stylua: ignore end
 
 for _, value in pairs(floatList) do
     windowRuleFloat(value[1], value[2], value[3])
