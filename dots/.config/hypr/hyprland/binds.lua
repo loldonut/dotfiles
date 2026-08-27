@@ -80,8 +80,8 @@ bind(
     { locked = true, repeating = true }
 )
 -- stylua: ignore start
-bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
-bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
+bind("XF86MonBrightnessUp",   global_dsp("quickshell:brightnessUp"),   { locked = true, repeating = true })
+bind("XF86MonBrightnessDown", global_dsp("quickshell:brightnessDown"), { locked = true, repeating = true })
 
 -- Requires playerctl
 bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = true })

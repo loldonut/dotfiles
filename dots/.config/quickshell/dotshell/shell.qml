@@ -13,6 +13,7 @@ ShellRoot {
   Wallpapers {}
 
   VolumeOverlay {}
+  BrightnessOverlay {}
 
   Mpris {}
 
@@ -26,5 +27,17 @@ ShellRoot {
     onPressed: {
       Notifications.toggleNotifCenter();
     }
+  }
+
+  GlobalShortcut {
+    name: "brightnessUp"
+
+    onPressed: Brightness.increase()
+  }
+
+  GlobalShortcut {
+    name: "brightnessDown"
+
+    onPressed: Brightness.decrease()
   }
 }

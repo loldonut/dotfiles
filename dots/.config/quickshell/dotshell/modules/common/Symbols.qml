@@ -30,4 +30,22 @@ Singleton {
 
     return percentage > 49 ? "volume_up" : "volume_down";
   }
+
+  function getBrightnessOSDIcon(percentage: int): string {
+    if (percentage >= 93)
+      return "brightness_7";
+    if (percentage >= 78)
+      return "brightness_6";
+    if (percentage >= 64)
+      return "brightness_5";
+    if (percentage >= 50)
+      return "brightness_4";
+    if (percentage >= 35)
+      return "brightness_3";
+    if (percentage >= 21)
+      return "brightness_2";
+    if (percentage >= 7)
+      return "brightness_1";
+    return "brightness_empty";
+  }
 }

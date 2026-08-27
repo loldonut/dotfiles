@@ -1,35 +1,24 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
-import Quickshell.Services.Pipewire
 
 import qs.modules.common
 import qs.modules.config
+import qs.services
 
 Scope {
   id: root
 
-  property PwNodeAudio audio: Pipewire.defaultAudioSink.audio
-
-  PwNodeLinkTracker {
-    node: Pipewire.defaultAudioSink
-  }
+  property bool shouldShowOsd: false
 
   Connections {
-    target: root.audio
+    target: Brightness
 
-    function onVolumeChanged() {
-      root.shouldShowOsd = true;
-      hideTimer.restart();
-    }
-
-    function onMutedChanged() {
+    function onBrightnessChanged() {
       root.shouldShowOsd = true;
       hideTimer.restart();
     }
   }
-
-  property bool shouldShowOsd: false
 
   Timer {
     id: hideTimer
@@ -67,7 +56,8 @@ Scope {
           }
 
           MaterialSymbol {
-            text: (audio.volume !== 0 && !audio.muted) ? "volume_up" : "volume_mute"
+            size: 22
+            text: Symbols.getBrightnessOSDIcon(Brightness.brightnessPercent)
           }
 
           Rectangle {
@@ -86,7 +76,7 @@ Scope {
 
               color: Colors.md3.primary
 
-              implicitWidth: parent.width * (!audio.muted ? audio.volume : 0)
+              implicitWidth: parent.width * Brightness.brightnessValue
               radius: parent.radius
 
               Behavior on implicitWidth {
