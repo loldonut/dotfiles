@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Controls
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Services.Pipewire
@@ -45,13 +46,14 @@ Scope {
       margins.bottom: screen.height / 5
       exclusiveZone: 0
 
-      implicitWidth: 400
+      implicitWidth: 350
       implicitHeight: 50
       color: "transparent"
 
       mask: Region {}
 
       Rectangle {
+        Layout.fillWidth: true
         anchors.fill: parent
         radius: 10
         color: Colors.md3.surface
@@ -67,34 +69,39 @@ Scope {
           }
 
           MaterialSymbol {
-            text: (audio.volume !== 0 && !audio.muted) ? "volume_up" : "volume_mute"
+            text: (root.audio.volume !== 0 && !root.audio.muted) ? "volume_up" : "volume_mute"
           }
 
-          Rectangle {
-            Layout.fillWidth: true
+          ProgressBar {
+            id: control
+            value: root.audio.volume
+            padding: 2
 
-            implicitHeight: 10
-            radius: 20
-            color: Colors.md3.on_primary
+            background: Rectangle {
+              implicitWidth: 300
+              implicitHeight: 10
+              color: Colors.md3.on_primary
+              radius: width / 2
+            }
 
-            StyledRect {
-              anchors {
-                left: parent.left
-                top: parent.top
-                bottom: parent.bottom
-              }
+            contentItem: Item {
+              implicitWidth: 200
+              implicitHeight: 10
 
-              color: Colors.md3.primary
+              Rectangle {
+                width: (!audio.muted ? control.visualPosition : 0) * parent.width
+                height: parent.height
+                radius: width / 2
+                color: Colors.md3.primary
+                visible: !control.indeterminate
 
-              implicitWidth: parent.width * (!audio.muted ? audio.volume : 0)
-              radius: parent.radius
-
-              Behavior on implicitWidth {
-                NumberAnimation {
-                  easing {
-                    type: Easing.OutQuart
-                    amplitude: 1
-                    period: 0.5
+                Behavior on width {
+                  NumberAnimation {
+                    easing {
+                      type: Easing.OutQuart
+                      amplitude: 1
+                      period: 0.5
+                    }
                   }
                 }
               }
