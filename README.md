@@ -17,6 +17,7 @@ my dotfiles, managed by using stow
 
 ## Table of Contents
 
+- [Issues](#issues)
 - [Clone Repository](#clone-repository)
 - [Install](#install)
   - [Required Packages](#required-packages)
@@ -24,6 +25,14 @@ my dotfiles, managed by using stow
 - [Whereis](#whereis-dotfiles)
 - [Quickshell](#quickshell)
 - [Hyprland Configuration](#hyprland-configuration)
+
+## Issues
+
+- Quickshell config does not account for multiple monitors
+- Lacks Wifi and Bluetooth connection widget/panel
+- No `power-profiles-daemon` manager
+- Notification history is not stored when the application exits
+- Quickshell does not reload automatically when launched with `qs -c dotshell`
 
 ## Clone repository
 
