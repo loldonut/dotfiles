@@ -1,13 +1,9 @@
 import QtQuick
-import QtQuick.Controls
 import QtQuick.Layouts
 import Quickshell
-import Quickshell.Hyprland
 import Quickshell.Services.Pipewire
-import Quickshell.Wayland
 
 import qs.modules.common
-import qs.modules.config
 
 StyledBarRect {
   id: root
@@ -40,7 +36,7 @@ StyledBarRect {
       id: volWidget
       Layout.alignment: Qt.AlignVCenter
 
-      text: `${volume}%`
+      text: audio.muted ? `0%` : `${volume}%`
     }
   }
 
@@ -102,6 +98,16 @@ StyledBarRect {
         } else {
           root.decreaseVolume();
         }
+      }
+    }
+  }
+
+  Behavior on implicitWidth {
+    NumberAnimation {
+      easing {
+        type: Easing.OutQuart
+        amplitude: 1
+        period: 0.5
       }
     }
   }

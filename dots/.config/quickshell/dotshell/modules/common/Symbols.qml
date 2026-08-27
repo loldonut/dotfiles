@@ -25,7 +25,7 @@ Singleton {
 
   function getVolumeIcon(percentage: int, muted: bool): string {
     if (muted) {
-      return "volume_mute";
+      return "volume_off";
     }
 
     return percentage > 49 ? "volume_up" : "volume_down";
