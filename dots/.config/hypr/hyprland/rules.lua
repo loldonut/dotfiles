@@ -43,6 +43,13 @@ hl.layer_rule({
     ignore_alpha = 0.5,
 })
 
+hl.window_rule({
+    match = {
+        class = "Waydroid",
+    },
+    fullscreen = true,
+})
+
 -- Specific workspace for specific apps --
 
 local browserWorkspace = "2"
