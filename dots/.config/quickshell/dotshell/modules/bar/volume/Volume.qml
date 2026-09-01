@@ -1,3 +1,4 @@
+pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
@@ -29,45 +30,22 @@ StyledBarRect {
     anchors.centerIn: parent
 
     MaterialSymbol {
-      text: Symbols.getVolumeIcon(volume, audio?.muted)
+      text: Symbols.getVolumeIcon(root.volume, root.audio?.muted)
     }
 
     StyledText {
       id: volWidget
       Layout.alignment: Qt.AlignVCenter
 
-      text: audio.muted ? `0%` : `${volume}%`
+      text: root.audio.muted ? `0%` : `${root.volume}%`
     }
   }
 
-  PanelWindow {
-    id: volPopup
-    anchors {
-      top: parent
-      right: true
-    }
+  LazyLoader {
+    id: volSliderLoader
+    loading: true
 
-    margins {
-      top: 38
-      right: 310
-    }
-
-    implicitHeight: 50
-    implicitWidth: 250
-
-    visible: volWidget.showSlider
-
-    exclusionMode: ExclusionMode.Ignore
-
-    color: "transparent"
-
-    RowLayout {
-      anchors.fill: parent
-
-      VolumeSlider {
-        id: volSlider
-      }
-    }
+    VolumeSlider {}
   }
 
   function increaseVolume() {
@@ -88,7 +66,9 @@ StyledBarRect {
     hoverEnabled: true
     cursorShape: Qt.PointingHandCursor
 
-    onClicked: volSlider.visible = !volSlider.visible
+    onClicked: {
+      volSliderLoader.item.visible = !volSliderLoader.item.visible;
+    }
 
     WheelHandler {
       acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad

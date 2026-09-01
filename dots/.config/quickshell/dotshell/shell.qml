@@ -15,8 +15,6 @@ ShellRoot {
   VolumeOverlay {}
   BrightnessOverlay {}
 
-  Mpris {}
-
   SessionLock {}
 
   Bar {}

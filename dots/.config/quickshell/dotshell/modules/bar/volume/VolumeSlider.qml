@@ -2,21 +2,21 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import Quickshell
-import Quickshell.Hyprland
+import Quickshell.Services.Mpris
 import Quickshell.Services.Pipewire
-import Quickshell.Wayland
-import Quickshell.Widgets
 
+import qs.modules.common
 import qs.modules.config
+import qs.services
 
-PanelWindow {
+FocusablePanelWindow {
   id: volMenu
 
   visible: false
 
   color: "transparent"
 
-  implicitWidth: 600
+  implicitWidth: MprisController.activePlayer !== null ? 800 : 550
   implicitHeight: 300
 
   anchors {
@@ -29,12 +29,6 @@ PanelWindow {
     right: 10
   }
 
-  HyprlandFocusGrab {
-    active: volMenu.visible
-    windows: [volMenu]
-    onCleared: volMenu.visible = false
-  }
-
   Rectangle {
     anchors.fill: parent
     radius: 10
@@ -43,35 +37,80 @@ PanelWindow {
     border.color: Colors.md3.inverse_primary
     border.width: 2
 
-    ScrollView {
+    RowLayout {
       anchors.fill: parent
-      contentWidth: availableWidth
+      anchors.margins: 10
 
-      ColumnLayout {
-        anchors.fill: parent
-        anchors.margins: 10
+      ScrollView {
+        visible: MprisController.activePlayer !== null
+        Layout.fillHeight: true
+        Layout.preferredWidth: 300
+        Layout.margins: 10
+        contentWidth: availableWidth
 
-        PwNodeLinkTracker {
-          id: linkTracker
-          node: Pipewire.defaultAudioSink
+        ColumnLayout {
+          Repeater {
+            model: Mpris.players
+
+            MprisEntry {
+              id: mprisEntry
+              required property MprisPlayer modelData
+              implicitWidth: 300
+              player: modelData
+
+              FrameAnimation {
+                running: (mprisEntry.player.playbackState === MprisPlaybackState.Playing) && volMenu.visible
+                onTriggered: mprisEntry.player.positionChanged()
+              }
+            }
+          }
         }
+      }
 
-        MixerEntry {
-          node: Pipewire.defaultAudioSink
-        }
+      Rectangle {
+        visible: MprisController.activePlayer !== null
+        Layout.fillHeight: true
+        Layout.preferredWidth: 1
+        Layout.leftMargin: -4
+        Layout.rightMargin: -4
+        Layout.topMargin: 12
+        Layout.bottomMargin: 12
+        opacity: 0.2
+        color: Colors.md3.primary
+      }
 
-        Rectangle {
-          Layout.fillWidth: true
-          color: Colors.md3.on_primary
-          implicitHeight: 1
-        }
+      ScrollView {
+        Layout.fillHeight: true
+        Layout.fillWidth: true
+        Layout.maximumWidth: 550
+        contentWidth: availableWidth
 
-        Repeater {
-          model: linkTracker.linkGroups
+        ColumnLayout {
+          anchors.fill: parent
+          anchors.margins: 10
+
+          PwNodeLinkTracker {
+            id: linkTracker
+            node: Pipewire.defaultAudioSink
+          }
 
           MixerEntry {
-            required property PwLinkGroup modelData
-            node: modelData.source
+            node: Pipewire.defaultAudioSink
+          }
+
+          Rectangle {
+            Layout.fillWidth: true
+            color: Colors.md3.on_primary
+            implicitHeight: 1
+          }
+
+          Repeater {
+            model: linkTracker.linkGroups
+
+            MixerEntry {
+              required property PwLinkGroup modelData
+              node: modelData.source
+            }
           }
         }
       }
