@@ -38,6 +38,7 @@ Singleton {
     property int height: 50 * root.bar.scale
     property real scale: 1.0
     property bool shortTimeFormat: true
+    property bool useUSCS: false
   }
 
   component Notifications: JsonObject {

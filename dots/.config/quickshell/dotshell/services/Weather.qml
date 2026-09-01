@@ -3,10 +3,18 @@ import QtQuick
 import Quickshell
 import Quickshell.Io
 
+import qs.modules.config
+
 // from https://github.com/end-4/dots-hyprland
 
 Singleton {
   id: root
+
+  readonly property bool useUSCS: Config.bar.useUSCS
+
+  onUseUSCSChanged: {
+    root.getData();
+  }
 
   property var data: ({
       cloudcover: 0,
@@ -14,8 +22,7 @@ Singleton {
       humidity: 0,
       observationTime: "",
       pressure: 0,
-      tempC: 0,
-      tempF: 0,
+      temp: 0,
       uvIndex: 0,
       windspeedKmph: 0
     })
@@ -23,15 +30,29 @@ Singleton {
   function formatData(data) {
     let weather = {};
 
-    weather.cloudcover = data?.current?.cloudcover || 0;
     weather.desc = data?.current?.weatherDesc[0]?.value || "";
     weather.humidity = data?.current?.humidity || 0;
     weather.observationTime = data?.current?.observation_time || "";
-    weather.pressure = data?.current?.pressure || 0;
-    weather.tempC = data?.current?.temp_C || 0;
-    weather.tempF = data?.current?.temp_F || 0;
     weather.uvIndex = data?.current?.uvIndex || 0;
-    weather.windspeedKmph = data?.current?.windspeedKmph || 0;
+
+    weather.temp = "";
+
+    if (root.useUSCS) {
+      weather.wind = (data?.current?.windspeedMiles || 0) + " mph";
+      weather.precip = (data?.current?.precipInches || 0) + " in";
+      weather.visib = (data?.current?.visibilityMiles || 0) + " m";
+      weather.press = (data?.current?.pressureInches || 0) + " psi";
+      weather.temp += (data?.current?.temp_F || 0);
+      weather.temp += "°F";
+      weather.tempFeelsLike += "°F";
+    } else {
+      weather.wind = (data?.current?.windspeedKmph || 0) + " km/h";
+      weather.precip = (data?.current?.precipMM || 0) + " mm";
+      weather.visib = (data?.current?.visibility || 0) + " km";
+      weather.press = (data?.current?.pressure || 0) + " hPa";
+      weather.temp += (data?.current?.temp_C || 0);
+      weather.temp += "°C";
+    }
 
     root.data = weather;
   }

@@ -1,10 +1,6 @@
 import QtQuick
-import QtQuick.Layouts
-import Quickshell
-import Quickshell.Io
 
 import qs.modules.common
-import qs.modules.config
 import qs.services
 
 Item {
@@ -18,7 +14,7 @@ Item {
     visible: true
     anchors.centerIn: parent
 
-    text: `${Weather.data?.tempC} °C`
+    text: Weather.data?.temp
 
     MouseArea {
       anchors.fill: parent

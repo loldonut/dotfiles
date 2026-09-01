@@ -46,7 +46,7 @@ PopupWindow {
 
       StyledText {
         font.pixelSize: Config.font.size + 24
-        text: `${Weather.data?.tempC} °C`
+        text: Weather.data?.temp
       }
 
       ColumnLayout {
@@ -56,12 +56,12 @@ PopupWindow {
         }
 
         StyledText {
-          text: `Wind: ${Weather.data?.windspeedKmph} km/h`
+          text: `Wind: ${Weather.data?.wind}`
           opacity: 0.8
         }
 
         StyledText {
-          text: `Pressure: ${Weather.data?.pressure}hPa`
+          text: `Pressure: ${Weather.data?.press}`
           opacity: 0.8
         }
       }
