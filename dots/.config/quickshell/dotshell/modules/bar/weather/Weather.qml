@@ -18,7 +18,7 @@ Item {
     visible: true
     anchors.centerIn: parent
 
-    text: `${Weather.data?.tempC}°C`
+    text: `${Weather.data?.tempC} °C`
 
     MouseArea {
       anchors.fill: parent
