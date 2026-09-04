@@ -26,6 +26,7 @@ Rectangle {
 
     anchors.fill: parent
 
+    asynchronous: true
     source: root.player.trackArtUrl
     fillMode: Image.PreserveAspectCrop
     visible: false

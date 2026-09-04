@@ -1,7 +1,7 @@
+pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-import Quickshell
 import Quickshell.Services.Mpris
 import Quickshell.Services.Pipewire
 
@@ -59,7 +59,7 @@ FocusablePanelWindow {
               player: modelData
 
               FrameAnimation {
-                running: (mprisEntry.player.playbackState === MprisPlaybackState.Playing) && volMenu.visible
+                running: volMenu.visible && (mprisEntry.player.playbackState === MprisPlaybackState.Playing)
                 onTriggered: mprisEntry.player.positionChanged()
               }
             }
