@@ -50,7 +50,7 @@ FocusablePanelWindow {
 
         ColumnLayout {
           Repeater {
-            model: Mpris.players
+            model: MprisController.players
 
             MprisEntry {
               id: mprisEntry
