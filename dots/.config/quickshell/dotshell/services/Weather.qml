@@ -24,7 +24,7 @@ Singleton {
       pressure: 0,
       temp: 0,
       uvIndex: 0,
-      windspeedKmph: 0
+      wind: 0
     })
 
   function formatData(data) {
