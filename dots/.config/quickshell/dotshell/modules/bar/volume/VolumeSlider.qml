@@ -105,7 +105,7 @@ FocusablePanelWindow {
           }
 
           Repeater {
-            model: linkTracker.linkGroups
+            model: linkTracker.linkGroups.filter(node => node.source !== null && node.state == PwLinkState.Active)
 
             MixerEntry {
               required property PwLinkGroup modelData

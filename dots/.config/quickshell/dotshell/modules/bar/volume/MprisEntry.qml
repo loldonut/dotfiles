@@ -6,20 +6,17 @@ import Quickshell.Services.Mpris
 
 import qs.modules.common
 import qs.modules.config
-import qs.services
 
 Rectangle {
   id: root
 
   required property MprisPlayer player
 
-  color: Colors.md3.on_primary
+  color: "transparent"
   radius: 8
 
   implicitWidth: layoutContainer.implicitWidth
   implicitHeight: layoutContainer.implicitHeight + 20
-
-  visible: MprisController.isValidPlayer(root.player)
 
   Image {
     id: trackArt
@@ -36,16 +33,15 @@ Rectangle {
     visible: root.player?.trackArtUrl !== ""
     source: trackArt
     anchors.fill: trackArt
-    opacity: 0.8
 
     autoPaddingEnabled: false
     blurEnabled: true
     blur: 0.5
 
-    brightness: -0.1
-
     maskEnabled: true
     maskSource: mask
+    maskSpreadAtMin: 1
+    maskThresholdMin: 0.8
   }
 
   Item {
@@ -78,7 +74,7 @@ Rectangle {
   component LeftSideGradient: Gradient {
     orientation: Gradient.Horizontal
     GradientStop {
-      position: 0.5
+      position: 0.2
       color: Colors.md3.on_primary
     }
     GradientStop {
@@ -147,8 +143,9 @@ Rectangle {
       Layout.fillWidth: true
 
       StyledText {
+        id: textPos
         font.pixelSize: 16
-        Layout.preferredWidth: 70
+        Layout.preferredWidth: root.player.length > 3600 ? 70 : 50
         text: root.formatTime(root.player.position)
       }
 
