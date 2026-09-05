@@ -1,20 +1,14 @@
 import QtQuick
 import QtQuick.Layouts
-import Quickshell
 import Quickshell.Hyprland
-import Quickshell.Io
-import Quickshell.Widgets
 
 import qs.modules.common
 import qs.modules.config
 
-StyledRect {
+Item {
   id: root
-  implicitWidth: workspaces.implicitWidth + 20
-  implicitHeight: Config.bar.height - 14
 
-  color: "transparent"
-  radius: 8
+  implicitWidth: workspaces.implicitWidth + 20
 
   Behavior on implicitWidth {
     SmoothedAnimation {
@@ -33,17 +27,25 @@ StyledRect {
       model: Hyprland.workspaces.values.slice().sort((a, b) => a.id - b.id)
 
       StyledRect {
-        Layout.alignment: Qt.AlignVCenter
-        required property var modelData
+        id: workspaceRect
 
+        required property HyprlandWorkspace modelData
         property bool isActive: Hyprland.focusedWorkspace?.id === modelData.id
 
         color: isActive ? Colors.md3.primary : Colors.md3.on_primary
         opacity: isActive ? 0.8 : 1.0
 
-        implicitWidth: isActive ? 18 : 15
-        implicitHeight: isActive ? 18 : 15
         radius: 10
+
+        Layout.preferredWidth: isActive ? 18 : 8
+        Layout.preferredHeight: isActive ? 18 : 8
+
+        Behavior on Layout.preferredWidth {
+          NumberAnimation { duration: 400; easing.type: Easing.InOutQuad }
+        }
+        Behavior on Layout.preferredHeight {
+          NumberAnimation { duration: 200; easing.type: Easing.InOutQuad }
+        }
 
         MouseArea {
           anchors.fill: parent
@@ -52,13 +54,6 @@ StyledRect {
           cursorShape: Qt.PointingHandCursor
 
           onClicked: Hyprland.dispatch(`hl.dsp.focus({ workspace = "${modelData.id}" })`)
-        }
-
-        Behavior on color {
-          ColorAnimation {
-            duration: 200
-            easing.type: Easing.InOutQuad
-          }
         }
       }
     }
