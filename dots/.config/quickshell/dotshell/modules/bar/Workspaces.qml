@@ -41,10 +41,16 @@ Item {
         Layout.preferredHeight: isActive ? 18 : 8
 
         Behavior on Layout.preferredWidth {
-          NumberAnimation { duration: 400; easing.type: Easing.InOutQuad }
+          NumberAnimation {
+            duration: 400
+            easing.type: Easing.InOutQuad
+          }
         }
         Behavior on Layout.preferredHeight {
-          NumberAnimation { duration: 200; easing.type: Easing.InOutQuad }
+          NumberAnimation {
+            duration: 200
+            easing.type: Easing.InOutQuad
+          }
         }
 
         MouseArea {
