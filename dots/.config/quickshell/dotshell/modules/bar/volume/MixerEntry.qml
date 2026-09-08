@@ -76,9 +76,24 @@ ColumnLayout {
     Slider {
       id: control
       Layout.fillWidth: true
+      property real prevVolume: node.audio.volume
       value: node?.audio?.volume ?? 0
       onValueChanged: node.audio.volume = value
+      enabled: !node.audio.muted
       stepSize: 0.05
+
+      Connections {
+        target: node.audio
+
+        function onMutedChanged() {
+          if (node.audio.muted) {
+            control.prevVolume = node.audio.volume
+            control.value = 0
+          } else {
+            control.value = control.prevVolume
+          }
+        }
+      }
 
       background: Rectangle {
         x: control.leftPadding
