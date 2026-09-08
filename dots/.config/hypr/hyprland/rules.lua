@@ -50,6 +50,13 @@ hl.window_rule({
     fullscreen = true,
 })
 
+hl.window_rule({
+    match = {
+        class = "^(org.libresplit.LibreSplit)$",
+    },
+    pin = true,
+})
+
 -- Specific workspace for specific apps --
 
 local browserWorkspace = "2"
@@ -127,7 +134,7 @@ local floatList = {
     { "title:wants to open",             patterns.endsWith   },
     { "class:dialog",                    patterns.between    },
     { "title:dialog",                    patterns.between    },
-    { "class:libresplit",                patterns.has        },
+    { "class:org.libresplit.LibreSplit", patterns.has        },
     { "class:nm-connection-editor",      patterns.has        },
     { "class:steam",                     patterns.has        },
     { "class:org.kde.gwenview",          patterns.has        },
