@@ -79,6 +79,7 @@ hl.window_rule({
 
 -- Tearing
 hl.window_rule({ match = { title = ".*\\.exe" }, immediate = true })
+hl.window_rule({ match = { title = "^(Left 4 Dead 2).*$" }, immediate = true })
 
 -- Specific workspace for specific apps --
 
