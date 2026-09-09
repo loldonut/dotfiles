@@ -23,6 +23,12 @@ Singleton {
     }
   }
 
+  // from https://github.com/end-4/dots-hyprland
+  function transparentize(baseColor, percent = 1) {
+    const c = Qt.color(baseColor)
+    return Qt.rgba(c.r, c.g, c.b, c.a * percent)
+  }
+
   component Md3: JsonObject {
     property string background: "transparent"
     property string error: "transparent"

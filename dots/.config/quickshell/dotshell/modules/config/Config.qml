@@ -39,6 +39,7 @@ Singleton {
     property real scale: 1.0
     property bool shortTimeFormat: true
     property bool useUSCS: false
+    property real opacity: 0.85
   }
 
   component Notifications: JsonObject {

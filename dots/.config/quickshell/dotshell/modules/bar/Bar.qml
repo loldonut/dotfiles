@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
+import Quickshell.Wayland
 
 import qs.modules.bar
 import qs.modules.bar.dashboard
@@ -33,6 +34,7 @@ Scope {
         right: Config.bar.floating ? 6 : 0
       }
 
+      WlrLayershell.namespace: "quickshell:bar"
       color: "transparent"
       implicitHeight: Config.bar.height + 2
 
@@ -46,7 +48,7 @@ Scope {
           verticalCenter: parent.verticalCenter
         }
 
-        color: Colors.md3.on_secondary_fixed
+        color: Colors.transparentize(Colors.md3.on_secondary_fixed, Config.bar.opacity)
 
         radius: Config.bar.floating ? 4 : 0
 

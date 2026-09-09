@@ -39,5 +39,4 @@ output_path = '~/.config/rofi/colors.rasi'
 [templates.quickshell]
 input_path = '~/.config/matugen/quickshell/quickshell.json'
 output_path = '~/.local/state/quickshell/generated/colors.json'
-post_hook = 'pkill -9 qs && qs -c dotshell'
 

@@ -43,6 +43,17 @@ hl.layer_rule({
     ignore_alpha = 0.5,
 })
 
+-- Quickshell
+hl.layer_rule({
+    match = { namespace = "quickshell:.*" },
+    blur = true,
+    blur_popups = true,
+})
+hl.layer_rule({
+    match = { namespace = "quickshell:bar" },
+    ignore_alpha = 0.79,
+})
+
 hl.window_rule({
     match = {
         class = "Waydroid",
