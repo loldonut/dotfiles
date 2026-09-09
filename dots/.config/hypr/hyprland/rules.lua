@@ -68,6 +68,18 @@ hl.window_rule({
     pin = true,
 })
 
+-- Picture in Picture
+hl.window_rule({
+    match = { title = "^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$" },
+    float = true,
+    keep_aspect_ratio = true,
+    size = { "(monitor_w)*0.25", "(monitor_h)*0.25" },
+    pin = true,
+})
+
+-- Tearing
+hl.window_rule({ match = { title = ".*\\.exe" }, immediate = true })
+
 -- Specific workspace for specific apps --
 
 local browserWorkspace = "2"
