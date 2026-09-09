@@ -2,40 +2,58 @@
 
 DEPS=(
     stow
+
+    # Qt / KDE
+    qt5ct
+    qt6ct
+    qt5-wayland
+    qt6-wayland
+    adwaita-qt5-git
+    adwaita-qt6-git
+    kde-material-you-colors
+
+    # GTK
+    gnome-themes-extra
+    nwg-look
+
+    quickshell
+    zoxide
+    starship
+
+    # Portal
+    xdg-desktop-portal
+    xdg-desktop-portal-hyprland
+    xdg-desktop-portal-gtk
+
+    network-manager-applet
+
+    # Hyprland
+    hyprshot
+    hyprshutdown
+    hyprpolkitagent
+
+    dolphin
+    kitty
+    ghostty
+    brave-bin
+    matugen
+    awww
+    alacritty
+    rofi
+    mangohud
     zsh
     tmux
     neovim
-    alacritty
-    rofi
     grim
     slurp
     swappy
-    mangohud
     blueman
     wl-clipboard
     cliphist
     fish
     fzf
-    qt5ct
-    qt6ct
-    qt5-wayland
-    qt6-wayland
-    quickshell
-    zoxide
-    starship
-    xdg-desktop-portal
-    xdg-desktop-portal-hyprland
-    xdg-desktop-portal-gtk
-    network-manager-applet
-    dolphin
-    kitty
-    hyprshot
-    hyprshutdown
-    hyprpolkitagent
-    ghostty
-    brave-bin
-    matugen
-    awww
+
+    ddcutil
     brightnessctl
     playerctl
 )
