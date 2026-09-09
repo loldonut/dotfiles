@@ -2,8 +2,6 @@ import QtQuick
 import QtQuick.Controls.Fusion
 import QtQuick.Effects
 import QtQuick.Layouts
-import Quickshell.Io
-import Quickshell.Wayland
 
 import qs.modules.common
 import qs.modules.config
@@ -17,7 +15,7 @@ StyledRect {
     id: wallpaper
     visible: Wallpaper.imagePath.length !== 0
     anchors.fill: parent
-    source: Wallpaper.imagePath
+    source: Wallpaper.getWallpaperPath()
     fillMode: Image.PreserveAspectFit
     asynchronous: true
 
