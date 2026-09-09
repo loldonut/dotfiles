@@ -35,10 +35,10 @@ Item {
         color: isActive ? Colors.md3.primary : Colors.md3.on_primary
         opacity: isActive ? 0.8 : 1.0
 
-        radius: 10
+        radius: width / 2
 
-        Layout.preferredWidth: isActive ? 18 : 8
-        Layout.preferredHeight: isActive ? 18 : 8
+        Layout.preferredWidth: isActive ? 18 : 15
+        Layout.preferredHeight: isActive ? 18 : 12
 
         Behavior on Layout.preferredWidth {
           NumberAnimation {
