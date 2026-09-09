@@ -18,13 +18,9 @@ ColumnLayout {
       text: (node?.audio?.volume !== 0 && !node?.audio?.muted) ? `volume_up` : `volume_mute`
     }
 
-    Label {
+    StyledText {
       Layout.fillWidth: true
       color: Colors.md3.primary
-      font {
-        family: Config.font.family
-        pixelSize: Config.font.size
-      }
       elide: Text.ElideRight
       text: {
         const app = node?.properties["application.name"] ?? (node?.description != "" ? node?.description : node.name) ?? "";
@@ -62,13 +58,9 @@ ColumnLayout {
   }
 
   RowLayout {
-    Label {
+    StyledText {
       color: Colors.md3.primary
-      font {
-        family: Config.font.family
-        pixelSize: Config.font.size
-        bold: true
-      }
+      font.bold: true
       Layout.preferredWidth: 50
       text: `${Math.round(node?.audio?.volume * 100)}%`
     }
@@ -87,10 +79,10 @@ ColumnLayout {
 
         function onMutedChanged() {
           if (node.audio.muted) {
-            control.prevVolume = node.audio.volume
-            control.value = 0
+            control.prevVolume = node.audio.volume;
+            control.value = 0;
           } else {
-            control.value = control.prevVolume
+            control.value = control.prevVolume;
           }
         }
       }
