@@ -23,8 +23,6 @@ hl.window_rule({
     no_focus = true,
 })
 
-hl.window_rule({})
-
 -- Float Download / History in Firefox
 hl.window_rule({
     match = {
@@ -65,6 +63,8 @@ hl.window_rule({
     match = {
         class = "^(org.libresplit.LibreSplit)$",
     },
+    decorate = false,
+    rounding = 0,
     pin = true,
 })
 
