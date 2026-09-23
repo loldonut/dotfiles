@@ -1,6 +1,5 @@
 import QtQuick
 import QtQuick.Layouts
-import Quickshell
 
 import qs.modules.common
 import qs.modules.config
@@ -21,6 +20,7 @@ Item {
     MaterialSymbol {
       anchors.centerIn: parent
 
+      color: Colors.md3.on_primary_container
       size: Config.font.size + 14
       text: "arrow_drop_down"
     }

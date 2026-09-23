@@ -1,8 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
-import Quickshell
 import Quickshell.Hyprland
-import Quickshell.Widgets
 
 import qs.modules.common
 import qs.modules.config
@@ -12,6 +10,7 @@ StyledText {
   Layout.alignment: Qt.AlignCenter
   Layout.maximumWidth: 250
 
+  color: Colors.md3.on_primary_container
   text: Hyprland.activeToplevel?.title || ""
   maximumLineCount: 1
   elide: Text.ElideRight

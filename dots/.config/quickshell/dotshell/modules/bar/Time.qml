@@ -5,6 +5,7 @@ import qs.modules.config
 import qs.services
 
 StyledText {
+  color: Colors.md3.on_primary_container
   text: Time.getDateAndTime(Config.bar.shortTimeFormat)
 
   MouseArea {

@@ -5,6 +5,7 @@ import Quickshell
 import Quickshell.Services.Pipewire
 
 import qs.modules.common
+import qs.modules.config
 
 StyledBarRect {
   id: root
@@ -30,12 +31,14 @@ StyledBarRect {
     anchors.centerIn: parent
 
     MaterialSymbol {
+      color: Colors.md3.on_primary_container
       text: Symbols.getVolumeIcon(root.volume, root.audio?.muted)
     }
 
     StyledText {
       id: volWidget
       Layout.alignment: Qt.AlignVCenter
+      color: Colors.md3.on_primary_container
 
       text: root.audio.muted ? `0%` : `${root.volume}%`
     }

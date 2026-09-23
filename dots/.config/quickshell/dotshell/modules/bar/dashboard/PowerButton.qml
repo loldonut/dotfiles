@@ -1,9 +1,4 @@
 import QtQuick
-import QtQuick.Controls
-import QtQuick.Layouts
-import Quickshell
-import Quickshell.Io
-import Quickshell.Widgets
 
 import qs.modules.common
 import qs.modules.config
@@ -17,6 +12,7 @@ StyledBarRect {
 
   MaterialSymbol {
     id: text
+    color: Colors.md3.on_primary_container
     anchors.centerIn: parent
 
     text: "power_settings_new"

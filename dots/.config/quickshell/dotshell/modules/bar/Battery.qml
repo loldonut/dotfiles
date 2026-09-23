@@ -25,6 +25,7 @@ StyledBarRect {
 
     MaterialSymbol {
       id: batteryText
+      color: Colors.md3.on_primary_container
 
       text: {
         const batteryIcon = Symbols.getBatteryIcon(root.batteryPercent);
@@ -35,6 +36,7 @@ StyledBarRect {
 
     MaterialSymbol {
       visible: root.isCharging
+      color: Colors.md3.on_primary_container
 
       Layout.leftMargin: -5
       size: Config.font.iconSize
@@ -42,6 +44,7 @@ StyledBarRect {
     }
 
     StyledText {
+      color: Colors.md3.on_primary_container
       text: `${root.batteryPercent}%`
     }
   }

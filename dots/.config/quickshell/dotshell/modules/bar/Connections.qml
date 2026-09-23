@@ -1,8 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
-import Quickshell
 import Quickshell.Networking
-import Quickshell.Widgets
 
 import qs.modules.common
 import qs.modules.config
@@ -15,6 +13,7 @@ StyledBarRect {
     anchors.centerIn: parent
 
     MaterialSymbol {
+      color: Colors.md3.on_primary_container
       text: {
         const network = Networking.devices.values.find(n => n.connected);
         const isConnected = ((network !== null) && (Networking.devices.values.length > 0));
@@ -33,6 +32,7 @@ StyledBarRect {
     }
 
     MaterialSymbol {
+      color: Colors.md3.on_primary_container
       text: "bluetooth"
     }
   }

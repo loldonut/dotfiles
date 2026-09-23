@@ -1,6 +1,7 @@
 import QtQuick
 
 import qs.modules.common
+import qs.modules.config
 import qs.services
 
 Item {
@@ -14,6 +15,7 @@ Item {
     visible: true
     anchors.centerIn: parent
 
+    color: Colors.md3.on_primary_container
     text: Weather.data?.temp
 
     MouseArea {

@@ -48,7 +48,7 @@ Scope {
           verticalCenter: parent.verticalCenter
         }
 
-        color: Colors.transparentize(Colors.md3.on_secondary_fixed, Config.bar.opacity)
+        color: Colors.transparentize(Colors.md3.surface, Config.bar.opacity)
 
         radius: Config.bar.floating ? 4 : 0
 
