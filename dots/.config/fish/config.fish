@@ -1,5 +1,3 @@
-set SESSIONIZER "$HOME/.config/fish/.sessionize"
-
 set -U fish_greeting
 set -g fish_color_autosuggestion 7982a9
 set -gx GPG_TTY (tty)
@@ -17,8 +15,9 @@ starship init fish | source
 zoxide init --cmd cd fish | source
 
 if status is-interactive
-    if not set -q TMUX
-        exec $SESSIONIZER
+    if set -q ZELLIJ
+    else
+        exec zellij
     end
 end
 
