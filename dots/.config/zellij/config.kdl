@@ -242,8 +242,6 @@ keybinds clear-defaults=true {
     }
 }
 
-// Plugin aliases - can be used to change the implementation of Zellij
-// changing these requires a restart to take effect
 plugins {
     about location="zellij:about"
     compact-bar location="zellij:compact-bar"
@@ -267,3 +265,6 @@ load_plugins {
 web_client {
     font "monospace"
 }
+
+theme "catppuccin-mocha"
+show_startup_tips false
