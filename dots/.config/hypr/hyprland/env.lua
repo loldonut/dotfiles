@@ -17,4 +17,3 @@ hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 
 hl.env("XCURSOR_THEME", "Adwaita")
-hl.env("GTK_THEME", "Adwaita")
