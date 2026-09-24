@@ -95,12 +95,12 @@ ColumnLayout {
         width: control.availableWidth
         height: implicitHeight
         radius: 2
-        color: Colors.md3.on_primary
+        color: Colors.md3.primary
 
         Rectangle {
           width: control.visualPosition * parent.width
           height: parent.height
-          color: Colors.md3.primary
+          color: Colors.md3.on_primary
           radius: 2
 
           Behavior on width {
