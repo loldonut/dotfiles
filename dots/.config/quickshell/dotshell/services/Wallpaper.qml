@@ -9,12 +9,12 @@ Singleton {
   function setImage(path) {
     matugenProc.command = ["matugen", "image", path, "--source-color-index", "0"];
     matugenProc.running = true;
-    root.imagePath = path
+    root.imagePath = path;
   }
 
   function getWallpaperPath() {
-    awwwQueryProc.running = true
-    return root.imagePath
+    awwwQueryProc.running = true;
+    return root.imagePath;
   }
 
   Process {

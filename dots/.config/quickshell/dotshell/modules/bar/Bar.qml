@@ -48,7 +48,9 @@ Scope {
           verticalCenter: parent.verticalCenter
         }
 
-        color: Colors.transparentize(Colors.md3.surface, Config.bar.opacity)
+        property color tintMix: Colors.mix(Colors.md3.background, Colors.md3.primary, 0.99)
+
+        color: Colors.transparentize(tintMix, Config.bar.opacity)
 
         radius: Config.bar.floating ? 4 : 0
 
