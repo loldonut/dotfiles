@@ -98,6 +98,8 @@ Rectangle {
         }
 
         StyledText {
+          Layout.fillWidth: true
+          elide: Text.ElideRight
           opacity: 0.8
           font.pixelSize: 16
           color: Colors.md3.secondary
