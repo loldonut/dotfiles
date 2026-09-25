@@ -34,9 +34,10 @@ hl.window_rule({
     size = { "(monitor_w*.55)", "(monitor_h*.70)" },
 })
 
--- Rofi blur
+-- Rofi
 hl.layer_rule({
     match = { namespace = "rofi" },
+    no_anim = true,
     blur = true,
     ignore_alpha = 0.5,
 })
