@@ -266,5 +266,5 @@ web_client {
     font "monospace"
 }
 
-theme "catppuccin-mocha"
+theme "matugen"
 show_startup_tips false
