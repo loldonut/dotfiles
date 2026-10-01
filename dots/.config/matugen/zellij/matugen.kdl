@@ -1,6 +1,128 @@
 themes {
     matugen {
+        text_unselected {
+            base "{{colors.on_surface.default.hex}}"
+            background "{{colors.surface_container.default.hex}}"
+            emphasis_0 "{{colors.tertiary.default.hex}}"
+            emphasis_1 "{{colors.primary.default.hex}}"
+            emphasis_2 "{{colors.secondary.default.hex}}"
+            emphasis_3 "{{colors.on_surface_variant.default.hex}}"
+        }
+        text_selected {
+            base "{{colors.on_secondary_container.default.hex}}"
+            background "{{colors.secondary_container.default.hex}}"
+            emphasis_0 "{{colors.tertiary.default.hex}}"
+            emphasis_1 "{{colors.primary.default.hex}}"
+            emphasis_2 "{{colors.secondary.default.hex}}"
+            emphasis_3 "{{colors.on_surface_variant.default.hex}}"
+        }
+        ribbon_selected {
+            base "{{colors.on_primary.default.hex}}"
+            background "{{colors.primary.default.hex}}"
+            emphasis_0 "{{colors.error.default.hex}}"
+            emphasis_1 "{{colors.tertiary.default.hex}}"
+            emphasis_2 "{{colors.secondary.default.hex}}"
+            emphasis_3 "{{colors.on_primary_container.default.hex}}"
+        }
+        ribbon_unselected {
+            base "{{colors.on_surface.default.hex}}"
+            background "{{colors.surface_container_high.default.hex}}"
+            emphasis_0 "{{colors.error.default.hex}}"
+            emphasis_1 "{{colors.on_surface.default.hex}}"
+            emphasis_2 "{{colors.primary.default.hex}}"
+            emphasis_3 "{{colors.tertiary.default.hex}}"
+        }
+        table_title {
+            base "{{colors.primary.default.hex}}"
+            background 0
+            emphasis_0 "{{colors.tertiary.default.hex}}"
+            emphasis_1 "{{colors.primary.default.hex}}"
+            emphasis_2 "{{colors.secondary.default.hex}}"
+            emphasis_3 "{{colors.on_surface_variant.default.hex}}"
+        }
+        table_cell_selected {
+            base "{{colors.on_secondary_container.default.hex}}"
+            background "{{colors.secondary_container.default.hex}}"
+            emphasis_0 "{{colors.tertiary.default.hex}}"
+            emphasis_1 "{{colors.primary.default.hex}}"
+            emphasis_2 "{{colors.secondary.default.hex}}"
+            emphasis_3 "{{colors.on_surface_variant.default.hex}}"
+        }
+        table_cell_unselected {
+            base "{{colors.on_surface.default.hex}}"
+            background "{{colors.surface_container.default.hex}}"
+            emphasis_0 "{{colors.tertiary.default.hex}}"
+            emphasis_1 "{{colors.primary.default.hex}}"
+            emphasis_2 "{{colors.secondary.default.hex}}"
+            emphasis_3 "{{colors.on_surface_variant.default.hex}}"
+        }
+        list_selected {
+            base "{{colors.on_secondary_container.default.hex}}"
+            background "{{colors.secondary_container.default.hex}}"
+            emphasis_0 "{{colors.tertiary.default.hex}}"
+            emphasis_1 "{{colors.primary.default.hex}}"
+            emphasis_2 "{{colors.secondary.default.hex}}"
+            emphasis_3 "{{colors.on_surface_variant.default.hex}}"
+        }
+        list_unselected {
+            base "{{colors.on_surface.default.hex}}"
+            background "{{colors.surface_container.default.hex}}"
+            emphasis_0 "{{colors.tertiary.default.hex}}"
+            emphasis_1 "{{colors.primary.default.hex}}"
+            emphasis_2 "{{colors.secondary.default.hex}}"
+            emphasis_3 "{{colors.on_surface_variant.default.hex}}"
+        }
         frame_selected {
+            base "{{colors.primary.default.hex}}"
+            background 0
+            emphasis_0 "{{colors.tertiary.default.hex}}"
+            emphasis_1 "{{colors.secondary.default.hex}}"
+            emphasis_2 "{{colors.primary.default.hex}}"
+            emphasis_3 0
+        }
+        frame_highlight {
+            base "{{colors.tertiary.default.hex}}"
+            background 0
+            emphasis_0 "{{colors.primary.default.hex}}"
+            emphasis_1 "{{colors.tertiary.default.hex}}"
+            emphasis_2 "{{colors.tertiary.default.hex}}"
+            emphasis_3 "{{colors.tertiary.default.hex}}"
+        }
+        frame_unselected {
+            base "{{colors.outline.default.hex}}"
+            background 0
+            emphasis_0 "{{colors.outline_variant.default.hex}}"
+            emphasis_1 "{{colors.outline_variant.default.hex}}"
+            emphasis_2 "{{colors.outline_variant.default.hex}}"
+            emphasis_3 0
+        }
+        exit_code_success {
+            base "{{colors.primary.default.hex}}"
+            background 0
+            emphasis_0 "{{colors.tertiary.default.hex}}"
+            emphasis_1 "{{colors.on_surface.default.hex}}"
+            emphasis_2 "{{colors.secondary.default.hex}}"
+            emphasis_3 "{{colors.primary.default.hex}}"
+        }
+        exit_code_error {
+            base "{{colors.error.default.hex}}"
+            background 0
+            emphasis_0 "{{colors.error.default.hex}}"
+            emphasis_1 "{{colors.error.default.hex}}"
+            emphasis_2 "{{colors.error.default.hex}}"
+            emphasis_3 "{{colors.error.default.hex}}"
+        }
+        multiplayer_user_colors {
+            player_1 "{{colors.primary.default.hex}}"
+            player_2 "{{colors.secondary.default.hex}}"
+            player_3 "{{colors.tertiary.default.hex}}"
+            player_4 "{{colors.error.default.hex}}"
+            player_5 "{{colors.primary_fixed_dim.default.hex}}"
+            player_6 "{{colors.secondary_fixed_dim.default.hex}}"
+            player_7 "{{colors.tertiary_fixed_dim.default.hex}}"
+            player_8 "{{colors.primary_container.default.hex}}"
+            player_9 "{{colors.secondary_container.default.hex}}"
+            player_10 "{{colors.tertiary_container.default.hex}}"
         }
     }
 }
