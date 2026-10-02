@@ -11,6 +11,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("~/.config/tmux/import_env")
 
     -- Clipboard Manager
+    hl.exec_cmd("cliphist wipe -older-than 720h")
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
 
