@@ -19,7 +19,6 @@ bindShiftMod("F1", toggleAnimations,                      { description = "Toggl
 bindShiftMod("E",  exec_cmd("rofimoji --action copy"),    { description = "Find an emoji using rofi"     })
 
 -- Quickshell IPC Binds
-bindMod("P",      exec_cmd(qsIpc .. "mpris toggle"),         { description = "Open Mpris Player"        })
 bindMod("N",      global_dsp("quickshell:notifCenter"),      { description = "Open Notification Center" })
 bindShiftMod("W", global_dsp("quickshell:wallpapers"),       { description = "Open Wallpaper Picker"    })
 bindShiftMod("M", global_dsp("quickshell:lock"),             { description = "Locks the session"        })
