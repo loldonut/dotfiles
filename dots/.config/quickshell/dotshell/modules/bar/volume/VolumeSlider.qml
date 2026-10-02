@@ -31,7 +31,7 @@ FocusablePanelWindow {
 
   Rectangle {
     anchors.fill: parent
-    radius: 10
+    radius: 8
 
     color: Colors.md3.surface
     border.color: Colors.md3.inverse_primary
