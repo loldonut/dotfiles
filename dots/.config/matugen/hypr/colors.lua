@@ -1,11 +1,9 @@
 hl.config({
     general = {
         col = {
-            active_border = {
-                colors = {"{{ colors.inverse_primary.dark.hex }}", "{{ colors.on_secondary_fixed.dark.hex }}"},
-                angle = 45
-            },
-            inactive_border = "{{ colors.on_secondary_fixed.dark.rgba }}",
-        }
-    }
+            -- from https://github.com/end-4/dots-hyprland
+            active_border = "rgba({{colors.outline_variant.default.hex_stripped}}77)",
+            inactive_border = "rgba({{colors.surface_container_low.default.hex_stripped}}33)",
+        },
+    },
 })
