@@ -49,3 +49,5 @@ bindMod("G", function()
         window = "title:^(Left 4 Dead 2)$",
     }))
 end, { repeating = false })
+
+bindMod("X", hl.dsp.exec_cmd("pkill -9 xhair-overlay || xhair-overlay"))

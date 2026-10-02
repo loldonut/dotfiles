@@ -50,6 +50,8 @@ StyledRect {
         Layout.fillWidth: true
         Layout.leftMargin: -8
 
+        color: Colors.md3.on_surface
+
         font {
           family: "Roboto Flex"
           weight: Font.Black
@@ -71,6 +73,8 @@ StyledRect {
             "wdth": 150
           }
         }
+
+        color: Colors.md3.on_surface
 
         renderType: Text.NativeRendering
         opacity: 0.8
@@ -105,7 +109,7 @@ StyledRect {
           }
         }
 
-        color: Colors.md3.on_primary_container
+        color: Colors.md3.on_surface
 
         renderType: Text.NativeRendering
         font.pixelSize: 70
@@ -174,16 +178,17 @@ StyledRect {
             text: unlockButton.text
 
             font.family: "Roboto Flex"
+            font.bold: false
 
-            opacity: enabled ? 1.0 : 0.3
-            color: Colors.md3.primary
+            color: Colors.md3.on_primary_container
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             elide: Text.ElideRight
           }
 
           background: Rectangle {
-            color: unlockButton.down ? Colors.md3.inverse_primary : Colors.md3.on_secondary_fixed
+            color: unlockButton.down ? Colors.md3.inverse_primary : Colors.md3.primary_container
+            opacity: enabled ? 1.0 : 0.5
             radius: 8
           }
 
