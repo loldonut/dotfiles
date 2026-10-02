@@ -1,7 +1,7 @@
 require("..utils")
 require("..utils.binds")
 
-local qsIpc = "qs -c dotshell ipc call "
+-- local qsIpc = "qs -c dotshell ipc call "
 
 -- stylua: ignore start
 
