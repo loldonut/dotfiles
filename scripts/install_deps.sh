@@ -15,6 +15,8 @@ DEPS=(
     # GTK
     gnome-themes-extra
     nwg-look
+    # Steam GTK
+    adwsteamgtk
 
     quickshell
     zoxide
