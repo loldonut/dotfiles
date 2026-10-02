@@ -54,6 +54,7 @@ DEPS=(
     cliphist
     fish
     fzf
+    rofimoji
 
     ddcutil
     brightnessctl

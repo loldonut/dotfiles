@@ -16,6 +16,7 @@ bindMod("F", hl.dsp.window.fullscreen(),                 { description = "Toggle
 bindShiftMod("B",  exec_cmd(bluetoothManager),            { description = "Launch bluetooth manager"     })
 bindShiftMod("P",  exec_cmd("pavucontrol"),               { description = "Launch pavucontrol"           })
 bindShiftMod("F1", toggleAnimations,                      { description = "Toggle compositor animations" })
+bindShiftMod("E",  exec_cmd("rofimoji --action copy"),    { description = "Find an emoji using rofi"     })
 
 -- Quickshell IPC Binds
 bindMod("P",      exec_cmd(qsIpc .. "mpris toggle"),         { description = "Open Mpris Player"        })
