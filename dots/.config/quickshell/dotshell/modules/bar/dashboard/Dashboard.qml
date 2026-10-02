@@ -1,6 +1,5 @@
 import QtQuick
 import QtQuick.Layouts
-import Quickshell
 import Quickshell.Hyprland
 
 import qs
@@ -38,6 +37,7 @@ FocusablePanelWindow {
     anchors.fill: parent
 
     radius: 12
+    color: Colors.md3.surface
     border.width: 2
     border.color: Colors.md3.inverse_primary
 
