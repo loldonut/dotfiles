@@ -4,6 +4,7 @@ import Quickshell
 import Quickshell.Wayland
 
 import qs.modules.bar
+import qs.modules.bar.battery
 import qs.modules.bar.dashboard
 import qs.modules.bar.notifications
 import qs.modules.bar.tray
