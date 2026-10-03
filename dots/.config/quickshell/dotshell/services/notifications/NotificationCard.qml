@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
+import Quickshell
 import Quickshell.Services.Notifications
 
 import qs.modules.common
@@ -41,9 +42,10 @@ Rectangle {
         Layout.preferredHeight: 36
         Layout.preferredWidth: 36
         Layout.alignment: Qt.AlignTop
+        Layout.margins: 4
         fillMode: Image.PreserveAspectFit
         visible: source.toString() !== ""
-        source: root.notif.image || root.notif.appIcon || ""
+        source: root.notif.image || Quickshell.iconPath(root.notif.appIcon) || ""
       }
 
       ColumnLayout {
