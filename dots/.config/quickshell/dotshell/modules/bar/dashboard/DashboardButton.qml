@@ -1,34 +1,44 @@
 import QtQuick
+import QtQuick.Controls
 
 import qs.modules.common
 import qs.modules.config
 
-StyledRect {
+Button {
   id: root
-  required property string text
+
   property string command
   property var clickedHandler
-  property color symbolColor: Colors.md3.primary
+  property color symbolColor: Colors.md3.on_primary_container
+  property string tooltip
 
-  implicitWidth: 50
-  implicitHeight: 50
+  ToolTip.delay: 1000
+  ToolTip.visible: hovered
+  ToolTip.text: tooltip
 
-  radius: 16
-  color: Colors.md3.on_primary
+  background: Rectangle {
+    implicitWidth: 80
+    implicitHeight: 80
+    color: root.hovered ? Colors.md3.on_primary : Colors.md3.primary_container
+    radius: 8
 
-  MaterialSymbol {
-    anchors.centerIn: parent
-    font.pixelSize: Config.font.size + 20
+    Behavior on color {
+      ColorAnimation { duration: 150 }
+    }
+  }
 
-    color: root.symbolColor
+  contentItem: MaterialSymbol {
     text: root.text
+    font.pixelSize: Config.font.size + 20
+    color: root.symbolColor
+    horizontalAlignment: Text.AlignHCenter
+    verticalAlignment: Text.AlignVCenter
+    elide: Text.ElideRight
   }
 
   MouseArea {
     anchors.fill: parent
     cursorShape: Qt.PointingHandCursor
-    onClicked: {
-      root.clickedHandler();
-    }
+    onClicked: root.clickedHandler()
   }
 }

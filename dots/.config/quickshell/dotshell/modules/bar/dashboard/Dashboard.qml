@@ -22,13 +22,17 @@ FocusablePanelWindow {
     right: 10
   }
 
-  implicitWidth: row.implicitWidth + 50
-  implicitHeight: col.implicitHeight + 50
+  implicitWidth: 370
+  implicitHeight: 200
 
   onVisibleChanged: {
     if (visible) {
       container.forceActiveFocus();
     }
+  }
+
+  function dispatchCommand(command) {
+    Hyprland.dispatch(`hl.dsp.exec_cmd('${command}')`)
   }
 
   StyledRect {
@@ -45,11 +49,18 @@ FocusablePanelWindow {
       id: col
       anchors.fill: parent
       anchors.margins: 20
-      spacing: 12
+      spacing: 0
 
       RowLayout {
+        MaterialSymbol {
+          font.pixelSize: Config.font.size + 14
+          color: Colors.md3.outline_variant
+          text: "account_circle"
+        }
+
         StyledText {
           font.pixelSize: 28
+          Layout.leftMargin: -2
           text: SystemInfo.user
         }
 
@@ -68,8 +79,6 @@ FocusablePanelWindow {
         Layout.preferredWidth: parent.width
         Layout.preferredHeight: 1.5
         Layout.alignment: Qt.AlignVCenter
-        Layout.leftMargin: 2
-        Layout.rightMargin: 2
         opacity: 0.2
         color: Colors.md3.primary
       }
@@ -82,6 +91,7 @@ FocusablePanelWindow {
 
         DashboardButton {
           text: "lock"
+          tooltip: "Lock"
           clickedHandler: () => {
             ShellState.locked = true;
           }
@@ -89,16 +99,18 @@ FocusablePanelWindow {
 
         DashboardButton {
           text: "restart_alt"
+          tooltip: "Restart"
           clickedHandler: () => {
-            Hyprland.dispatch("hl.dsp.exec_cmd(\"hyprshutdown -t 'Restarting...' --post-cmd 'reboot'\")");
+            root.dispatchCommand("hyprshutdown -t 'Restarting...' --post-cmd 'reboot'");
           }
         }
 
         DashboardButton {
           text: "power_settings_new"
           symbolColor: "#F44336"
+          tooltip: "Shutdown"
           clickedHandler: () => {
-            Hyprland.dispatch("hl.dsp.exec_cmd(\"hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'\")");
+            root.dispatchCommand("hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'");
           }
         }
       }
