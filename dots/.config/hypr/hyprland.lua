@@ -9,12 +9,12 @@ local hyprConfigPath = home .. ".config/hypr"
 local extras = {
     "monitors",
     "binds",
-    "devices"
+    "devices",
 }
 
 for _, name in ipairs(extras) do
     local path = string.format("%s/extras/%s.lua", hyprConfigPath, name)
-    if pathExists(path) then
+    if path_exists(path) then
         require("extras." .. name)
     end
 end

@@ -1,13 +1,13 @@
 require("..utils.binds")
 
 -- Touchpad/Trackpad
-bindMod("T", function()
+bind_mod("T", function()
     hl.device({
         name = "synps/2-synaptics-touchpad",
         enabled = false,
     })
 end)
-bindShiftMod("T", function()
+bind_shift_mod("T", function()
     hl.device({
         name = "synps/2-synaptics-touchpad",
         enabled = true,
@@ -18,7 +18,7 @@ end)
 
 local lsClass = "class:^(org.libresplit.LibreSplit)$"
 
-bindMod("F5", function()
+bind_mod("F5", function()
     hl.dispatch(hl.dsp.send_shortcut({
         state = "down",
         mods = "",
@@ -26,7 +26,7 @@ bindMod("F5", function()
         window = lsClass,
     }))
 end, { repeating = false })
-bindMod("G", function()
+bind_mod("G", function()
     -- For some reason 'hl.dsp.send_shortcut' and 'hl.dsp.pass' does not work
     -- and this is the work around
     hl.dispatch(hl.dsp.send_shortcut({
@@ -50,4 +50,4 @@ bindMod("G", function()
     }))
 end, { repeating = false })
 
-bindMod("X", hl.dsp.exec_cmd("pkill -9 xhair-overlay || xhair-overlay"))
+bind_mod("X", hl.dsp.exec_cmd("pkill -9 xhair-overlay || xhair-overlay"))

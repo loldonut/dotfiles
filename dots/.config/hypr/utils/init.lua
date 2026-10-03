@@ -1,4 +1,4 @@
-function pathExists(path)
+function path_exists(path)
     local file = io.open(path, "r")
     if file == nil then
         return false
@@ -8,7 +8,7 @@ function pathExists(path)
     end
 end
 
-function toggleAnimations()
+function toggle_animations()
     local game_mode = (hl.get_config("animations.enabled") == false)
 
     if game_mode then

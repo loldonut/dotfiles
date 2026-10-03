@@ -6,7 +6,7 @@ function bind(key, action, flags)
     end
 end
 
-function bindMod(key, action, flags)
+function bind_mod(key, action, flags)
     local bindModKey = string.format("%s + %s", mainMod, key)
     if flags then
         bind(bindModKey, action, flags)
@@ -15,9 +15,9 @@ function bindMod(key, action, flags)
     end
 end
 
-function bindShiftMod(key, action, flags)
+function bind_shift_mod(key, action, flags)
     local bindModKey = string.format("SHIFT + %s", key)
-    bindMod(bindModKey, action, flags)
+    bind_mod(bindModKey, action, flags)
 end
 
 exec_cmd = hl.dsp.exec_cmd
