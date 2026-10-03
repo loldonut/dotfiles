@@ -6,6 +6,7 @@ import Quickshell.Services.Notifications
 import qs.modules.common
 import qs.modules.config
 
+// TODO: Maybe just use NotificationCard instead
 Rectangle {
   id: root
 
@@ -26,10 +27,11 @@ Rectangle {
     Image {
       Layout.preferredHeight: 36
       Layout.preferredWidth: 36
-      Layout.alignment: Qt.AlignTop
+      Layout.alignment: Qt.AlignVCenter
+      Layout.margins: 4
       fillMode: Image.PreserveAspectFit
       visible: source.toString() !== ""
-      source: model.image || model.appIcon || ""
+      source: model.image || Quickshell.iconPath(model.appIcon) || ""
     }
 
     ColumnLayout {
