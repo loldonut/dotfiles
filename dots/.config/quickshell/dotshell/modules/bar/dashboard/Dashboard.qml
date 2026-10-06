@@ -32,7 +32,7 @@ FocusablePanelWindow {
   }
 
   function dispatchCommand(command) {
-    Hyprland.dispatch(`hl.dsp.exec_cmd('${command}')`)
+    Hyprland.dispatch(`hl.dsp.exec_cmd("${command}")`)
   }
 
   StyledRect {
