@@ -2,30 +2,30 @@
 
 my dotfiles, managed by using stow
 
-## Using
+## using
 - **Wayland Compositor:** [Hyprland](https://github.com/hyprwm/Hyprland)
 - **Status Bar:** [Quickshell](https://quickshell.org)
 - **Color Generation Tool:** [Matugen](https://github.com/InioX/matugen)
 - **Terminal Emulator:** Fish + [Ghostty](https://github.com/ghostty-org/ghostty) **/** zsh + [Kitty](https://github.com/kovidgoyal/kitty) for launching programs that requires rendering.
 - **Text Editor:** [Neovim](https://github.com/neovim/neovim)
 
-### Thanks to
+### thanks to
 
 - [end-4/dots-hyprland](https://github.com/end-4/dots-hyprland) - For quickshell and material design stuff
 - [caelestia-dots/shell](https://github.com/caelestia-dots/shell)
 
-## Table of Contents
+## table of contents
 
 - [Issues](#issues)
-- [Clone Repository](#clone-repository)
+- [Clone Repository](#cloning)
 - [Install](#install)
   - [Required Packages](#required-packages)
 - [Change Wallpaper](#change-wallpaper)
-- [Whereis](#whereis-dotfiles)
+- [Whereis](#dotfiles-dirs)
 - [Quickshell](#quickshell)
 - [Hyprland Configuration](#hyprland-configuration)
 
-## Issues
+## issues
 
 - Quickshell config does not account for multiple monitors
 - Lacks Wifi and Bluetooth connection widget/panel
@@ -33,7 +33,7 @@ my dotfiles, managed by using stow
 - Notification history is not stored when the application exits
 - Quickshell does not reload automatically when launched with `qs -c dotshell`
 
-## Clone repository
+## cloning
 
 ##### SSH
 
@@ -47,15 +47,14 @@ git clone --recurse-submodules git@github.com:loldonut/dotfiles.git
 git clone --recurse-submodules https://github.com/loldonut/dotfiles
 ```
 
-## Install
+## install
 
-### Required packages
+Arch-based distro only, for now.
 
-**(arch only)** Download using any AUR Helper programs \
-This config uses `hyprpaper` for wallpapers. Switch wallpapers using the bind `SUPER + SHIFT + W`
+### required packages
 
 ```sh
-yay -S --needed git stow
+sudo pacman -S --needed git stow
 ```
 
 <details>
@@ -95,12 +94,12 @@ OPTIONS
 - Generates a file at `~/.local/state/dotfiles/.initialized` to know if the script has been run before.
 - `path_to_wallpaper` will only be used when running the script for the first time. Otherwise it is ignored in favor of the `SUPER + SHIFT + W` bind in the Hyprland config
 
-### Change wallpaper
+### change wallpaper
 
 Use the `SUPER + SHIFT + W` bind to change themes which will bring up a menu showing images at `$HOME/Pictures/Wallpapers` \
 This will run `matugen` automatically and change the color scheme.
 
-## Whereis `dotfiles`
+### dotfiles dirs
 
 - **Config:** `~/.config/dotfiles`
   - Contains `config.json`, the config file for the Quickshell application
@@ -108,13 +107,13 @@ This will run `matugen` automatically and change the color scheme.
 - **Share:** `~/.local/share/dotfiles`
   - Is used to store things like `colors.json` for neovim.
 
-## Quickshell
+## quickshell
 
 If you are missing colors or fonts in the status bar, make sure you have initiated matugen to generate a `Colors.qml` file
 
 You can also generate a matugen manually by using the [./setup wallpaper](#install) command provided
 
-## Hyprland configuration
+## hyprland configuration
 
 If you are having issues with `xdg-desktop-portal`, try running [Hyprland with UWSM.](https://wiki.hypr.land/Useful-Utilities/Systemd-start)
 
