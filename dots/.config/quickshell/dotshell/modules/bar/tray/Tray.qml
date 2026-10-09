@@ -1,5 +1,7 @@
+pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Layouts
+import Quickshell
 
 import qs.modules.common
 import qs.modules.config
@@ -26,13 +28,17 @@ Item {
     }
   }
 
-  TrayView {
-    id: trayView
-    rootItem: tray
+  LazyLoader {
+    id: trayLoader
+    loading: true
+
+    TrayView {
+      rootItem: tray
+    }
   }
 
   MouseArea {
     anchors.fill: parent
-    onClicked: trayView.visible = !trayView.visible
+    onClicked: trayLoader.item.visible = !trayLoader.item.visible
   }
 }
