@@ -38,6 +38,7 @@ StyledBarRect {
     }
 
     StyledText {
+      font.pixelSize: Sizes.font.small
       color: Colors.md3.on_primary_container
       text: `${Battery.percent}%`
     }

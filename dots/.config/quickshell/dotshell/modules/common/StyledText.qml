@@ -5,7 +5,7 @@ import qs.modules.config
 Text {
   font {
     family: Config.font.family
-    pixelSize: Config.font.size
+    pixelSize: Sizes.font.normal
     weight: Font.DemiBold
   }
   color: Colors.md3.primary

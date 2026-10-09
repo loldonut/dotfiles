@@ -39,6 +39,7 @@ StyledBarRect {
       id: volWidget
       Layout.alignment: Qt.AlignVCenter
       color: Colors.md3.on_primary_container
+      font.pixelSize: Sizes.font.small
 
       text: root.audio.muted ? `0%` : `${root.volume}%`
     }
