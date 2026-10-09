@@ -8,6 +8,7 @@ import qs.modules.config
 
 ColumnLayout {
   required property PwNode node
+  property real prevVolume: node.audio.volume
 
   PwObjectTracker {
     objects: [node]
@@ -65,75 +66,29 @@ ColumnLayout {
       text: `${Math.round(node?.audio?.volume * 100)}%`
     }
 
-    Slider {
+    Connections {
+      target: node.audio
+
+      function onMutedChanged() {
+        if (node.audio.muted) {
+          control.prevVolume = node.audio.volume;
+          control.value = 0;
+        } else {
+          control.value = control.prevVolume;
+        }
+      }
+    }
+
+    StyledSlider {
       id: control
       Layout.fillWidth: true
-      property real prevVolume: node.audio.volume
       value: node?.audio?.volume ?? 0
       onValueChanged: node.audio.volume = value
       enabled: !node.audio.muted
       stepSize: 0.05
 
-      Connections {
-        target: node.audio
-
-        function onMutedChanged() {
-          if (node.audio.muted) {
-            control.prevVolume = node.audio.volume;
-            control.value = 0;
-          } else {
-            control.value = control.prevVolume;
-          }
-        }
-      }
-
-      background: Rectangle {
-        x: control.leftPadding
-        y: control.topPadding + control.availableHeight / 2 - height / 2
-        implicitWidth: 200
-        implicitHeight: 6
-        width: control.availableWidth
-        height: implicitHeight
-        radius: 2
-        color: Colors.md3.primary
-
-        Rectangle {
-          width: control.visualPosition * parent.width
-          height: parent.height
-          color: Colors.md3.on_primary
-          radius: 2
-
-          Behavior on width {
-            NumberAnimation {
-              easing {
-                type: Easing.OutQuart
-                amplitude: 1
-                period: 0.5
-              }
-            }
-          }
-        }
-      }
-
-      handle: Rectangle {
-        x: control.leftPadding + control.visualPosition * (control.availableWidth - width)
-        y: control.topPadding + control.availableHeight / 2 - height / 2
-        implicitWidth: 10
-        implicitHeight: 26
-        radius: 5
-        color: Colors.md3.surface
-        border.color: Colors.md3.primary
-
-        Behavior on x {
-          NumberAnimation {
-            easing {
-              type: Easing.OutQuart
-              amplitude: 1
-              period: 0.5
-            }
-          }
-        }
-      }
+      fillColor: Colors.md3.primary
+      posColor: Colors.md3.on_primary
 
       WheelHandler {
         target: control

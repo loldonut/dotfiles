@@ -16,7 +16,7 @@ Slider {
     implicitHeight: 6
     width: root.availableWidth
     height: implicitHeight
-    radius: 4
+    radius: width / 2
     color: root.fillColor
 
     Rectangle {
@@ -28,6 +28,16 @@ Slider {
       width: root.visualPosition * parent.width
       radius: parent.radius
       color: root.posColor
+
+      Behavior on width {
+        NumberAnimation {
+          easing {
+            type: Easing.OutQuart
+            amplitude: 1
+            period: 0.5
+          }
+        }
+      }
     }
   }
 
@@ -40,5 +50,15 @@ Slider {
     color: Colors.md3.surface
     border.color: Colors.md3.primary
     border.width: 2
+
+    Behavior on x {
+      NumberAnimation {
+        easing {
+          type: Easing.OutQuart
+          amplitude: 1
+          period: 0.5
+        }
+      }
+    }
   }
 }
