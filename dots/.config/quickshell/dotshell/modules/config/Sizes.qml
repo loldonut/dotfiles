@@ -7,6 +7,7 @@ Singleton {
     property real defaultBarHeight: 52
   }
 
+  // from https://github.com/end-4/dots-hyprland
   property QtObject font: QtObject {
     // property int smallest: 10
     // property int smaller: 12
