@@ -186,6 +186,8 @@ Scope {
                   anchors.fill: parent
                   anchors.margins: 2
                   source: fileUrl
+                  sourceSize.width: 400
+                  sourceSize.height: 200
                   fillMode: Image.PreserveAspectCrop
                   asynchronous: true
                 }
