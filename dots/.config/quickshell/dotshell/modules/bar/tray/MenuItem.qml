@@ -61,7 +61,6 @@ Item {
       ColumnLayout {
         id: trayMenuCol
         anchors.fill: parent
-        spacing: 2
         anchors.margins: 10
 
         Repeater {

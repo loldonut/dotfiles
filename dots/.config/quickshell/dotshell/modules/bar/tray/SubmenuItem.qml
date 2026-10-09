@@ -9,7 +9,7 @@ Item {
   required property QsMenuEntry entry
 
   Layout.fillWidth: true
-  Layout.preferredHeight: entry.isSeparator ? 8 : 34
+  Layout.preferredHeight: entry.isSeparator ? 1 : 34
 
   Rectangle {
     visible: entry.isSeparator
@@ -31,10 +31,12 @@ Item {
     visible: !entry.isSeparator
 
     anchors.fill: parent
-    Layout.fillWidth: true
+    Layout.margins: 10
+    Layout.leftMargin: 20
 
     Image {
       source: entry.icon
+      Layout.leftMargin: 8
       Layout.preferredWidth: 14
       Layout.preferredHeight: 14
       Layout.alignment: Qt.AlignVCenter
@@ -62,7 +64,7 @@ Item {
     visible: !entry.isSeparator
     enabled: entry.enabled
     hoverEnabled: true
-    cursorShape: Qt.PointingHandCursor
+    cursorShape: entry.enabled ? Qt.PointingHandCursor : Qt.ArrowCursor
 
     onClicked: {
       entry.triggered();
