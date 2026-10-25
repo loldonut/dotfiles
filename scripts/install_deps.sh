@@ -34,7 +34,10 @@ DEPS=(
     hyprshutdown
     hyprpolkitagent
 
+    # Dolphin + Compress/Extract dependency
     dolphin
+    ark
+
     kitty
     ghostty
     brave-bin
