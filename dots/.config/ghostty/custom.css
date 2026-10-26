@@ -1,3 +1,5 @@
 window {
     background: transparent;
+    /* add blur here since a gtk update disables blur by default 😐 */
+    backdrop-filter: blur(20px);
 }
