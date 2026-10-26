@@ -35,7 +35,7 @@ Scope {
         right: Config.bar.floating ? 6 : 0
       }
 
-      WlrLayershell.layer: WlrLayer.Overlay
+      WlrLayershell.layer: WlrLayer.Top
       WlrLayershell.namespace: "quickshell:bar"
       color: "transparent"
       implicitHeight: Config.bar.height + 2
